@@ -1,0 +1,37 @@
+# 現在のディレクトリ構造
+.
+├── app
+│   ├── api
+│   ├── assets
+│   ├── components
+│   ├── controllers
+│   ├── core
+│   ├── includes
+│   ├── models
+│   ├── templates
+│   └── views
+└── log
+
+# 将来的なディレクトリ構造
+.
+├── app
+│   ├── core
+│   └── requests
+│       ├── form
+│       │   ├── controllers
+│       │   └── models
+│       ├── ajax
+│       │   ├── controllers
+│       │   └── models
+│       ├── api
+│       │   ├── controllers
+│       │   └── models
+│       └── view
+│           ├── assets
+│           ├── components
+│           ├── controllers
+│           ├── includes
+│           ├── models
+│           ├── templates
+│           └── layouts
+└── log
