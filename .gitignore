@@ -1,2 +1,7 @@
-.DS_Store
+# Any Extension
 *.log
+
+# Any File
+.DS_Store
+
+# Any Directory
