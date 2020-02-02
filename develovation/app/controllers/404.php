@@ -3,7 +3,7 @@
 /**
  * View Controller
  */
-class __404 extends __Controller{
+class __C_404 extends __Controller{
 
     /**
      * Controller Init

@@ -34,6 +34,13 @@ class __Router{
     protected $path;
     
     /**
+     * This is Controller Class Name
+     *
+     * @var string
+     */
+    protected $controller_class;
+    
+    /**
      * Router Init
      */
     public function __construct()
@@ -135,16 +142,23 @@ class __Router{
      */
     protected function __load_view()
     {
-        // Get Route Class Name And File Name
-        $this->__get_slug(
-            basename(CONTROLLER_FILE,".php")
-        );
 
-        // Load Target Class File
+        // Load Target Controllers File
         __load_once(CONTROLLER_FILE);
 
-        // Run Target Class
-        new $this->slug;
+        // Load Controller Class Name
+        $this->__get_controller_class_name();
+
+        // Run Target Controllers Class
+        new $this->controller_class;
+    }
+
+    /**
+     * Load Controller Class Name
+     */
+    private function __get_controller_class_name()
+    {
+        $this->controller_class = CONTROLLER_CLASS;
     }
 
     /**

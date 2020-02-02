@@ -154,6 +154,25 @@ define(
     )
 );
 
+define(
+    "NOW_REQUEST_FILE_NAME",
+    basename(
+        NOW_REQUEST_FILE,
+        ".php"
+    )
+);
+
+define(
+    "CLASS_SLUG",
+    strtoupper(
+        NOW_REQUEST_FILE_NAME[0]
+    ).
+    substr(
+        NOW_REQUEST_FILE_NAME,
+        1
+    )
+);
+
 // Base File
 define(
     "BASE_FILE",
@@ -179,12 +198,26 @@ define(
     MODELS_PATH."404.php"
 );
 
+define(
+    "MODEL_CLASS",
+    PREFIX.
+    "M_".
+    CLASS_SLUG
+);
+
 // Controller File
 define(
     "CONTROLLER_FILE",
     !IS_404 ?
     CONTROLLERS_PATH.NOW_REQUEST_FILE :
     CONTROLLERS_PATH."404.php"
+);
+
+define(
+    "CONTROLLER_CLASS",
+    PREFIX.
+    "C_".
+    CLASS_SLUG
 );
 
 // View File
