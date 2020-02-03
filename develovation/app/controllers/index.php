@@ -24,6 +24,6 @@ class __C_Index extends __Controller{
         // $this->model->__test();
 
         // Get Views
-        __get_views();
+        $this->__get_view();
     }
 }

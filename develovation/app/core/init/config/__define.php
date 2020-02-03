@@ -162,15 +162,24 @@ define(
     )
 );
 
+// Is 404
+define(
+    "IS_404",
+    !file_exists(TEMPLATES_PATH.NOW_REQUEST_FILE)
+);
+
+// This is Class-Slug
 define(
     "CLASS_SLUG",
+    !IS_404 ?
     strtoupper(
         NOW_REQUEST_FILE_NAME[0]
     ).
     substr(
         NOW_REQUEST_FILE_NAME,
         1
-    )
+    ) :
+    "404"
 );
 
 // Base File
@@ -183,12 +192,6 @@ define(
 
 // Init Functions
 define("INIT_FUNC_FILE",INIT_PATH."__init_functions.php");
-
-// Is 404
-define(
-    "IS_404",
-    !file_exists(TEMPLATES_PATH.NOW_REQUEST_FILE)
-);
 
 // Model File
 define(
