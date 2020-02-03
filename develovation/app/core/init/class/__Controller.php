@@ -50,4 +50,12 @@ class __Controller{
     {
         $this->model_class = MODEL_CLASS;
     }
+
+    /**
+     * Load the View File
+     */
+    protected function __get_view()
+    {
+        __load_once(VIEW_FILE);
+    }
 }

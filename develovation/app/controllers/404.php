@@ -14,6 +14,6 @@ class __C_404 extends __Controller{
         parent::__construct();
 
         // Get Views
-        __get_views();
+        $this->__get_view();
     }
 }
