@@ -8,7 +8,7 @@ var fixed_full_screen_icon = fixed_full_screen_btn.find("i");
 $(function(){
 
     // Get a IP Address
-    //get_ip();
+    get_ip();
 
     // Get Token to All Form Input Element
     set_token_in_all_forms();

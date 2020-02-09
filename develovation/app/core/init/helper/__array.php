@@ -6,7 +6,9 @@
  * @param array $array
  * @return mixed
  */
-function __array_rand($array)
+function __array_rand(
+    array $array
+)
 {
     return $array[
         mt_rand(
@@ -18,8 +20,13 @@ function __array_rand($array)
 
 /**
  * Empty Index Delete
+ * 
+ * @param array $array
+ * @return array
  */
-function __empty_index_delete($array)
+function __empty_index_delete(
+    array $array
+): array
 {
     return array_values(
         array_filter(

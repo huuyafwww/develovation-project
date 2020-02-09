@@ -25,6 +25,6 @@ class __Ip extends __Api{
      */
     protected function __get_ip()
     {
-        $this->response["ip"] = IP_ADDRESS;
+        $this->__response["ip"] = IP_ADDRESS;
     }
 }

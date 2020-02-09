@@ -5,7 +5,7 @@
  *
  * @return string
  */
-function __get_encrypt_token()
+function __get_encrypt_token(): string
 {
     return openssl_encrypt(
         TOKEN,
@@ -19,7 +19,7 @@ function __get_encrypt_token()
  *
  * @return string
  */
-function __get_uniq_token()
+function __get_uniq_token(): string
 {
     return uniqid(
         bin2hex(

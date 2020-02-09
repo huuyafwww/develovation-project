@@ -45,7 +45,9 @@ function __get_footer()
  *
  * @param string $path
  */
-function __get_component($path)
+function __get_component(
+    string $path
+)
 {
     __load(COMPONENTS_PATH.$path);
 }

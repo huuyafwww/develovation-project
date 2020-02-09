@@ -6,7 +6,9 @@
  * @param string|array $stringer
  * @return string|array
  */
-function __h($stringer)
+function __h(
+    $stringer
+)
 {
     if(is_array($stringer) || !$stringer = htmlspecialchars($stringer)){
         foreach($stringer as &$string){

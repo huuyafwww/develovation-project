@@ -8,9 +8,11 @@ class __Loader{
     /**
      * Loader Init
      * 
-     * @param bool $is_display_error
+     * @param bool $__is_display_error
      */
-    public function __construct($is_display_error = true)
+    public function __construct(
+        bool $__is_display_error = true
+    )
     {
         // Auto Loader
         $this->__auto_loader();
@@ -19,7 +21,7 @@ class __Loader{
         $this->__default_settings();
 
         // Register Error Handle
-        $this->__error_settings($is_display_error);
+        $this->__error_settings($__is_display_error);
 
         // Token Settings
         $this->__token_settings();
@@ -66,17 +68,19 @@ class __Loader{
     /**
      * Load Files
      * 
-     * @param string $target_paths
+     * @param string $__target_paths
      */
-    protected function __load_files($target_paths)
+    protected function __load_files(
+        string $__target_paths
+    )
     {
         foreach(
-            __get_all_file_list($target_paths)
+            __get_all_file_list($__target_paths)
             as
-            $target_path
+            $__target_path
         )
         {
-            __load_once($target_path);
+            __load_once($__target_path);
         }
     }
 
@@ -92,9 +96,11 @@ class __Loader{
     /**
      * Error Settings
      * 
-     * @param bool $is_display_error
+     * @param bool $__is_display_error
      */
-    protected function __error_settings($is_display_error)
+    protected function __error_settings(
+        bool $__is_display_error
+    )
     {
         // Setting a Output Error Log Location
         ini_set("log_errors","On");
@@ -103,7 +109,7 @@ class __Loader{
 
         // Setting a Error Handle
         (
-            $is_display_error
+            $__is_display_error
             OR
             (
                 ini_set('display_errors',"Off")
