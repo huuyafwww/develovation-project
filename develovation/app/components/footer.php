@@ -1,18 +1,18 @@
-<!-- Main-Footer -->
 <footer class="main-footer">
-    <!-- To-the-right -->
-    <div class="float-right d-none d-sm-inline">
-        Anything you want
-    </div><!-- /To-the-right -->
 
-    <!-- Default-to-the-left -->
-    <strong>
-        Copyright &copy; 2014-2019 
-        <a href="https://adminlte.io">
-            AdminLTE.io
+    <!-- Footer-Left -->
+    <div class="footer-left">
+        Copyright &copy; 2018 
+        <div class="bullet"></div> 
+        Design By 
+        <a href="https://nauval.in/">
+            Muhamad Nauval Azhar
         </a>
-        .
-    </strong>
-    All rights reserved.<!-- /Default-to-the-left -->
+    </div><!-- /Footer-Left -->
     
-</footer><!-- /Main-Footer -->
+    <!-- Footer-Right -->
+    <div class="footer-right">
+        2.3.0
+    </div><!-- /Footer-Right -->
+
+</footer>
