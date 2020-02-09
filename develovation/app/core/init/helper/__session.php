@@ -6,7 +6,10 @@
  * @param string $session_name
  * @param mixed $session_value
  */
-function __set_session($session_name,$session_value = true)
+function __set_session(
+    string $session_name,
+    $session_value = true
+)
 {
     $_SESSION[$session_name] = $session_value;
 }
@@ -16,7 +19,9 @@ function __set_session($session_name,$session_value = true)
  *
  * @param array $sessions
  */
-function __set_sessions($sessions)
+function __set_sessions(
+    array $sessions
+)
 {
     foreach($sessions as $session_name => $session_value)
     {
@@ -29,7 +34,9 @@ function __set_sessions($sessions)
  *
  * @param string $session_name
  */
-function __delete_session($session_name)
+function __delete_session(
+    string $session_name
+)
 {
     unset($_SESSION[$session_name]);
 }
@@ -37,9 +44,11 @@ function __delete_session($session_name)
 /**
  * Delete Multi SESSION
  *
- * @param string $session_names
+ * @param array $session_names
  */
-function __delete_sessions($session_names)
+function __delete_sessions(
+    array $session_names
+)
 {
     foreach($session_names as $session_name)
     {
@@ -49,7 +58,6 @@ function __delete_sessions($session_names)
 
 /**
  * Safe SESSION Destroy
- *
  */
 function __end_session()
 {
@@ -63,7 +71,7 @@ function __end_session()
  *
  * @return string
  */
-function __get_session_token()
+function __get_session_token(): string
 {
     return $_SESSION[SESSION_TOKEN_NAME];
 }
@@ -73,7 +81,7 @@ function __get_session_token()
  *
  * @return string
  */
-function __get_e_session_token()
+function __get_e_session_token(): string
 {
     return $_SESSION[SESSION_E_TOKEN_NAME];
 }
@@ -84,7 +92,9 @@ function __get_e_session_token()
  * @param string $session_name
  * @return mixed
  */
-function __get_session($session_name)
+function __get_session(
+    string $session_name
+)
 {
     return $_SESSION[$session_name];
 }
@@ -94,7 +104,7 @@ function __get_session($session_name)
  *
  * @return array
  */
-function __get_sessions()
+function __get_sessions(): array
 {
     return $_SESSION;
 }
@@ -104,7 +114,7 @@ function __get_sessions()
  *
  * @return array
  */
-function __get_session_names()
+function __get_session_names(): array
 {
     return array_keys($_SESSION);
 }
@@ -115,7 +125,9 @@ function __get_session_names()
  * @param string $session_name
  * @return bool
  */
-function __session_name_exists($session_name)
+function __session_name_exists(
+    string $session_name
+): bool
 {
     return isset($_SESSION[$session_name]);
 }

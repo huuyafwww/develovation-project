@@ -8,7 +8,11 @@
  * @param bool $is_append
  * @return bool
  */
-function __save_file($file,$data,$is_append = true)
+function __save_file(
+    string $file,
+    $data,
+    bool $is_append = true
+): bool
 {
     $flags = ($is_append ? FILE_APPEND | LOCK_EX : LOCK_EX);
     return file_put_contents($file,$data,$flags) !== false;
@@ -20,7 +24,10 @@ function __save_file($file,$data,$is_append = true)
  * @param string|array $dirs
  * @param string $extension
  */
-function __delete_files($dirs,$extension = "*")
+function __delete_files(
+    $dirs,
+    string $extension = "*"
+)
 {
     if(!is_array($dirs))
     {

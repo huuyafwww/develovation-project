@@ -10,35 +10,35 @@ class __Router{
      *
      * @var array
      */
-    protected $uris;
+    protected $__uris;
 
     /**
      * This is Target Route
      *
      * @var array
      */
-    protected $route;
+    protected $__route;
 
     /**
      * This is Route Class Name And File Name
      *
      * @var string
      */
-    protected $slug;
+    protected $__slug;
 
     /**
      * This is Route Path
      *
      * @var string
      */
-    protected $path;
+    protected $__path;
     
     /**
-     * This is Controller Class Name
+     * This is Class Name
      *
      * @var string
      */
-    protected $controller_class;
+    protected $__class;
     
     /**
      * Router Init
@@ -57,7 +57,7 @@ class __Router{
      */
     protected function __get_array_uri()
     {
-        $this->uris = __empty_index_delete(
+        $this->__uris = __empty_index_delete(
             explode("/",REQUEST_URI)
         );
     }
@@ -65,38 +65,44 @@ class __Router{
     /**
      * Get Target Route
      * 
-     * @param string $target_str
+     * @param string $__target_str
      */
-    protected function __get_route($target_str)
+    protected function __get_route(
+        string $__target_str
+    )
     {
         // Get Target index
-        $target_index = array_search(
-            $target_str,
-            $this->uris
+        $__target_index = array_search(
+            $__target_str,
+            $this->__uris
         );
 
-        $this->route = [
-            "method" => $this->uris[
-                ($target_index + 1)
+        $this->__route = [
+            "method" => $this->__uris[
+                ($__target_index + 1)
             ],
-            "slug" => $this->uris[
-                ($target_index + 2)
+            "slug" => $this->__uris[
+                ($__target_index + 2)
             ]
         ];
     }
 
     /**
      * Get Route Class Name And File Name
+     * 
+     * @param string $__target_str
      */
-    protected function __get_slug($target_str)
+    protected function __get_slug(
+        string $__target_str
+    )
     {
-        $this->slug = 
+        $this->__slug = 
             PREFIX.
             strtoupper(
-                $target_str[0]
+                $__target_str[0]
             ).
             substr(
-                $target_str,
+                $__target_str,
                 1
             )
         ;
@@ -107,10 +113,10 @@ class __Router{
      */
     protected function __get_path()
     {
-        $this->path =
-            $this->route["method"].
+        $this->__path =
+            $this->__route["method"].
             "/".
-            $this->slug.
+            $this->__slug.
             ".php"
         ;
     }
@@ -147,18 +153,18 @@ class __Router{
         __load_once(CONTROLLER_FILE);
 
         // Load Controller Class Name
-        $this->__get_controller_class_name();
+        $this->__get_class_name();
 
         // Run Target Controllers Class
-        new $this->controller_class;
+        new $this->__class;
     }
 
     /**
      * Load Controller Class Name
      */
-    private function __get_controller_class_name()
+    private function __get_class_name()
     {
-        $this->controller_class = CONTROLLER_CLASS;
+        $this->__class = CONTROLLER_CLASS;
     }
 
     /**
@@ -170,7 +176,7 @@ class __Router{
         $this->__get_route("api");
 
         // Get Route Class Name And File Name
-        $this->__get_slug($this->route["slug"]);
+        $this->__get_slug($this->__route["slug"]);
 
         // Get Route Path
         $this->__get_path();
@@ -178,10 +184,10 @@ class __Router{
         // Load Target Class File
         __load_once(
             API_PATH.
-            $this->path
+            $this->__path
         );
 
         // Run Target Class
-        new $this->slug;
+        new $this->__slug;
     }
 }

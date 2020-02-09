@@ -5,7 +5,9 @@
  * 
  * @param string $file
  */
-function __get_app_css($file)
+function __get_app_css(
+    string $file
+)
 {
     echo APP_CSS_PATH.$file."?v=".time();
 }
@@ -15,7 +17,9 @@ function __get_app_css($file)
  * 
  * @param string $file
  */
-function __get_app_js($file)
+function __get_app_js(
+    string $file
+)
 {
     echo APP_JS_PATH.$file."?v=".time();
 }
@@ -25,7 +29,9 @@ function __get_app_js($file)
  * 
  * @param string $file
  */
-function __get_app_img($file)
+function __get_app_img(
+    string $file
+)
 {
     echo APP_IMG_PATH.$file."?v=".time();
 }
@@ -35,7 +41,9 @@ function __get_app_img($file)
  * 
  * @param string $file
  */
-function __get_lib_css($file)
+function __get_lib_css(
+    string $file
+)
 {
     echo LIB_CSS_PATH.$file;
 }
@@ -45,7 +53,9 @@ function __get_lib_css($file)
  * 
  * @param string $file
  */
-function __get_lib_js($file)
+function __get_lib_js(
+    string $file
+)
 {
     echo LIB_JS_PATH.$file;
 }
@@ -55,7 +65,9 @@ function __get_lib_js($file)
  * 
  * @param string $file
  */
-function __get_lib_img($file)
+function __get_lib_img(
+    string $file
+)
 {
     echo LIB_IMG_PATH.$file;
 }

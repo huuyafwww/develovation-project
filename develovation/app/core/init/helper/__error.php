@@ -8,16 +8,19 @@
  * @param string $file
  * @param string $line
  */
-function __error_logger($level,$about,$file,$line)
+function __error_logger(
+    int $level,
+    string $about,
+    string $file,
+    string $line
+)
 {
-    $error_level = __get_error_level($level);
-    $error_log = 
-        "PHP ".$error_level
+    error_log(
+        "PHP ".__get_error_level($level)
         .": ".$about
         ." in ".$file
         ." on line ".$line
-    ;
-    error_log($error_log);
+    );
 }
 
 /**
@@ -28,10 +31,21 @@ function __error_logger($level,$about,$file,$line)
  * @param string $file
  * @param string $line
  */
-function __error_handler($level,$about,$file,$line)
+function __error_handler(
+    int $level,
+    string $about,
+    string $file,
+    string $line
+)
 {
-    __error_logger($level,$about,$file,$line);
-    $error_level = __get_error_level($level);
+    // Error Logger
+    __error_logger(
+        $level,
+        $about,
+        $file,
+        $line
+    );
+
     ?>
     <div style="border:dotted 2px #000;padding:1.5%;">
         <h3 style="margin:0 0 .3em 0;text-align: center;color:red;">
@@ -44,7 +58,7 @@ function __error_handler($level,$about,$file,$line)
                         Severity
                     </th>
                     <td>
-                        <?php echo $error_level; ?>
+                        <?php echo __get_error_level($level); ?>
                     </td>
                 </tr>
                 <tr style="border-bottom: solid 2px #ccc;">
@@ -83,7 +97,9 @@ function __error_handler($level,$about,$file,$line)
  * @param int $level
  * @return string
  */
-function __get_error_level($level)
+function __get_error_level(
+    int $level
+): string
 {
     return constant("ERROR_LEVEL_".$level);
 }

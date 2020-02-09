@@ -3,35 +3,41 @@
 /**
  * Load a File By require() or include()
  *
- * @param string $path
+ * @param string $__path
  * @param bool $is_require
  */
-function __load($path,$is_require = true)
+function __load(
+    string $__path,
+    bool $__is_require = true
+)
 {
     (
-        $is_require
+        $__is_require
         OR
-        include($path)
+        include($__path)
     )
     AND
-    require($path);
+    require($__path);
 }
 
 /**
  * Load a File By require_once() or include_once()
  *
- * @param string $path
+ * @param string $__path
  * @param bool $is_require
  */
-function __load_once($path,$is_require = true)
+function __load_once(
+    string $__path,
+    bool $__is_require = true
+)
 {
     (
-        $is_require
+        $__is_require
         OR
-        include_once($path)
+        include_once($__path)
     )
     AND
-    require_once($path);
+    require_once($__path);
 }
 
 /**
@@ -41,50 +47,64 @@ function __load_once($path,$is_require = true)
  * @param string $extension
  * @return array
  */
-function __get_file_list($dir,$extension = "*")
+function __get_file_list(
+    string $__dir,
+    string $__extension = "*"
+): array
 {
     return glob(
-        rtrim($dir,"/")."/".$extension
+        rtrim($__dir,"/").
+        "/".
+        $__extension
     );
 }
 
 /**
  * Get All File Path from $dir
  *
- * @param string $dir
- * @param string $extension
+ * @param string $__dir
+ * @param string $__extension
  * @return array
  */
-function __get_all_file_list($dir,$extension = "*")
+function __get_all_file_list(
+    string $__dir,
+    string $__extension = "*"
+): array
 {
-    $files = __get_file_list($dir,$extension);
-    $list = [];
-    foreach($files as $file)
+    $__files = __get_file_list(
+        $__dir,
+        $__extension
+    );
+    $__list = [];
+    foreach($__files as $__file)
     {
-        if(is_file($file))
+        if(is_file($__file))
         {
-            $list[] = $file;
+            $__list[] = $__file;
         }
         
-        if(is_dir($file))
+        if(is_dir($__file))
         {
-            $list = array_merge(
-                $list,
-                __get_all_file_list($file)
+            $__list = array_merge(
+                $__list,
+                __get_all_file_list($__file)
             );
         }
     }
-    return $list;
+    return $__list;
 }
 
 /**
  * Is Index of Search String from Target String
  *
- * @param string $target_str
- * @param string $search_str
+ * @param string $__target_str
+ * @param string $__search_str
  * @return bool
  */
-function __is_strpos($target_str,$search_str)
+function __is_strpos(
+    string $__target_str,
+    string $__search_str
+): bool
 {
-    return strpos($target_str,$search_str) !== false;
+    return strpos($__target_str,$__search_str) !== false;
 }

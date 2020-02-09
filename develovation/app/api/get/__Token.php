@@ -24,7 +24,7 @@ class __Token extends __Api{
      * Get Encrypt Token
      */
     protected function __get_token(){
-        $this->response["token"] = openssl_encrypt(
+        $this->__response["token"] = openssl_encrypt(
             __h($_GET["temp_token"]),
             OPENSSL_METHOD,
             TOKEN_KEY

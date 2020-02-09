@@ -8,13 +8,16 @@ class __Tester{
     /**
      * Debug Var
      *
-     * @param mixed $var
-     * @param bool $type
+     * @param mixed $__var
+     * @param bool $__type
      */
-    public function __dump($var,$type = false)
+    public function __dump(
+        $__var,
+        bool $__type = false
+    )
     {
         echo "<pre>";
-        $type ? var_dump($var) : print_r($var);
+        $__type ? var_dump($__var) : print_r($__var);
         echo "</pre>";
     }
 

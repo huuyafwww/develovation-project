@@ -10,14 +10,14 @@ class __Controller{
      *
      * @var object
      */
-    protected $model;
+    protected $__model;
 
     /**
      * This is Controller Model Name
      *
      * @var string
      */
-    private $model_class;
+    private $__model_class;
 
     /**
      * Controller Init
@@ -40,7 +40,7 @@ class __Controller{
         $this->__get_model_class_name();
 
         // Load Target Class File
-        $this->model = new $this->model_class; //子クラスのモデルを格納
+        $this->__model = new $this->__model_class; //子クラスのモデルを格納
     }
 
     /**
@@ -48,7 +48,7 @@ class __Controller{
      */
     private function __get_model_class_name()
     {
-        $this->model_class = MODEL_CLASS;
+        $this->__model_class = MODEL_CLASS;
     }
 
     /**
