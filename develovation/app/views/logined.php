@@ -3,36 +3,52 @@
 <head>
     <?php __get_header(); ?>
 </head>
-<body class="hold-transition sidebar-mini">
-    <!-- Wrapper -->
-    <div class="wrapper">
+<body>
 
-        <?php __get_component("top-navbar.php"); ?>
-        <?php __get_component("left-sidebar.php"); ?>
-        
-        <!-- Content-Wrapper -->
-        <div class="content-wrapper">
-            <?php __get_component("content-header.php"); ?>
-            
+    <!-- HTML-Parts -->
+    <app-html>
+
+        <!-- Main-Wrapper -->
+        <div class="main-wrapper">
+
+            <?php __get_component("nav.php"); ?>
+            <?php __get_component("sidebar.php"); ?>
+
             <!-- Main-Content -->
-            <div class="content">
-                <?php __get_template(); ?>
+            <div class="main-content">
+
+                <!-- Section -->
+                <section class="section">
+
+                    <!-- Section-Header -->
+                    <div class="section-header">
+
+                        <!-- Section-Title -->
+                        <h1>Blank Page</h1><!-- /Section-Title -->
+
+                    </div><!-- /Section-Header -->
+
+                    <!-- Section-Body -->
+                    <div class="section-body">
+
+                        <?php __get_template(); ?>
+                    
+                    </div><!-- /Section-Body -->
+
+                </section><!-- /Section -->
+
             </div><!-- /Main-Content -->
 
-            <!-- Fixed-Full-Screen-Button -->
-            <a id="fixed-full-screen-btn" href="#" class="btn btn-primary position-fixed" role="button">
-                <!-- Full-Screen-Icon -->
-                <i class="fas fa-expand-arrows-alt"></i><!-- /Full-Screen-Icon -->
-            </a><!-- /Fixed-Full-Screen-Button -->
+            <?php __get_component("footer.php"); ?>
 
-        </div><!-- /Content-Wrapper -->
-        
-        <?php __get_component("menu-sidebar.php"); ?>
-        <?php //__get_component("footer.php"); ?>
+        </div><!-- /Main-Wrapper -->
 
-    </div><!-- /Wrapper -->
+    </app-html><!-- /HTML-Parts -->
 
-    <?php __get_footer(); ?>
+    <!-- JS-Parts -->
+    <app-js>
+        <?php __get_footer(); ?>
+    </app-js><!-- /JS-Parts -->
 
 </body>
 </html>
