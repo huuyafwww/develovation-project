@@ -31,9 +31,6 @@ function get_ip()
         null,
         function(data){
             let ip_address = data["ip"];
-            console.log(
-                ip_address
-            );
         }
     );
 }
