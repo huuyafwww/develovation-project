@@ -10,7 +10,12 @@ function __h(
     $stringer
 )
 {
-    if(is_array($stringer) || !$stringer = htmlspecialchars($stringer)){
+    if(
+        is_array($stringer)
+        ||
+        !$stringer = htmlspecialchars($stringer)
+    )
+    {
         foreach($stringer as &$string){
             $string = htmlspecialchars($string);
         }

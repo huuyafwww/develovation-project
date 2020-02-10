@@ -3,8 +3,11 @@
 // Constant a Request Uri
 define("REQUEST_URI",$_SERVER["REQUEST_URI"]);
 
+// Constant a Request Method Name
+define("REQUEST_METHOD",$_SERVER["REQUEST_METHOD"]);
+
 // Is POST
-define("IS_POST",$_SERVER["REQUEST_METHOD"] === "POST");
+define("IS_POST",REQUEST_METHOD === "POST");
 
 // Is Ajax
 define(
