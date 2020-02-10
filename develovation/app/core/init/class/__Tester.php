@@ -8,6 +8,7 @@ class __Tester{
     /**
      * Debug Var
      *
+     * @access public
      * @param mixed $__var
      * @param bool $__type
      */
@@ -23,6 +24,8 @@ class __Tester{
 
     /**
      * Debug The Include Files
+     * 
+     * @access public
      */
     public function __inc_files()
     {
@@ -33,6 +36,8 @@ class __Tester{
     
     /**
      * Debug The Defined Constants
+     * 
+     * @access public
      */
     public function __def_consts()
     {
@@ -43,6 +48,8 @@ class __Tester{
 
     /**
      * Debug The Defined Functions
+     * 
+     * @access public
      */
     public function __def_funcs()
     {
@@ -53,6 +60,8 @@ class __Tester{
 
     /**
      * Debug The Defined Variable
+     * 
+     * @access public
      */
     public function __def_vars()
     {

@@ -8,6 +8,7 @@ class __Loader{
     /**
      * Loader Init
      * 
+     * @access public
      * @param bool $__is_display_error
      */
     public function __construct(
@@ -32,8 +33,10 @@ class __Loader{
 
     /**
      * Auto Loader
+     * 
+     * @access private
      */
-    protected function __auto_loader()
+    private function __auto_loader()
     {
 
         // Require Define Constants
@@ -51,16 +54,20 @@ class __Loader{
 
     /**
      * Require Define Constants
+     * 
+     * @access private
      */
-    protected function __define_loader()
+    private function __define_loader()
     {
         require_once(DEFINE_FILE);
     }
 
     /**
      * Require Init Functions File
+     * 
+     * @access private
      */
-    protected function __init_func_loader()
+    private function __init_func_loader()
     {
         require_once(INIT_FUNC_FILE);
     }
@@ -68,9 +75,10 @@ class __Loader{
     /**
      * Load Files
      * 
+     * @access private
      * @param string $__target_paths
      */
-    protected function __load_files(
+    private function __load_files(
         string $__target_paths
     )
     {
@@ -86,8 +94,10 @@ class __Loader{
 
     /**
      * Default Settings
+     * 
+     * @access private
      */
-    protected function __default_settings()
+    private function __default_settings()
     {
         // Default TimeZone
         date_default_timezone_set(DEFAULT_TIME_ZONE);
@@ -96,9 +106,10 @@ class __Loader{
     /**
      * Error Settings
      * 
+     * @access private
      * @param bool $__is_display_error
      */
-    protected function __error_settings(
+    private function __error_settings(
         bool $__is_display_error
     )
     {
@@ -127,8 +138,10 @@ class __Loader{
 
     /**
      * Token Settings
+     * 
+     * @access private
      */
-    protected function __token_settings()
+    private function __token_settings()
     {
         IS_POST
         OR
@@ -146,8 +159,10 @@ class __Loader{
 
     /**
      * Route Loader
+     * 
+     * @access private
      */
-    protected function __route_loader()
+    private function __route_loader()
     {
         new __Router;
     }

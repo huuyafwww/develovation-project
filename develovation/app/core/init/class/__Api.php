@@ -8,6 +8,7 @@ class __Api{
     /**
      * Variable a Response
      *
+     * @access protected
      * @var array
      */
     protected $__response = [];
@@ -15,6 +16,7 @@ class __Api{
     /**
      * API Init
      * 
+     * @access protected
      * @param string $__mime
      */
     protected function __construct(
@@ -28,9 +30,10 @@ class __Api{
     /**
      * Response Header Settings
      *
+     * @access private
      * @param string $__mime
      */
-    protected function __header_settings(
+    private function __header_settings(
         string $__mime
     )
     {
@@ -40,6 +43,8 @@ class __Api{
 
     /**
      * Send Response
+     * 
+     * @access protected
      */
     protected function __send_response()
     {

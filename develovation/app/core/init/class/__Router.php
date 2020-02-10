@@ -8,40 +8,47 @@ class __Router{
     /**
      * This is Array Uri
      *
+     * @access private
      * @var array
      */
-    protected $__uris;
+    private $__uris;
 
     /**
      * This is Target Route
      *
+     * @access private
      * @var array
      */
-    protected $__route;
+    private $__route;
 
     /**
      * This is Route Class Name And File Name
      *
+     * @access private
      * @var string
      */
-    protected $__slug;
+    private $__slug;
 
     /**
      * This is Route Path
      *
+     * @access private
      * @var string
      */
-    protected $__path;
+    private $__path;
     
     /**
      * This is Class Name
      *
+     * @access private
      * @var string
      */
-    protected $__class;
+    private $__class;
     
     /**
      * Router Init
+     * 
+     * @access public
      */
     public function __construct()
     {
@@ -54,8 +61,10 @@ class __Router{
 
     /**
      * Get Uri to Array
+     * 
+     * @access private
      */
-    protected function __get_array_uri()
+    private function __get_array_uri()
     {
         $this->__uris = __empty_index_delete(
             explode("/",REQUEST_URI)
@@ -65,9 +74,10 @@ class __Router{
     /**
      * Get Target Route
      * 
+     * @access private
      * @param string $__target_str
      */
-    protected function __get_route(
+    private function __get_route(
         string $__target_str
     )
     {
@@ -90,9 +100,10 @@ class __Router{
     /**
      * Get Route Class Name And File Name
      * 
+     * @access private
      * @param string $__target_str
      */
-    protected function __get_slug(
+    private function __get_slug(
         string $__target_str
     )
     {
@@ -110,8 +121,10 @@ class __Router{
 
     /**
      * Get Route Path
+     * 
+     * @access private
      */
-    protected function __get_path()
+    private function __get_path()
     {
         $this->__path =
             $this->__route["method"].
@@ -124,8 +137,10 @@ class __Router{
 
     /**
      * Run a Route
+     * 
+     * @access private
      */
-    protected function __run_route()
+    private function __run_route()
     {
         /* HTTP Request Router
             - IS_AJAX
@@ -145,8 +160,10 @@ class __Router{
 
     /**
      * Load a View
+     * 
+     * @access private
      */
-    protected function __load_view()
+    private function __load_view()
     {
 
         // Load Target Controllers File
@@ -161,6 +178,8 @@ class __Router{
 
     /**
      * Load Controller Class Name
+     * 
+     * @access private
      */
     private function __get_class_name()
     {
@@ -169,8 +188,10 @@ class __Router{
 
     /**
      * Load a Api
+     * 
+     * @access private
      */
-    protected function __load_api()
+    private function __load_api()
     {
         // Get Target Route
         $this->__get_route("api");
