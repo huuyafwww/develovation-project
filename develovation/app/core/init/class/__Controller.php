@@ -8,6 +8,7 @@ class __Controller{
     /**
      * This is Child Model Object
      *
+     * @access protected
      * @var object
      */
     protected $__model;
@@ -15,14 +16,17 @@ class __Controller{
     /**
      * This is Controller Model Name
      *
+     * @access private
      * @var string
      */
     private $__model_class;
 
     /**
      * Controller Init
+     * 
+     * @access protected
      */
-    public function __construct()
+    protected function __construct()
     {
         // Load Child Model
         $this->__load_model();
@@ -30,6 +34,8 @@ class __Controller{
 
     /**
      * Load Child Model
+     * 
+     * @access private
      */
     private function __load_model()
     {
@@ -45,6 +51,8 @@ class __Controller{
 
     /**
      * Load Model Class Name
+     * 
+     * @access private
      */
     private function __get_model_class_name()
     {
@@ -53,6 +61,8 @@ class __Controller{
 
     /**
      * Load the View File
+     * 
+     * @access protected
      */
     protected function __get_view()
     {
