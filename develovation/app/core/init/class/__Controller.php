@@ -43,7 +43,8 @@ class __Controller{
         // Load Target Model File
         __load_once(MODEL_FILE);
 
-        $this->__get_model_class_name();
+        // Load Model Class Name
+        $this->__get_class_name();
 
         // Load Target Class File
         $this->__model = new $this->__model_class; //子クラスのモデルを格納
@@ -54,7 +55,7 @@ class __Controller{
      * 
      * @access private
      */
-    private function __get_model_class_name()
+    private function __get_class_name()
     {
         $this->__model_class = MODEL_CLASS;
     }
