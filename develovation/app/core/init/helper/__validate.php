@@ -3,22 +3,22 @@
 /**
  * All of the Arguments do Sanitize
  *
- * @param string|array $stringer
+ * @param string|array $__stringer
  * @return string|array
  */
 function __h(
-    $stringer
+    $__stringer
 )
 {
     if(
-        is_array($stringer)
+        is_array($__stringer)
         ||
-        !$stringer = htmlspecialchars($stringer)
+        !$__stringer = htmlspecialchars($__stringer)
     )
     {
-        foreach($stringer as &$string){
-            $string = htmlspecialchars($string);
+        foreach($__stringer as &$__string){
+            $__string = htmlspecialchars($__string);
         }
     }
-    return $stringer;
+    return $__stringer;
 }

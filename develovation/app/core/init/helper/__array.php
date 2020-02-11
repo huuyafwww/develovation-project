@@ -3,17 +3,17 @@
 /**
  * This "__array_rand" is "array_rand" Used Mersenne Twister RNG
  *
- * @param array $array
+ * @param array $__array
  * @return mixed
  */
 function __array_rand(
-    array $array
+    array $__array
 )
 {
-    return $array[
+    return $__array[
         mt_rand(
             0,
-            count($array) - 1
+            count($__array) - 1
         )
     ];
 }
@@ -21,16 +21,16 @@ function __array_rand(
 /**
  * Empty Index Delete
  * 
- * @param array $array
+ * @param array $__array
  * @return array
  */
 function __empty_index_delete(
-    array $array
+    array $__array
 ): array
 {
     return array_values(
         array_filter(
-            $array,
+            $__array,
             "strlen"
         )
     );

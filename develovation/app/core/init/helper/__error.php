@@ -3,47 +3,47 @@
 /**
  * Error Logger
  *
- * @param int $level
- * @param string $about
- * @param string $file
- * @param string $line
+ * @param int $__level
+ * @param string $__about
+ * @param string $__file
+ * @param string $__line
  */
 function __error_logger(
-    int $level,
-    string $about,
-    string $file,
-    string $line
+    int $__level,
+    string $__about,
+    string $__file,
+    string $__line
 )
 {
     error_log(
-        "PHP ".__get_error_level($level)
-        .": ".$about
-        ." in ".$file
-        ." on line ".$line
+        "PHP ".__get_error_level($__level)
+        .": ".$__about
+        ." in ".$__file
+        ." on line ".$__line
     );
 }
 
 /**
  * Error Handler
  *
- * @param int $level
- * @param string $about
- * @param string $file
- * @param string $line
+ * @param int $__level
+ * @param string $__about
+ * @param string $__file
+ * @param string $__line
  */
 function __error_handler(
-    int $level,
-    string $about,
-    string $file,
-    string $line
+    int $__level,
+    string $__about,
+    string $__file,
+    string $__line
 )
 {
     // Error Logger
     __error_logger(
-        $level,
-        $about,
-        $file,
-        $line
+        $__level,
+        $__about,
+        $__file,
+        $__line
     );
 
     ?>
@@ -58,7 +58,7 @@ function __error_handler(
                         Severity
                     </th>
                     <td>
-                        <?php echo __get_error_level($level); ?>
+                        <?php echo __get_error_level($__level); ?>
                     </td>
                 </tr>
                 <tr style="border-bottom: solid 2px #ccc;">
@@ -66,7 +66,7 @@ function __error_handler(
                         Message
                     </th>
                     <td>
-                        <?php echo $about; ?>
+                        <?php echo $__about; ?>
                     </td>
                 </tr>
                 <tr style="border-bottom: solid 2px #ccc;">
@@ -74,7 +74,7 @@ function __error_handler(
                         File
                     </th>
                     <td>
-                        <?php echo $file; ?>
+                        <?php echo $__file; ?>
                     </td>
                 </tr>
                 <tr>
@@ -82,7 +82,7 @@ function __error_handler(
                         Line Number
                     </th>
                     <td>
-                        <?php echo $line; ?>
+                        <?php echo $__line; ?>
                     </td>
                 </tr>
             </tbody>
@@ -94,12 +94,12 @@ function __error_handler(
 /**
  * Get Error Level
  *
- * @param int $level
+ * @param int $__level
  * @return string
  */
 function __get_error_level(
-    int $level
+    int $__level
 ): string
 {
-    return constant("ERROR_LEVEL_".$level);
+    return constant("ERROR_LEVEL_".$__level);
 }
