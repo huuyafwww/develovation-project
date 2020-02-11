@@ -38,12 +38,11 @@ class __Loader{
      */
     private function __auto_loader()
     {
-
-        // Require Define Constants
-        $this->__define_loader();
-
         // Require Init Functions Files
         $this->__init_func_loader();
+
+        // Require Define Constants
+        $this->__load_files(LOAD_DEFINE_FILES);
 
         // Load Helper Files
         $this->__load_files(HELPER_PATH);
@@ -76,14 +75,16 @@ class __Loader{
      * Load Files
      * 
      * @access private
-     * @param string $__target_paths
+     * @param string|array $__target_paths
      */
     private function __load_files(
-        string $__target_paths
+        $__target_paths
     )
     {
         foreach(
-            __get_all_file_list($__target_paths)
+            is_array($__target_paths) ? 
+                $__target_paths :
+                __get_all_file_list($__target_paths)
             as
             $__target_path
         )
