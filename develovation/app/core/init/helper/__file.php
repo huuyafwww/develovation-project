@@ -3,47 +3,62 @@
 /**
  * Saving File
  *
- * @param string $file
- * @param mixed $data
- * @param bool $is_append
+ * @param string $__file
+ * @param mixed $__data
+ * @param bool $__is_append
  * @return bool
  */
 function __save_file(
-    string $file,
-    $data,
-    bool $is_append = true
+    string $__file,
+    $__data,
+    bool $__is_append = true
 ): bool
 {
-    $flags = ($is_append ? FILE_APPEND | LOCK_EX : LOCK_EX);
-    return file_put_contents($file,$data,$flags) !== false;
+    $__flags = ($__is_append ? FILE_APPEND | LOCK_EX : LOCK_EX);
+    return 
+        file_put_contents(
+            $__file,
+            $__data,
+            $__flags
+        ) !== false;
 }
 
 /**
  * Delete Files
  *
- * @param string|array $dirs
- * @param string $extension
+ * @param string|array $__dirs
+ * @param string $__extension
  */
 function __delete_files(
-    $dirs,
-    string $extension = "*"
+    $__dirs,
+    string $__extension = "*"
 )
 {
-    if(!is_array($dirs))
+    if(!is_array($__dirs))
     {
-        $files = __get_file_list($dirs,$extension);
-        foreach($files as $file){
-            unlink($file);
+        $__files = 
+            __get_file_list(
+                $__dirs,
+                $__extension
+            )
+        ;
+        foreach($__files as $__file){
+            unlink($__file);
         }
     }
     else
     {
-        foreach($dirs as $dir)
+        foreach($__dirs as $__dir)
         {
-            $files = __get_file_list($dir,$extension);
-            foreach($files as $file)
+            $__files = 
+                __get_file_list(
+                    $__dir,
+                    $__extension
+                )
+            ;
+            foreach($__files as $__file)
             {
-                unlink($file);
+                unlink($__file);
             }
         }
     }

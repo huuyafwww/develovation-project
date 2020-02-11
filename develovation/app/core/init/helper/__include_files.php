@@ -46,10 +46,10 @@ function __get_footer()
  * @param string $path
  */
 function __get_component(
-    string $path
+    string $__path
 )
 {
-    __load(COMPONENTS_PATH.$path);
+    __load(COMPONENTS_PATH.$__path);
 }
 
 /**

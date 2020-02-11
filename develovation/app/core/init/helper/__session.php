@@ -3,56 +3,60 @@
 /**
  * Register Single SESSION
  *
- * @param string $session_name
- * @param mixed $session_value
+ * @param string $__session_name
+ * @param mixed $__session_value
  */
 function __set_session(
-    string $session_name,
-    $session_value = true
+    string $__session_name,
+    $__session_value = true
 )
 {
-    $_SESSION[$session_name] = $session_value;
+    $_SESSION[$__session_name] = $__session_value;
 }
 
 /**
  * Register Multi SESSION
  *
- * @param array $sessions
+ * @param array $__sessions
  */
 function __set_sessions(
-    array $sessions
+    array $__sessions
 )
 {
-    foreach($sessions as $session_name => $session_value)
+    foreach(
+        $__sessions
+        as $__session_name
+        => $__session_value
+    )
     {
-        $_SESSION[$session_name] = $session_value;
+        $_SESSION[$__session_name] = $__session_value;
     }
 }
 
 /**
  * Delete Single SESSION
  *
- * @param string $session_name
+ * @param string $__session_name
  */
 function __delete_session(
-    string $session_name
+    string $__session_name
 )
 {
-    unset($_SESSION[$session_name]);
+    unset($_SESSION[$__session_name]);
 }
 
 /**
  * Delete Multi SESSION
  *
- * @param array $session_names
+ * @param array $__session_names
  */
 function __delete_sessions(
-    array $session_names
+    array $__session_names
 )
 {
-    foreach($session_names as $session_name)
+    foreach($__session_names as $__session_name)
     {
-        unset($_SESSION[$session_name]);
+        unset($_SESSION[$__session_name]);
     }
 }
 
@@ -89,14 +93,14 @@ function __get_e_session_token(): string
 /**
  * Get Single SESSION Value
  *
- * @param string $session_name
+ * @param string $__session_name
  * @return mixed
  */
 function __get_session(
-    string $session_name
+    string $__session_name
 )
 {
-    return $_SESSION[$session_name];
+    return $_SESSION[$__session_name];
 }
 
 /**
@@ -122,12 +126,12 @@ function __get_session_names(): array
 /**
  * If SESSION Name Exists
  *
- * @param string $session_name
+ * @param string $__session_name
  * @return bool
  */
 function __session_name_exists(
-    string $session_name
+    string $__session_name
 ): bool
 {
-    return isset($_SESSION[$session_name]);
+    return isset($_SESSION[$__session_name]);
 }
