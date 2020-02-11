@@ -11,7 +11,9 @@ class __Validater{
      * @access public
      * @param bool $__is_auto_validate
      */
-    public function __construct($__is_auto_validate = true)
+    public function __construct(
+        bool $__is_auto_validate = true
+    )
     {
         // Auto Validater
         $__is_auto_validate AND $this->__auto_validate();
