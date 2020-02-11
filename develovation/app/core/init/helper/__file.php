@@ -14,13 +14,18 @@ function __save_file(
     bool $__is_append = true
 ): bool
 {
-    $__flags = ($__is_append ? FILE_APPEND | LOCK_EX : LOCK_EX);
     return 
         file_put_contents(
             $__file,
             $__data,
-            $__flags
-        ) !== false;
+            (
+                $__is_append 
+                ? FILE_APPEND 
+                | LOCK_EX 
+                : LOCK_EX
+            )
+        ) !== false
+    ;
 }
 
 /**
