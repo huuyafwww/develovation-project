@@ -106,5 +106,7 @@ function __is_strpos(
     string $__search_str
 ): bool
 {
-    return strpos($__target_str,$__search_str) !== false;
+    return 
+        strpos($__target_str,$__search_str) !== false
+    ;
 }
