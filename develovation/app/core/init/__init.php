@@ -44,6 +44,7 @@ define(
     "LOAD_DEFINE_FILES",
     [
         $__init_path."config/__define.php",
+        $__init_path."config/__db.php",
         $__init_path."config/__path.php",
         $__init_path."config/__file.php",
         $__init_path."config/__error.php"
