@@ -5,6 +5,12 @@
  */
 class __Database{
 
+    // Using Select Method
+    use __Select;
+
+    // Using Insert Method
+    use __Insert;
+
     /**
      * This is PDO Object
      *
@@ -20,6 +26,46 @@ class __Database{
      * @var string|array
      */
     private $__query;
+
+    /**
+     * This is Prepare SQL
+     *
+     * @access private
+     * @var object
+     */
+    private $__sql;
+
+    /**
+     * Table
+     *
+     * @access private
+     * @var string|array
+     */
+    private $__table;
+
+    /**
+     *  Do Proccess Datas
+     * 
+     * @access private
+     * @var array
+     */
+    private $__datas;
+
+    /**
+     * Prefix Columns
+     * 
+     * @access private
+     * @var array
+     */
+    private $__cols;
+
+    /**
+     * Columns
+     *
+     * @access private
+     * @var array
+     */
+    private $__prefix_cols;
 
     /**
      * Database Init
@@ -81,18 +127,79 @@ class __Database{
     }
 
     /**
-     * SQL Query for SELECT
+     * Do Init
      *
-     * @access public
-     * @param string|array
+     * @access protected
+     * @param array|string $__table
+     * @param array $__datas
      */
-    public function __select(
-        $table
+    protected function __do_init(
+        string $__table,
+        array $__datas
     )
     {
-        $this->__pdo->setAttribute(
-            PDO::ATTR_EMULATE_PREPARES,
-            true
+        // Var $this->__table
+        $this->__table = $__table;
+
+        // Var $this->__datas
+        $this->__datas = $__datas;
+
+        // Get Columns
+        $this->__get_cols();
+    }
+
+    /**
+     * Get Columns
+     *
+     * @access private
+     */
+    private function __get_cols()
+    {
+        $this->__cols = implode(
+            ",",
+            array_keys(
+                $this->__datas
+            )
+        );
+    }
+
+    /**
+     * Run Query
+     *
+     * @access protected
+     */
+    protected function __run_query()
+    {
+        // PDO Set a Query
+        $this->__set_query();
+
+        // Do Query
+        $this->__do_query();
+    }
+
+    /**
+     * PDO Set a Query
+     *
+     * @access private
+     */
+    private function __set_query()
+    {
+        $this->__sql = 
+            $this->__pdo->prepare(
+                $this->__query
+            )
+        ;
+    }
+
+    /**
+     * Do Query
+     *
+     * @access private
+     */
+    private function __do_query()
+    {
+        $this->__sql->execute(
+            $this->__datas
         );
     }
 }
