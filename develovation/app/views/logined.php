@@ -3,7 +3,7 @@
 <head>
     <?php __get_header(); ?>
 </head>
-<body>
+<body <?php __body_class(); ?>>
 
     <!-- HTML-Parts -->
     <app-html>

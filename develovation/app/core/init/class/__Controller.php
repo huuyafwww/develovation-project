@@ -22,6 +22,14 @@ class __Controller{
     private $__model_class;
 
     /**
+     * This is HTML Body Class List
+     *
+     * @access private
+     * @var array
+     */
+    public static $__body_class = [];
+
+    /**
      * Controller Init
      * 
      * @access protected
@@ -30,6 +38,14 @@ class __Controller{
     {
         // Load Child Model
         $this->__load_model();
+
+        // Set Now File Name for Body Class
+        $this->__set_body_class(
+            basename(
+                TEMPLATE_FILE,
+                ".php"
+            )
+        );
     }
 
     /**
@@ -61,12 +77,25 @@ class __Controller{
     }
 
     /**
-     * Load the View File
+     * Load View File
      * 
      * @access protected
      */
     protected function __get_view()
     {
         __load_once(VIEW_FILE);
+    }
+
+    /**
+     * Set Body Class
+     * 
+     * @access protected
+     * @param string $__var
+     */
+    protected function __set_body_class(
+        string $__var
+    )
+    {
+        self::$__body_class[] = $__var;
     }
 }
