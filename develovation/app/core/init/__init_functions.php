@@ -4,7 +4,7 @@
  * Load a File By require() or include()
  *
  * @param string $__path
- * @param bool $is_require
+ * @param bool $__is_require
  */
 function __load(
     string $__path,
@@ -24,13 +24,16 @@ function __load(
  * Load a File By require_once() or include_once()
  *
  * @param string $__path
- * @param bool $is_require
+ * @param bool $__is_require
+ * @param string $__vars
  */
 function __load_once(
     string $__path,
-    bool $__is_require = true
+    bool $__is_require = true,
+    array $__vars = []
 )
 {
+    empty($__vars) OR extract($__vars);
     (
         $__is_require
         OR
@@ -43,8 +46,8 @@ function __load_once(
 /**
  * Get File List
  *
- * @param string $dir
- * @param string $extension
+ * @param string $__dir
+ * @param string $__extension
  * @return array
  */
 function __get_file_list(

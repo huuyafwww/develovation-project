@@ -3,7 +3,7 @@
 /**
  * View Model
  */
-class __M_Index extends __Model{
+class __M_Home extends __Model{
 
     /**
      * Model Init
