@@ -80,10 +80,17 @@ class __Controller{
      * Load View File
      * 
      * @access protected
+     * @param string $__vars
      */
-    protected function __get_view()
+    protected function __get_view(
+        array $__vars = []
+    )
     {
-        __load_once(VIEW_FILE);
+        __load_once(
+            VIEW_FILE,
+            true,
+            $__vars
+        );
     }
 
     /**

@@ -13,7 +13,8 @@ define(
             "REDIRECT_URL" :
             "SCRIPT_FILENAME"
         ]
-    )
+    ).
+    ".php"
 );
 
 // Now Request File Name
@@ -28,7 +29,10 @@ define(
 // Is 404
 define(
     "IS_404",
-    !file_exists(TEMPLATES_PATH.NOW_REQUEST_FILE)
+    !file_exists(
+        TEMPLATES_PATH.
+        NOW_REQUEST_FILE
+    )
 );
 
 // This is Class-Slug

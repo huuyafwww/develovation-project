@@ -21,6 +21,9 @@ class __Loader{
         // Default Settings
         $this->__default_settings();
 
+        // Auto Uri Checking
+        $this->__uri_auto_checking();
+
         // Register Error Handle
         $this->__error_settings($__is_display_error);
 
@@ -102,6 +105,47 @@ class __Loader{
     {
         // Default TimeZone
         date_default_timezone_set(DEFAULT_TIME_ZONE);
+    }
+
+    /**
+     * Auto Uri Checking
+     * 
+     * @access private
+     */
+    private function __uri_auto_checking()
+    {
+        // When "ROOT_URI === REQUEST_URI",Auto Home Redirect
+        $this->__uri_auto_redirect(
+            ROOT_URI === REQUEST_URI,
+            "home"
+        );
+
+        // Replace ".php" to "/" for Now Uri
+        $this->__uri_auto_redirect(
+            strpos(NOW_URI,".php") !== false,
+            basename(
+                NOW_URI,
+                ".php"
+            )
+        );
+    }
+
+    private function __uri_auto_redirect(
+        bool $__judge,
+        string $__to
+    )
+    {
+        (
+            $__judge
+            AND
+            !header(
+                "Location: ".
+                $__to.
+                "/"
+            )
+            AND
+            exit
+        );
     }
 
     /**

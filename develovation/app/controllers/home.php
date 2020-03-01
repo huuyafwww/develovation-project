@@ -3,7 +3,7 @@
 /**
  * View Controller
  */
-class __C_Index extends __Controller{
+class __C_Home extends __Controller{
 
     /**
      * This Class Name

@@ -7,6 +7,13 @@
 // Root Path
 define("ROOT_PATH",__DIR__."/../../../../");
 
+// Root Uri
+define(
+    "ROOT_URI",
+    pathinfo(SCRIPT_NAME)["dirname"].
+    "/"
+);
+
 /* Directly-Root-DIR-Constant */
 define("APP_PATH",ROOT_PATH."app/");
 define("LOG_PATH",ROOT_PATH."log/");
@@ -16,7 +23,7 @@ define("LOG_PATH",ROOT_PATH."log/");
 define("API_PATH",APP_PATH."api/");
 define(
     "ASSETS_PATH",
-    pathinfo($_SERVER["SCRIPT_NAME"])["dirname"]."/app/assets/"
+    ROOT_URI."app/assets/"
 );
 define("COMPONENTS_PATH",APP_PATH."components/");
 define("CONTROLLERS_PATH",APP_PATH."controllers/");

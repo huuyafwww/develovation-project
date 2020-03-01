@@ -9,8 +9,17 @@ define(
     isset($_SESSION[LOGIN_VAR])
 );
 
+// Constant a Http Host
+define("HTTP_HOST",$_SERVER["HTTP_HOST"]);
+
 // Constant a Request Uri
 define("REQUEST_URI",$_SERVER["REQUEST_URI"]);
+
+// Constant a Now Uri
+define("NOW_URI",HTTP_HOST.REQUEST_URI);
+
+// Constant a Script Name
+define("SCRIPT_NAME",$_SERVER["SCRIPT_NAME"]);
 
 // Constant a Request Method Name
 define("REQUEST_METHOD",$_SERVER["REQUEST_METHOD"]);
