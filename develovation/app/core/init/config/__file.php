@@ -4,6 +4,11 @@
  * FILE Constant
  */
 
+define(
+    "LIB_AUTOLOAD_FILE",
+    CORE_LIB_PATH."autoload.php"
+);
+
 // Now Request File
 define(
     "NOW_REQUEST_FILE",

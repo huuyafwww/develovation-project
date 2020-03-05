@@ -47,6 +47,9 @@ class __Loader{
         // Require Define Constants
         __load_files(LOAD_DEFINE_FILES);
 
+        // Require Composer Package AutoLoad File
+        __load_once(LIB_AUTOLOAD_FILE);
+
         // Load Helper Files
         __load_files(HELPER_PATH);
 
