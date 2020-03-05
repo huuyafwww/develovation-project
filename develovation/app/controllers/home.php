@@ -6,13 +6,6 @@
 class __C_Home extends __Controller{
 
     /**
-     * This Class Name
-     *
-     * @var string
-     */
-    protected $class_name;
-
-    /**
      * Controller Init
      */
     public function __construct()

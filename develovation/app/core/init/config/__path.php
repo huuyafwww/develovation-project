@@ -7,13 +7,6 @@
 // Root Path
 define("ROOT_PATH",__DIR__."/../../../../");
 
-// Root Uri
-define(
-    "ROOT_URI",
-    pathinfo(SCRIPT_NAME)["dirname"].
-    "/"
-);
-
 /* Directly-Root-DIR-Constant */
 define("APP_PATH",ROOT_PATH."app/");
 define("LOG_PATH",ROOT_PATH."log/");
@@ -26,8 +19,10 @@ define(
     ROOT_URI."app/assets/"
 );
 define("COMPONENTS_PATH",APP_PATH."components/");
+define("VIEW_CONFIG_PATH",APP_PATH."config/");
 define("CONTROLLERS_PATH",APP_PATH."controllers/");
 define("CORE_PATH",APP_PATH."core/");
+define("VIEW_HELPERS_PATH",APP_PATH."helpers/");
 define("INCLUDES_PATH",APP_PATH."includes/");
 define("MODELS_PATH",APP_PATH."models/");
 define("TEMPLATES_PATH",APP_PATH."templates/");

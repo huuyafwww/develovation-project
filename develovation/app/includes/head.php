@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
 
-<title>Blank Page</title>
+<title><?php __get_title(); ?></title>
 
 <link rel="stylesheet" href="<?php __get_lib_css("bootstrap/bootstrap.min.css"); ?>">
 <link rel="stylesheet" href="<?php __get_lib_css("fontawesome/all.min.css"); ?>">

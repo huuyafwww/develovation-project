@@ -92,6 +92,18 @@ define(
 // View File
 define("VIEW_FILE",VIEWS_PATH.BASE_FILE);
 
+// View Sidebar Menu Config File
+define(
+    "SIDEBAR_MENU_CONFIG_FILE",
+    VIEW_CONFIG_PATH."__sidebar-menu.php"
+);
+
+// View Sidebar Menu Config File
+define(
+    "TITLE_CONFIG_FILE",
+    VIEW_CONFIG_PATH."__title.php"
+);
+
 // Template File
 define(
     "TEMPLATE_FILE",
