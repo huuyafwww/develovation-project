@@ -3,6 +3,7 @@
 
 # Any File
 .DS_Store
+composer.lock
 
 # Any Folder
 /temp/

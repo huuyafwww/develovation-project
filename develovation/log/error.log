@@ -1,0 +1,8 @@
+[05-Mar-2020 23:01:21 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function connection() on null in /Applications/MAMP/htdocs/github/develovation-project/develovation/app/core/init/lib/illuminate/database/Capsule/Manager.php:87
+Stack trace:
+#0 /Applications/MAMP/htdocs/github/develovation-project/develovation/app/templates/home.php(26): Illuminate\Database\Capsule\Manager::table('city')
+#1 /Applications/MAMP/htdocs/github/develovation-project/develovation/app/core/init/__init_functions.php(40): require_once('/Applications/M...')
+#2 /Applications/MAMP/htdocs/github/develovation-project/develovation/app/core/init/helper/__include_files.php(60): __load_once('/Applications/M...')
+#3 /Applications/MAMP/htdocs/github/develovation-project/develovation/app/views/logined.php(34): __get_template()
+#4 /Applications/MAMP/htdocs/github/develovation-project/develovation/app/core/init/__init_functions.php(40): require_once('/Applications/M...')
+#5 /Applications/MAMP/htdocs/github/develovation-project/develovation/app/core/init/class/__Controller.php(97): __ in /Applications/MAMP/htdocs/github/develovation-project/develovation/app/core/init/lib/illuminate/database/Capsule/Manager.php on line 87

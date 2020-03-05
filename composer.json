@@ -1,0 +1,8 @@
+{
+    "require": {
+        "illuminate/database": "^7.0"
+    },
+    "config": {
+        "vendor-dir" : "./develovation/app/core/init/lib"
+    }
+}
