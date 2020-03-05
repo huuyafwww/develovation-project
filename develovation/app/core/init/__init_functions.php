@@ -25,15 +25,12 @@ function __load(
  *
  * @param string $__path
  * @param bool $__is_require
- * @param string $__vars
  */
 function __load_once(
     string $__path,
-    bool $__is_require = true,
-    array $__vars = []
+    bool $__is_require = true
 )
 {
-    empty($__vars) OR extract($__vars);
     (
         $__is_require
         OR
@@ -41,6 +38,23 @@ function __load_once(
     )
     AND
     require_once($__path);
+}
+
+/**
+ * Is Index of Search String from Target String
+ *
+ * @param string $__target_str
+ * @param string $__search_str
+ * @return bool
+ */
+function __is_strpos(
+    string $__target_str,
+    string $__search_str
+): bool
+{
+    return 
+        strpos($__target_str,$__search_str) !== false
+    ;
 }
 
 /**
@@ -98,18 +112,22 @@ function __get_all_file_list(
 }
 
 /**
- * Is Index of Search String from Target String
- *
- * @param string $__target_str
- * @param string $__search_str
- * @return bool
+ * Load Files
+ * 
+ * @param string|array $__target_paths
  */
-function __is_strpos(
-    string $__target_str,
-    string $__search_str
-): bool
+function __load_files(
+    $__target_paths
+)
 {
-    return 
-        strpos($__target_str,$__search_str) !== false
-    ;
+    foreach(
+        is_array($__target_paths) ? 
+            $__target_paths :
+            __get_all_file_list($__target_paths)
+        as
+        $__target_path
+    )
+    {
+        __load_once($__target_path);
+    }
 }

@@ -5,20 +5,19 @@ $__sidebar_config =
     "home" => [
 		"type" => "normal",
 		"label" => "ホーム",
-		"title" => "ホーム",
-		"icon" => "home",
+        "icon" => "home",
+        "href" => "home"
 	],
     "tools" => [
         "type" => "parent",
 		"label" => "ツール",
-		"title" => "ツール",
 		"icon" => "tools",
 		"child" => [
-			"json/encode" => [
-				"label" => "Json Encode",
+			"/json/encode" => [
+                "label" => "Json Encode",
 			],
-			"json/dencode" => [
-				"label" => "Json Decode",
+			"/json/dencode" => [
+                "label" => "Json Decode"
 			]
 		]
     ]

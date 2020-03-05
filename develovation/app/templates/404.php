@@ -2,8 +2,10 @@
     <h2>お探しのページは見つかりませんでした</h2>
     <p>
         <a 
-            href="<?php echo "//".HTTP_HOST."/".ROOT_URI; ?>/home/"
-        >ホーム</a>
+            href="<?php __get_http_url("home"); ?>"
+        >
+            ホーム
+        </a>
         へ戻る
     </p>
 </div>

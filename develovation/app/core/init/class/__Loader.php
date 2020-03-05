@@ -45,13 +45,13 @@ class __Loader{
         $this->__init_func_loader();
 
         // Require Define Constants
-        $this->__load_files(LOAD_DEFINE_FILES);
+        __load_files(LOAD_DEFINE_FILES);
 
         // Load Helper Files
-        $this->__load_files(HELPER_PATH);
+        __load_files(HELPER_PATH);
 
         // Load Class Files
-        $this->__load_files(CLASS_PATH);
+        __load_files(CLASS_PATH);
     }
 
     /**
@@ -72,28 +72,6 @@ class __Loader{
     private function __init_func_loader()
     {
         require_once(INIT_FUNC_FILE);
-    }
-
-    /**
-     * Load Files
-     * 
-     * @access private
-     * @param string|array $__target_paths
-     */
-    private function __load_files(
-        $__target_paths
-    )
-    {
-        foreach(
-            is_array($__target_paths) ? 
-                $__target_paths :
-                __get_all_file_list($__target_paths)
-            as
-            $__target_path
-        )
-        {
-            __load_once($__target_path);
-        }
     }
 
     /**

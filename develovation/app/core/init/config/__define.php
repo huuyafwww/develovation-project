@@ -21,6 +21,19 @@ define("NOW_URI",HTTP_HOST.REQUEST_URI);
 // Constant a Script Name
 define("SCRIPT_NAME",$_SERVER["SCRIPT_NAME"]);
 
+// Root Uri
+define(
+    "ROOT_URI",
+    pathinfo(SCRIPT_NAME)["dirname"].
+    "/"
+);
+
+// Root Url
+define(
+    "HTTP_ROOT_URL",
+    "//".HTTP_HOST."/".ROOT_URI
+);
+
 // Constant a Request Method Name
 define("REQUEST_METHOD",$_SERVER["REQUEST_METHOD"]);
 
