@@ -39,7 +39,7 @@
                     <!-- Avatar-Image -->
                     <img
                         alt="image"
-                        src="<?php echo LIB_IMG_PATH; ?>avatar/avatar-1.png"
+                        src="<?php __get_lib_img("avatar/avatar-1.png"); ?>"
                         class="rounded-circle"
                     ><!-- /Avatar-Image -->
     
@@ -75,7 +75,7 @@
                     <!-- Avatar-Image -->
                     <img
                         alt="image"
-                        src="<?php echo LIB_IMG_PATH; ?>avatar/avatar-2.png"
+                        src="<?php __get_lib_img("avatar/avatar-2.png"); ?>"
                         class="rounded-circle"
                     ><!-- /Avatar-Image -->
     
@@ -114,7 +114,7 @@
                     <!-- Avatar-Image -->
                     <img
                         alt="image"
-                        src="<?php echo LIB_IMG_PATH; ?>avatar/avatar-5.png"
+                        src="<?php __get_lib_img("avatar/avatar-5.png"); ?>"
                         class="rounded-circle"
                     ><!-- /Avatar-Image -->
     

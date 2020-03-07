@@ -39,12 +39,20 @@ define(
     "auth.php"
 );
 
-// Base Directory Name
+// Base Directory
 define(
     "BASE_DIR",
     IS_LOGIN ?
     "dashboard/" :
     "auth/"
+);
+
+// Base Directory
+define(
+    "BASE_DIR_NAME",
+    IS_LOGIN ?
+    "dashboard" :
+    "auth"
 );
 
 // Is 404
@@ -114,6 +122,8 @@ define(
 // View File
 define("VIEW_FILE",VIEWS_PATH.BASE_FILE);
 
+/////////// View Config ///////////
+
 // View Sidebar Menu Config File
 define(
     "SIDEBAR_MENU_CONFIG_FILE",
@@ -127,6 +137,15 @@ define(
     VIEW_CONFIG_PATH.
     "__title.php"
 );
+
+// View Sidebar Menu Config File
+define(
+    "AUTH_CARD_TITLE_CONFIG_FILE",
+    VIEW_CONFIG_PATH.
+    "__auth-card-title.php"
+);
+
+/////////// View Config ///////////
 
 // Template File
 define(

@@ -8,42 +8,54 @@
     <!-- HTML-Parts -->
     <app-html>
 
-        <!-- Main-Wrapper -->
-        <div class="main-wrapper">
+        <!-- Main-Section -->
+        <section class="section">
+            
+            <!-- Main-Container -->
+            <div class="container mt-5">
+                
+                <!-- Row -->
+                <div class="row">
 
-            <?php __get_component("nav.php"); ?>
-            <?php __get_component("sidebar.php"); ?>
+                    <!-- Main-Column -->
+                    <div 
+                        class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4"
+                    >
+                        <!-- Login-Brand -->
+                        <?php __get_component("login-brand.php"); ?><!-- /Login-Brand -->
 
-            <!-- Main-Content -->
-            <div class="main-content">
+                        <!-- Card -->
+                        <div class="card card-primary">
+                            
+                            <!-- Card-Header -->
+                            <div class="card-header">
 
-                <!-- Section -->
-                <section class="section">
+                                <!-- Card-Title -->
+                                <h4>
+                                    <?php __get_card_title(); ?>
+                                </h4><!-- /Card-Title -->
+                                
+                            </div><!-- /Card-Header -->
+                            
+                            <!-- Card-Body -->
+                            <div class="card-body">
 
-                    <!-- Section-Header -->
-                    <div class="section-header">
+                                <?php __get_template(); ?>
+                            
+                            </div><!-- /Card-Body -->
 
-                        <!-- Section-Title -->
-                        <h1>Blank Page</h1><!-- /Section-Title -->
+                        </div><!-- /Card -->
 
-                    </div><!-- /Section-Header -->
+                        <!-- Footer -->
+                        <?php __get_component("footer.php"); ?><!-- /Footer -->
 
-                    <!-- Section-Body -->
-                    <div class="section-body">
+                    </div><!-- /Main-Column -->
 
-                        <?php __get_template(); ?>
-                    
-                    </div><!-- /Section-Body -->
+                </div><!-- /Row -->
 
-                </section><!-- /Section -->
+            </div><!-- /Main-Container -->
 
-            </div><!-- /Main-Content -->
-
-            <?php __get_component("footer.php"); ?>
-
-        </div><!-- /Main-Wrapper -->
-
-    </app-html><!-- /HTML-Parts -->
+        </section><!-- /Main-Section -->
 
     <!-- JS-Parts -->
     <app-js>

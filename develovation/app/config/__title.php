@@ -1,7 +1,13 @@
 <?php
 
 $__titles = [
-    "home" => "ホーム",
-    "tools/json/encode/" => "Json Encode",
-    "tools/json/dencode/" => "Json Decode"
+    "auth" => [
+        "register" => "新規登録",
+        "ログイン" => "ログイン"
+    ],
+    "dashboard" => [
+        "home" => "ホーム",
+        "encode" => "Json Encode", // "tools/json/encode/"
+        "dencode" => "Json Decode" // "tools/json/dencode/"
+    ]
 ];
