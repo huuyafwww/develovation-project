@@ -23,28 +23,8 @@
                     >
                         <!-- Login-Brand -->
                         <?php __get_component("login-brand.php"); ?><!-- /Login-Brand -->
-
-                        <!-- Card -->
-                        <div class="card card-primary">
                             
-                            <!-- Card-Header -->
-                            <div class="card-header">
-
-                                <!-- Card-Title -->
-                                <h4>
-                                    <?php __get_card_title(); ?>
-                                </h4><!-- /Card-Title -->
-                                
-                            </div><!-- /Card-Header -->
-                            
-                            <!-- Card-Body -->
-                            <div class="card-body">
-
-                                <?php __get_template(); ?>
-                            
-                            </div><!-- /Card-Body -->
-
-                        </div><!-- /Card -->
+                        <?php __get_template(); ?>
 
                         <!-- Footer -->
                         <?php __get_component("footer.php"); ?><!-- /Footer -->

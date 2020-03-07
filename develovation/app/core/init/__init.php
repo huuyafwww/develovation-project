@@ -3,6 +3,8 @@
 // This is test
 $_SESSION["user"] = true;
 
+unset($_SESSION["user"]);
+
 
 // Init Functions File
 define(

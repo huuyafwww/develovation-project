@@ -15,8 +15,8 @@
     <div class="card-body">
 
         <!-- Form -->
-        <form method="POST">
-            
+        <form method="POST" action="#">
+
             <!-- Form-Group -->
             <div class="form-group">
 
@@ -37,54 +37,49 @@
                 ><!-- /Input-Email -->
 
                 <!-- Invalid-Feedback -->
-                <div class="invalid-feedback"></div><!-- /Invalid-Feedback -->
+                <div class="invalid-feedback">
+                    メールアドレスを入力してください
+                </div><!-- /Invalid-Feedback -->
 
             </div><!-- /Form-Group -->
 
             <!-- Form-Group -->
             <div class="form-group">
 
-                <!-- Label -->
-                <label for="password" class="d-block">
-                    パスワード
-                </label><!-- /Label -->
+                <!-- Label-Box -->
+                <div class="d-block">
+
+                    <!-- Label -->
+                    <label for="password" class="control-label">
+                        パスワード
+                    </label><!-- /Label -->
+
+                    <!-- Float-Right -->
+                    <div class="float-right">
+                        
+                        <!-- Forgot-Password-Link -->
+                        <a href="auth-forgot-password.html" class="text-small">
+                            パスワードの再設定
+                        </a><!-- /Forgot-Password-Link -->
+
+                    </div><!-- /Float-Right -->
+
+                </div><!-- /Label-Box -->
 
                 <!-- Input-Password -->
                 <input
                     id="password"
                     type="password"
-                    class="form-control pwstrength"
-                    data-indicator="pwindicator"
+                    class="form-control"
                     name="password"
                     tabindex="2"
                     required
                 ><!-- /Input-Password -->
 
-                <!-- Pwindicator -->
-                <div id="pwindicator" class="pwindicator">
-                    <div class="bar"></div>
-                    <div class="label"></div>
-                </div><!-- /Pwindicator -->
-
-            </div><!-- /Form-Group -->
-
-            <!-- Form-Group -->
-            <div class="form-group">
-
-                <!-- Label -->
-                <label for="password2" class="d-block">
-                    パスワード（再確認）
-                </label><!-- /Label -->
-
-                <!-- Input-Password-Confirm -->
-                <input
-                    id="password2"
-                    type="password"
-                    class="form-control" 
-                    name="password-confirm"
-                    tabindex="3"
-                    required
-                ><!-- /Input-Password-Confirm -->
+                <!-- Invalid-Feedback -->
+                <div class="invalid-feedback">
+                    パスワードを入力してください
+                </div><!-- /Invalid-Feedback -->
 
             </div><!-- /Form-Group -->
 
@@ -97,16 +92,15 @@
                     <!-- Input-Checkbox -->
                     <input
                         type="checkbox"
-                        name="agree"
+                        name="remember"
                         class="custom-control-input"
-                        id="agree"
-                        tabindex="4"
-                        required
-                    ><!-- /Input-Checkbox -->
+                        tabindex="3"
+                        id="remember-me"
+                    ><!-- Input-Checkbox -->
 
                     <!-- Custom-Control-Label -->
-                    <label class="custom-control-label" for="agree">
-                        利用規約に同意します
+                    <label class="custom-control-label" for="remember-me">
+                        次回から自動ログイン
                     </label><!-- /Custom-Control-Label -->
 
                 </div><!-- /Custom-Checkbox -->
@@ -120,10 +114,10 @@
                 <button
                     type="submit"
                     class="btn btn-primary btn-lg btn-block"
-                    tabindex="5"
+                    tabindex="4"
                 >
-                    新規登録
-                </button><!-- /Button-Submit -->
+                    ログイン
+                </button><!-- Button-Submit -->
 
             </div><!-- /Form-Group -->
 
@@ -132,3 +126,8 @@
     </div><!-- /Card-Body -->
 
 </div><!-- /Card -->
+
+<!-- Link-to-Create-Account -->
+<div class="mt-5 text-muted text-center">
+    Don't have an account? <a href="auth-register.html">Create One</a>
+</div><!-- /Link-to-Create-Account -->

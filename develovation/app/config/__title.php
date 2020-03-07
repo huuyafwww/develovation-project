@@ -3,7 +3,7 @@
 $__titles = [
     "auth" => [
         "register" => "新規登録",
-        "ログイン" => "ログイン"
+        "login" => "ログイン"
     ],
     "dashboard" => [
         "home" => "ホーム",
@@ -11,3 +11,23 @@ $__titles = [
         "dencode" => "Json Decode" // "tools/json/dencode/"
     ]
 ];
+
+/* Future
+
+$__titles = [
+    "auth" => [
+        "register" => "新規登録",
+        "login" => "ログイン"
+    ],
+    "dashboard" => [
+        "home" => "ホーム",
+        "tools" => [
+            "json" => [
+                "encode" => "Json Encode",
+                "dencode" => "Json Decode"
+            ]
+        ]
+    ]
+];
+
+/Future */
