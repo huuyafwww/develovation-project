@@ -49,7 +49,11 @@ function __get_component(
     string $__path
 )
 {
-    __load(COMPONENTS_PATH.$__path);
+    __load(
+        COMPONENTS_PATH.
+        BASE_DIR.
+        $__path
+    );
 }
 
 /**

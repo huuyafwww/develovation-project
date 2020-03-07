@@ -5,7 +5,7 @@
  */
 
 // DataBase Name
-define("DB_NAME","world");
+define("DB_NAME","develovation");
 
 // DataBase Host
 define("DB_HOST","localhost");
