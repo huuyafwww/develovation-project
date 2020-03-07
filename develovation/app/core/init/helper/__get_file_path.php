@@ -25,6 +25,22 @@ function __get_app_js(
 }
 
 /**
+ * Echo the Page Js Path For Front-End Request
+ * 
+ * @param string $__file
+ */
+function __get_page_js()
+{
+    echo 
+        APP_JS_PATH.
+        BASE_DIR.
+        NOW_REQUEST_FILE.
+        "?v=".
+        time()
+    ;
+}
+
+/**
  * Echo the App Img Path For Front-End Request
  * 
  * @param string $__file

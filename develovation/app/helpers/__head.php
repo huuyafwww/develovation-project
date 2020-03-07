@@ -6,21 +6,16 @@
 function __get_title()
 {
     require_once(TITLE_CONFIG_FILE);
-    foreach(
+
+    echo 
+        isset(
+            $__titles
+                [BASE_DIR_NAME]
+                [NOW_REQUEST_FILE_NAME]
+        ) ? 
         $__titles
-        as
-        $__uri
-        =>
-        $__title
-    )
-    {
-        if(
-            __is_strpos(NOW_URI,$__uri)
-        )
-        {
-            echo $__title;
-            return;
-        }
-    }
-    echo "404 Not Found";
+            [BASE_DIR_NAME]
+            [NOW_REQUEST_FILE_NAME] :
+        "404 Not Found"
+    ;
 }

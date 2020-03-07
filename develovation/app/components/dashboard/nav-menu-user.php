@@ -10,7 +10,7 @@
         <!-- Dropdown-About-Left -->
         <img
             alt="image"
-            src="<?php echo LIB_IMG_PATH; ?>avatar/avatar-1.png"
+            src="<?php __get_lib_img("avatar/avatar-1.png"); ?>"
             class="rounded-circle mr-1"
         ><!-- /Dropdown-About-Left -->
     

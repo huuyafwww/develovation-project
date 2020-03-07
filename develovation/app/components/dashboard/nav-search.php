@@ -88,7 +88,7 @@
                 <img
                     class="mr-3 rounded"
                     width="30"
-                    src="<?php echo LIB_IMG_PATH; ?>products/product-3-50.png"
+                    src="<?php __get_lib_img("products/product-3-50.png"); ?>"
                     alt="product"
                 ><!-- /About-Image -->
 
@@ -109,7 +109,7 @@
                 <img
                     class="mr-3 rounded"
                     width="30"
-                    src="<?php echo LIB_IMG_PATH; ?>products/product-2-50.png"
+                    src="<?php __get_lib_img("products/product-2-50.png"); ?>"
                     alt="product"
                 ><!-- /About-Image -->
 
@@ -130,7 +130,7 @@
                 <img
                     class="mr-3 rounded"
                     width="30"
-                    src="<?php echo LIB_IMG_PATH; ?>products/product-1-50.png"
+                    src="<?php __get_lib_img("products/product-1-50.png"); ?>"
                     alt="product"
                 ><!-- /About-Image -->
 
