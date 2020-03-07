@@ -31,11 +31,28 @@ define(
     )
 );
 
+// Base File
+define(
+    "BASE_FILE",
+    IS_LOGIN ?
+    "dashboard.php" :
+    "auth.php"
+);
+
+// Base Directory Name
+define(
+    "BASE_DIR",
+    IS_LOGIN ?
+    "dashboard/" :
+    "auth/"
+);
+
 // Is 404
 define(
     "IS_404",
     !file_exists(
         TEMPLATES_PATH.
+        BASE_DIR.
         NOW_REQUEST_FILE
     )
 );
@@ -54,20 +71,16 @@ define(
     "404"
 );
 
-// Base File
-define(
-    "BASE_FILE",
-    IS_LOGIN ?
-    "logined.php" :
-    "not-logined.php"
-);
-
 // Model File
 define(
     "MODEL_FILE",
-    !IS_404 ?
-    MODELS_PATH.NOW_REQUEST_FILE :
-    MODELS_PATH."404.php"
+    MODELS_PATH.
+    BASE_DIR.
+    (
+        !IS_404 ?
+        NOW_REQUEST_FILE :
+        "404.php"
+    )
 );
 
 // Model Class Name
@@ -81,9 +94,13 @@ define(
 // Controller File
 define(
     "CONTROLLER_FILE",
-    !IS_404 ?
-    CONTROLLERS_PATH.NOW_REQUEST_FILE :
-    CONTROLLERS_PATH."404.php"
+    CONTROLLERS_PATH.
+    BASE_DIR.
+    (
+        !IS_404 ?
+        NOW_REQUEST_FILE :
+        "404.php"
+    )
 );
 
 // Controller Class Name
@@ -100,37 +117,68 @@ define("VIEW_FILE",VIEWS_PATH.BASE_FILE);
 // View Sidebar Menu Config File
 define(
     "SIDEBAR_MENU_CONFIG_FILE",
-    VIEW_CONFIG_PATH."__sidebar-menu.php"
+    VIEW_CONFIG_PATH.
+    "__sidebar-menu.php"
 );
 
 // View Sidebar Menu Config File
 define(
     "TITLE_CONFIG_FILE",
-    VIEW_CONFIG_PATH."__title.php"
+    VIEW_CONFIG_PATH.
+    "__title.php"
 );
 
 // Template File
 define(
     "TEMPLATE_FILE",
-    !IS_404 ?
-    TEMPLATES_PATH.NOW_REQUEST_FILE :
-    TEMPLATES_PATH."404.php"
+    TEMPLATES_PATH.
+    BASE_DIR.
+    (
+        !IS_404 ?
+        NOW_REQUEST_FILE :
+        "404.php"
+    )
 );
 
 // 404 View File
-define("E_404_FILE",TEMPLATES_PATH."404.php");
+define(
+    "E_404_FILE",
+    TEMPLATES_PATH.
+    BASE_DIR.
+    "404.php"
+);
 
 // Base "head" File
-define("BASE_HEAD_FILE",INCLUDES_PATH."head.php");
+define(
+    "BASE_HEAD_FILE",
+    INCLUDES_PATH.
+    BASE_DIR.
+    "head.php"
+);
 
 // Now "head" File
-define("HEAD_FILE",HEAD_PATH.NOW_REQUEST_FILE);
+define(
+    "HEAD_FILE",
+    HEAD_PATH.
+    BASE_DIR.
+    NOW_REQUEST_FILE
+);
 
 // Base "foot-script" File
-define("BASE_FOOT_FILE",INCLUDES_PATH."footer-script.php");
+define(
+    "BASE_FOOT_FILE",
+    INCLUDES_PATH.
+    BASE_DIR.
+    "footer-script.php"
+);
 
 // Now "footer-Script" File
-define("FOOT_FILE",FOOT_PATH.NOW_REQUEST_FILE);
+define(
+    "FOOT_FILE",
+    FOOT_PATH.
+    BASE_DIR.
+    NOW_REQUEST_FILE
+);
 
 /**
  * /FILE Constant
