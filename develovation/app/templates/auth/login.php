@@ -97,7 +97,7 @@
                         name="remember"
                         required
                         tabindex="3"
-                    ><!-- Input-Checkbox -->
+                    ><!-- /Input-Checkbox -->
 
                     <!-- Custom-Control-Label -->
                     <label class="custom-control-label" for="remember-me">
@@ -118,7 +118,7 @@
                     tabindex="4"
                 >
                     ログイン
-                </button><!-- Button-Submit -->
+                </button><!-- /Button-Submit -->
 
             </div><!-- /Form-Group -->
 

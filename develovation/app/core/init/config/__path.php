@@ -52,8 +52,8 @@ define("CORE_LIB_PATH",INIT_PATH."lib/");
 /* /Core-Dir-Constant */
 
 /* Inc-Dir-Constant */
-define("FOOT_PATH",INCLUDES_PATH."foot/");
-define("HEAD_PATH",INCLUDES_PATH."head/");
+define("FOOT_PATH","foot/");
+define("HEAD_PATH","head/");
 /* /Inc-Dir-Constant */
 
 /**

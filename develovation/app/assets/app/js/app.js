@@ -8,23 +8,24 @@ var fixed_full_screen_icon = fixed_full_screen_btn.find("i");
 $(function(){
 
     // Get a IP Address
-    get_ip();
+    __get_ip();
 
     // Get Token to All Form Input Element
-    set_token_in_all_forms();
+    __set_token_in_all_forms();
 
     // Toggle a Full Screen
-    full_screen_btn_click_event();
+    __full_screen_btn_click_event();
 
     // Run All "a-tag" Prefetch
-    prefetch();
+    __prefetch();
+    
 });
 
 /**
  * Get a IP Address
  * $.getJSON Sample(Get IP ADDRESS)
  */
-function get_ip()
+function __get_ip()
 {
     $.getJSON(
         "http://localhost:8888/github/develovation-project/develovation/api/get/ip/",
@@ -38,16 +39,16 @@ function get_ip()
 /**
  * If Full Screen Button Click,Toggle a Full Screen
  */
-function full_screen_btn_click_event()
+function __full_screen_btn_click_event()
 {
     fixed_full_screen_btn.on("click",function(){
         if(!is_full_screen)
         {
-            run_full_screen();
+            __run_full_screen();
         }
         else
         {
-            exit_full_screen();
+            __exit_full_screen();
         }
     });
 }
@@ -55,7 +56,7 @@ function full_screen_btn_click_event()
 /**
  * Run Full Screen
  */
-function run_full_screen()
+function __run_full_screen()
 {
     fixed_full_screen_icon.addClass("fa-compress-arrows-alt");
     fixed_full_screen_icon.removeClass("fa-expand-arrows-alt");
@@ -66,7 +67,7 @@ function run_full_screen()
 /**
  * Exit Full Screen
  */
-function exit_full_screen()
+function __exit_full_screen()
 {
     fixed_full_screen_icon.addClass("fa-expand-arrows-alt");
     fixed_full_screen_icon.removeClass("fa-compress-arrows-alt");
@@ -81,7 +82,7 @@ function exit_full_screen()
 /**
  * If Dom Loaded,Get Token to All Form Input Element
  */
-function set_token_in_all_forms()
+function __set_token_in_all_forms()
 {
     let temp_token = $("#main-js").data("token");
     let form = $("form");
@@ -116,7 +117,7 @@ function set_token_in_all_forms()
 /**
  * If Dom Loaded,Run All "a-tag" Prefetch
  */
-function prefetch()
+function __prefetch()
 {
     let a = $("a");
     let temp_hrefs = [];

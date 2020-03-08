@@ -178,8 +178,9 @@ define(
 // Now "head" File
 define(
     "HEAD_FILE",
-    HEAD_PATH.
+    INCLUDES_PATH.
     BASE_DIR.
+    HEAD_PATH.
     NOW_REQUEST_FILE
 );
 
@@ -194,8 +195,9 @@ define(
 // Now "footer-Script" File
 define(
     "FOOT_FILE",
-    FOOT_PATH.
+    INCLUDES_PATH.
     BASE_DIR.
+    FOOT_PATH.
     NOW_REQUEST_FILE
 );
 
