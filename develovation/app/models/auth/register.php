@@ -22,4 +22,14 @@ class __M_Register extends __Model{
         echo "Testing";
     }
 
+    /**
+     * Register New User
+     *
+     * @access private
+     */
+    private function __register_user()
+    {
+
+    }
+
 }

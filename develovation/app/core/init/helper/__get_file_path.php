@@ -9,7 +9,7 @@ function __get_app_css(
     string $__file
 )
 {
-    echo APP_CSS_PATH.$__file."?v=".time();
+    echo APP_CSS_PATH.$__file."?v=".TIME;
 }
 
 /**
@@ -21,7 +21,7 @@ function __get_app_js(
     string $__file
 )
 {
-    echo APP_JS_PATH.$__file."?v=".time();
+    echo APP_JS_PATH.$__file."?v=".TIME;
 }
 
 /**
@@ -34,9 +34,9 @@ function __get_page_js()
     echo 
         APP_JS_PATH.
         BASE_DIR.
-        NOW_REQUEST_FILE.
-        "?v=".
-        time()
+        NOW_REQUEST_FILE_NAME.
+        ".js?v=".
+        TIME
     ;
 }
 
@@ -49,7 +49,7 @@ function __get_app_img(
     string $__file
 )
 {
-    echo APP_IMG_PATH.$__file."?v=".time();
+    echo APP_IMG_PATH.$__file."?v=".TIME;
 }
 
 /**

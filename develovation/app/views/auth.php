@@ -36,6 +36,8 @@
             </div><!-- /Main-Container -->
 
         </section><!-- /Main-Section -->
+    
+    </app-html><!-- /HTML-Parts -->
 
     <!-- JS-Parts -->
     <app-js>
