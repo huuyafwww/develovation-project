@@ -15,8 +15,35 @@
     <div class="card-body">
 
         <!-- Form -->
-        <form method="POST">
-            
+        <form method="POST" action="">
+
+            <!-- Form-Group -->
+            <div class="form-group">
+
+                <!-- Label -->
+                <label for="user_name">
+                    ユーザー名
+                </label><!-- /Label -->
+
+                <!-- Input-Email -->
+                <input
+                    id="user_name"
+                    class="form-control"
+                    type="text"
+                    name="user_name"
+                    required
+                    tabindex="1"
+                    minlength="3"
+                    pattern="^[0-9a-z]+$"
+                    autofocus
+                ><!-- /Input-Email -->
+
+                <!-- Invalid-Feedback -->
+                <div class="invalid-feedback"></div><!-- /Invalid-Feedback -->
+
+            </div><!-- /Form-Group -->
+
+
             <!-- Form-Group -->
             <div class="form-group">
 
@@ -28,12 +55,11 @@
                 <!-- Input-Email -->
                 <input
                     id="email"
-                    type="email"
                     class="form-control"
+                    type="email"
                     name="email"
-                    tabindex="1"
                     required
-                    autofocus
+                    tabindex="2"
                 ><!-- /Input-Email -->
 
                 <!-- Invalid-Feedback -->
@@ -52,12 +78,14 @@
                 <!-- Input-Password -->
                 <input
                     id="password"
-                    type="password"
                     class="form-control pwstrength"
-                    data-indicator="pwindicator"
+                    type="password"
                     name="password"
-                    tabindex="2"
                     required
+                    tabindex="3"
+                    minlength="8"
+                    pattern="^[0-9a-z]+$"
+                    data-indicator="pwindicator"
                 ><!-- /Input-Password -->
 
                 <!-- Pwindicator -->
@@ -79,11 +107,11 @@
                 <!-- Input-Password-Confirm -->
                 <input
                     id="password2"
-                    type="password"
                     class="form-control" 
+                    type="password"
                     name="password-confirm"
-                    tabindex="3"
                     required
+                    tabindex="4"
                 ><!-- /Input-Password-Confirm -->
 
             </div><!-- /Form-Group -->
@@ -96,12 +124,12 @@
                     
                     <!-- Input-Checkbox -->
                     <input
+                        id="agree"
+                        class="custom-control-input"
                         type="checkbox"
                         name="agree"
-                        class="custom-control-input"
-                        id="agree"
-                        tabindex="4"
                         required
+                        tabindex="5"
                     ><!-- /Input-Checkbox -->
 
                     <!-- Custom-Control-Label -->
@@ -118,9 +146,9 @@
 
                 <!-- Button-Submit -->
                 <button
-                    type="submit"
                     class="btn btn-primary btn-lg btn-block"
-                    tabindex="5"
+                    type="submit"
+                    tabindex="6"
                 >
                     新規登録
                 </button><!-- /Button-Submit -->

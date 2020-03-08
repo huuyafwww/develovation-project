@@ -15,7 +15,7 @@
     <div class="card-body">
 
         <!-- Form -->
-        <form method="POST" action="#">
+        <form method="POST" action="">
 
             <!-- Form-Group -->
             <div class="form-group">
@@ -28,11 +28,11 @@
                 <!-- Input-Email -->
                 <input
                     id="email"
-                    type="email"
                     class="form-control"
+                    type="email"
                     name="email"
-                    tabindex="1"
                     required
+                    tabindex="1"
                     autofocus
                 ><!-- /Input-Email -->
 
@@ -69,11 +69,11 @@
                 <!-- Input-Password -->
                 <input
                     id="password"
-                    type="password"
                     class="form-control"
+                    type="password"
                     name="password"
-                    tabindex="2"
                     required
+                    tabindex="2"
                 ><!-- /Input-Password -->
 
                 <!-- Invalid-Feedback -->
@@ -91,11 +91,12 @@
                     
                     <!-- Input-Checkbox -->
                     <input
+                        id="remember-me"
+                        class="custom-control-input"
                         type="checkbox"
                         name="remember"
-                        class="custom-control-input"
+                        required
                         tabindex="3"
-                        id="remember-me"
                     ><!-- Input-Checkbox -->
 
                     <!-- Custom-Control-Label -->
@@ -112,8 +113,8 @@
 
                 <!-- Button-Submit -->
                 <button
-                    type="submit"
                     class="btn btn-primary btn-lg btn-block"
+                    type="submit"
                     tabindex="4"
                 >
                     ログイン
