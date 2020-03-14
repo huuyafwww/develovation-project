@@ -165,6 +165,8 @@ class __Router{
      */
     private function __load_view()
     {
+        // Auth Check
+        $this->__auth_check();
 
         // Load Target Controllers File
         __load_once(CONTROLLER_FILE);
@@ -174,6 +176,71 @@ class __Router{
 
         // Run Target Controllers Class
         new $this->__class;
+    }
+
+    /**
+     * Auth Check
+     * 
+     * @access private
+     */
+    private function __auth_check()
+    {
+        // IF Not Login and Get to Login After Page
+        // $this->__auth_login_check();
+
+        // If Auth route
+        $this->__auth_404_check();
+        
+    }
+
+    /**
+     * IF Not Login and Get to Login After Page
+     * 
+     * @access private
+     */
+    private function __auth_login_check()
+    {
+        (
+            IS_AUTH
+            AND
+            !IS_LOGIN
+            AND
+            // Redirect to login.php
+            $this->__redirect_to_login_before()
+        );
+        // BASE_DIR_NAME
+    }
+
+    /**
+     * If Auth route
+     * 
+     * @access private
+     */
+    private function __auth_404_check()
+    {
+        (
+            IS_AUTH
+            AND
+            IS_404
+            AND
+            // Redirect to login.php
+            $this->__redirect_to_login_before()
+        );
+    }
+
+    /**
+     * Redirect to login.php
+     * 
+     * @access private
+     */
+    private function __redirect_to_login_before()
+    {
+        header(
+            "Location: ".
+            HTTP_ROOT_URL.
+            "login/"
+        );
+        exit;
     }
 
     /**
