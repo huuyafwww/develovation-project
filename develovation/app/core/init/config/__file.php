@@ -55,6 +55,12 @@ define(
     "auth"
 );
 
+// Is Auth
+define(
+    "IS_AUTH",
+    BASE_DIR_NAME === "auth"
+);
+
 // Is 404
 define(
     "IS_404",
