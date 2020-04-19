@@ -7,5 +7,3 @@ composer.lock
 
 # Any Folder
 /temp/
-
-tempディレクトリのキャッシュを削除してGitHub上から削除する
