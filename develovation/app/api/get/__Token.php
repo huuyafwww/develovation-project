@@ -4,7 +4,7 @@
  * Get Encrypt Token
  */
 class __Token extends __Api{
-    
+
     /**
      * Get Encrypt Token Init
      */

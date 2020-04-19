@@ -1,6 +1,6 @@
 <?php
 
-$__sidebar_config = 
+$__sidebar_config =
 [
     "home" => [
 		"type" => "normal",
