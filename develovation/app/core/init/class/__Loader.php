@@ -7,7 +7,7 @@ class __Loader{
 
     /**
      * Loader Init
-     * 
+     *
      * @access public
      * @param bool $__is_display_error
      */
@@ -36,7 +36,7 @@ class __Loader{
 
     /**
      * Auto Loader
-     * 
+     *
      * @access private
      */
     private function __auto_loader()
@@ -59,7 +59,7 @@ class __Loader{
 
     /**
      * Require Define Constants
-     * 
+     *
      * @access private
      */
     private function __define_loader()
@@ -69,7 +69,7 @@ class __Loader{
 
     /**
      * Require Init Functions File
-     * 
+     *
      * @access private
      */
     private function __init_func_loader()
@@ -79,7 +79,7 @@ class __Loader{
 
     /**
      * Default Settings
-     * 
+     *
      * @access private
      */
     private function __default_settings()
@@ -90,7 +90,7 @@ class __Loader{
 
     /**
      * Auto Uri Checking
-     * 
+     *
      * @access private
      */
     private function __uri_auto_checking()
@@ -111,6 +111,12 @@ class __Loader{
         );
     }
 
+    /**
+     * Uri Auto Redirect
+     *
+     * @param boolean $__judge
+     * @param string $__to
+     */
     private function __uri_auto_redirect(
         bool $__judge,
         string $__to
@@ -131,7 +137,7 @@ class __Loader{
 
     /**
      * Error Settings
-     * 
+     *
      * @access private
      * @param bool $__is_display_error
      */
@@ -164,7 +170,7 @@ class __Loader{
 
     /**
      * Token Settings
-     * 
+     *
      * @access private
      */
     private function __token_settings()
@@ -185,7 +191,7 @@ class __Loader{
 
     /**
      * Route Loader
-     * 
+     *
      * @access private
      */
     private function __route_loader()

@@ -36,7 +36,7 @@ class __Router{
      * @var string
      */
     private $__path;
-    
+
     /**
      * This is Class Name
      *
@@ -44,10 +44,10 @@ class __Router{
      * @var string
      */
     private $__class;
-    
+
     /**
      * Router Init
-     * 
+     *
      * @access public
      */
     public function __construct()
@@ -61,83 +61,25 @@ class __Router{
 
     /**
      * Get Uri to Array
-     * 
+     *
      * @access private
      */
     private function __get_array_uri()
     {
         $this->__uris = __empty_index_delete(
-            explode("/",REQUEST_URI)
-        );
-    }
-
-    /**
-     * Get Target Route
-     * 
-     * @access private
-     * @param string $__target_str
-     */
-    private function __get_route(
-        string $__target_str
-    )
-    {
-        // Get Target index
-        $__target_index = array_search(
-            $__target_str,
-            $this->__uris
-        );
-
-        $this->__route = [
-            "method" => $this->__uris[
-                ($__target_index + 1)
-            ],
-            "slug" => $this->__uris[
-                ($__target_index + 2)
-            ]
-        ];
-    }
-
-    /**
-     * Get Route Class Name And File Name
-     * 
-     * @access private
-     * @param string $__target_str
-     */
-    private function __get_slug(
-        string $__target_str
-    )
-    {
-        $this->__slug = 
-            PREFIX.
-            strtoupper(
-                $__target_str[0]
-            ).
-            substr(
-                $__target_str,
-                1
+            explode(
+                "/",
+                parse_url(
+                    REQUEST_URI,
+                    PHP_URL_PATH
+                )
             )
-        ;
+        );
     }
-
-    /**
-     * Get Route Path
-     * 
-     * @access private
-     */
-    private function __get_path()
-    {
-        $this->__path =
-            $this->__route["method"].
-            "/".
-            $this->__slug.
-            ".php"
-        ;
-    }
-    
 
     /**
      * Run a Route
-     * 
+     *
      * @access private
      */
     private function __run_route()
@@ -160,7 +102,7 @@ class __Router{
 
     /**
      * Load a View
-     * 
+     *
      * @access private
      */
     private function __load_view()
@@ -180,40 +122,39 @@ class __Router{
 
     /**
      * Auth Check
-     * 
+     *
      * @access private
      */
     private function __auth_check()
     {
         // IF Not Login and Get to Login After Page
-        // $this->__auth_login_check();
+        $this->__auth_login_check();
 
         // If Auth route
         $this->__auth_404_check();
-        
+
     }
 
     /**
      * IF Not Login and Get to Login After Page
-     * 
+     *
      * @access private
      */
     private function __auth_login_check()
     {
         (
-            IS_AUTH
+            !IS_AUTH
             AND
             !IS_LOGIN
             AND
             // Redirect to login.php
             $this->__redirect_to_login_before()
         );
-        // BASE_DIR_NAME
     }
 
     /**
      * If Auth route
-     * 
+     *
      * @access private
      */
     private function __auth_404_check()
@@ -230,7 +171,7 @@ class __Router{
 
     /**
      * Redirect to login.php
-     * 
+     *
      * @access private
      */
     private function __redirect_to_login_before()
@@ -245,7 +186,7 @@ class __Router{
 
     /**
      * Load Controller Class Name
-     * 
+     *
      * @access private
      */
     private function __get_class_name()
@@ -255,7 +196,7 @@ class __Router{
 
     /**
      * Load a Api
-     * 
+     *
      * @access private
      */
     private function __load_api()
@@ -277,5 +218,96 @@ class __Router{
 
         // Run Target Class
         new $this->__slug;
+    }
+
+    /**
+     * Get Target Route
+     *
+     * @access private
+     * @param string $__target_str
+     */
+    private function __get_route(
+        string $__target_str
+    )
+    {
+        // Slice Uris
+        $this->__slice_uris(
+            array_search(
+                $__target_str,
+                $this->__uris
+            )
+        );
+
+        // Get Route Uri
+        $this->__get_route_uri();
+    }
+
+    /**
+     * Slice Uris
+     */
+    private function __slice_uris(
+        string $__target_index
+    )
+    {
+        $this->__uris = array_slice(
+            $this->__uris,
+            $__target_index + 1
+        );
+    }
+
+    /**
+     * Get Route Uri
+     *
+     * @return void
+     */
+    private function __get_route_uri()
+    {
+        // Get Slug
+        $slug = array_pop($this->__uris);
+
+        $this->__route = [
+            "method" => implode(
+                "/",
+                $this->__uris
+            ),
+            "slug" => $slug
+        ];
+    }
+
+    /**
+     * Get Route Class Name And File Name
+     *
+     * @access private
+     * @param string $__target_str
+     */
+    private function __get_slug(
+        string $__target_str
+    )
+    {
+        $this->__slug =
+            PREFIX.
+            strtoupper(
+                $__target_str[0]
+            ).
+            substr(
+                $__target_str,
+                1
+            )
+        ;
+    }
+
+    /**
+     * Get Route Path
+     *
+     * @access private
+     */
+    private function __get_path()
+    {
+        $this->__path =
+            $this->__route["method"].
+            "/".
+            $this->__slug.
+            ".php"
+        ;
     }
 }

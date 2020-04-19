@@ -20,7 +20,7 @@ function __array_rand(
 
 /**
  * Empty Index Delete
- * 
+ *
  * @param array $__array
  * @return array
  */

@@ -32,7 +32,7 @@
                     <div class="section-body">
 
                         <?php __get_template(); ?>
-                    
+
                     </div><!-- /Section-Body -->
 
                 </section><!-- /Section -->
