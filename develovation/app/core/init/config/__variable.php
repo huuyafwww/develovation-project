@@ -1,6 +1,6 @@
 <?php
 
-$components = 
+$components =
 [
     "common" => [
         "header" => [

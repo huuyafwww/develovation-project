@@ -4,8 +4,19 @@
  * PATH Constant
  */
 
+// Document Root Path
+define(
+    "DOCUMENT_ROOT",
+    $_SERVER["DOCUMENT_ROOT"]
+);
+
 // Root Path
-define("ROOT_PATH",__DIR__."/../../../../");
+define(
+    "ROOT_PATH",
+    realpath(
+        __DIR__."/../../../../"
+    )."/"
+);
 
 /* Directly-Root-DIR-Constant */
 define("APP_PATH",ROOT_PATH."app/");

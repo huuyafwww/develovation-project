@@ -2,7 +2,7 @@
 
 /**
  * Echo the App Css Path For Front-End Request
- * 
+ *
  * @param string $__file
  */
 function __get_app_css(
@@ -14,7 +14,7 @@ function __get_app_css(
 
 /**
  * Echo the App Js Path For Front-End Request
- * 
+ *
  * @param string $__file
  */
 function __get_app_js(
@@ -26,15 +26,15 @@ function __get_app_js(
 
 /**
  * Echo the Page Js Path For Front-End Request
- * 
+ *
  * @param string $__file
  */
 function __get_page_js()
 {
-    echo 
+    echo
         APP_JS_PATH.
         BASE_DIR.
-        NOW_REQUEST_FILE_NAME.
+        WEB_URI_PATH_NAME.
         ".js?v=".
         TIME
     ;
@@ -42,7 +42,7 @@ function __get_page_js()
 
 /**
  * Echo the App Img Path For Front-End Request
- * 
+ *
  * @param string $__file
  */
 function __get_app_img(
@@ -54,7 +54,7 @@ function __get_app_img(
 
 /**
  * Echo the Lib Css Path For Front-End Request
- * 
+ *
  * @param string $__file
  */
 function __get_lib_css(
@@ -66,7 +66,7 @@ function __get_lib_css(
 
 /**
  * Echo the Lib Js Path For Front-End Request
- * 
+ *
  * @param string $__file
  */
 function __get_lib_js(
@@ -78,7 +78,7 @@ function __get_lib_js(
 
 /**
  * Echo the Lib Img Path For Front-End Request
- * 
+ *
  * @param string $__file
  */
 function __get_lib_img(
