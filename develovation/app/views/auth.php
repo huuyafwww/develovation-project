@@ -10,20 +10,20 @@
 
         <!-- Main-Section -->
         <section class="section">
-            
+
             <!-- Main-Container -->
             <div class="container mt-5">
-                
+
                 <!-- Row -->
                 <div class="row">
 
                     <!-- Main-Column -->
-                    <div 
+                    <div
                         class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4"
                     >
                         <!-- Login-Brand -->
                         <?php __get_component("login-brand.php"); ?><!-- /Login-Brand -->
-                            
+
                         <?php __get_template(); ?>
 
                         <!-- Footer -->
@@ -36,7 +36,7 @@
             </div><!-- /Main-Container -->
 
         </section><!-- /Main-Section -->
-    
+
     </app-html><!-- /HTML-Parts -->
 
     <!-- JS-Parts -->

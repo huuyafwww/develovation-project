@@ -26,7 +26,7 @@ function __get_sidebar()
 
 /**
  * Get Normal Sidebar Item
- * 
+ *
  * @param string $slug
  * @param array $__sidebar_item
  */
@@ -37,18 +37,18 @@ function __get_sidebar_normal(
 {
     ?>
     <!-- Menu-Item -->
-    <li 
+    <li
         class="<?php __is_sidebar_item_active($slug); ?>"
     >
 
         <!-- Menu-Title -->
-        <a 
-            class="nav-link" 
+        <a
+            class="nav-link"
             href="<?php __get_http_url($__sidebar_item["href"]); ?>"
         >
 
             <!-- Menu-Icon -->
-            <i 
+            <i
                 class="fas fa-<?php echo $__sidebar_item["icon"]; ?>"
             >
             </i> <!-- /Menu-Icon -->
@@ -66,7 +66,7 @@ function __get_sidebar_normal(
 
 /**
  * Get Parent Sidebar Item
- * 
+ *
  * @param string $slug
  * @param array $__sidebar_item
  */
@@ -77,7 +77,7 @@ function __get_sidebar_parent(
 {
     ?>
     <!-- Menu-Item -->
-    <li 
+    <li
         class="nav-item dropdown<?php __is_sidebar_item_active($slug); ?>"
     >
 
@@ -99,7 +99,7 @@ function __get_sidebar_parent(
 
         <!-- Dropdown-Menu -->
         <ul class="dropdown-menu">
-            <?php 
+            <?php
                 foreach(
                     $__sidebar_item["child"]
                     as
@@ -122,7 +122,7 @@ function __get_sidebar_parent(
 
 /**
  * Get Child Sidebar Item
- * 
+ *
  * @param string $__child_href
  * @param array $__child_item
  */
@@ -133,12 +133,12 @@ function __get_sidebar_child(
 {
     ?>
     <!-- Dropdown-Item -->
-    <li 
+    <li
         class="<?php __is_sidebar_item_active($__child_href); ?>"
     >
 
         <!-- Item-Link -->
-        <a 
+        <a
             class="nav-link"
             href="<?php echo __get_http_url($__child_href); ?>"
         >
@@ -154,14 +154,14 @@ function __get_sidebar_child(
 
 /**
  * Get Child Sidebar Item
- * 
+ *
  * @param string $__search_uri
  */
 function __is_sidebar_item_active(
     string $__search_uri
 )
 {
-    echo 
+    echo
         __is_strpos(NOW_URI,$__search_uri)
         ? " active"
         : ""

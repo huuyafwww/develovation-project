@@ -4,7 +4,7 @@
  * Get IP Address
  */
 class __Ip extends __Api{
-    
+
     /**
      * Get IP Address Init
      */
@@ -12,18 +12,12 @@ class __Ip extends __Api{
     {
         // Run Parent Class Constructor
         parent::__construct();
-
-        // Get IP Address
-        $this->__get_ip();
-
-        // Send Response
-        parent::__send_response();
     }
 
     /**
      * Get IP Address
      */
-    protected function __get_ip()
+    protected function __get_response()
     {
         $this->__response["ip"] = IP_ADDRESS;
     }

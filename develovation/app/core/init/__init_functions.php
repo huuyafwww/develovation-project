@@ -52,7 +52,7 @@ function __is_strpos(
     string $__search_str
 ): bool
 {
-    return 
+    return
         strpos($__target_str,$__search_str) !== false
     ;
 }
@@ -99,7 +99,7 @@ function __get_all_file_list(
         {
             $__list[] = $__file;
         }
-        
+
         if(is_dir($__file))
         {
             $__list = array_merge(
@@ -113,7 +113,7 @@ function __get_all_file_list(
 
 /**
  * Load Files
- * 
+ *
  * @param string|array $__target_paths
  */
 function __load_files(
@@ -121,7 +121,7 @@ function __load_files(
 )
 {
     foreach(
-        is_array($__target_paths) ? 
+        is_array($__target_paths) ?
             $__target_paths :
             __get_all_file_list($__target_paths)
         as

@@ -2,7 +2,7 @@
 
 /**
  * Get The __Controller Varivale
- * 
+ *
  * @param string $__var_name
  */
 function __get_controller_var(

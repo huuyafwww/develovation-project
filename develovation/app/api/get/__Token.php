@@ -12,18 +12,13 @@ class __Token extends __Api{
     {
         // Run Parent Class Constructor
         parent::__construct();
-
-        // Get Encrypt Token
-        $this->__get_token();
-
-        // Send Response
-        parent::__send_response();
     }
 
     /**
      * Get Encrypt Token
      */
-    protected function __get_token(){
+    protected function __get_response()
+    {
         $this->__response["token"] = openssl_encrypt(
             __h($_GET["temp_token"]),
             OPENSSL_METHOD,

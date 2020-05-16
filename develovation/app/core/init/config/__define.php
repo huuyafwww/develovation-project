@@ -28,7 +28,13 @@ define(
     "/"
 );
 
-// Root Url
+// Api Uri
+define(
+    "API_URI",
+    ROOT_URI."api/"
+);
+
+// HTTP Root Url
 define(
     "HTTP_ROOT_URL",
     "//".HTTP_HOST."/".ROOT_URI
@@ -51,7 +57,34 @@ define(
 // Is Api
 define(
     "IS_API",
-    strpos(REQUEST_URI,"api") !== false
+    strpos(
+        REQUEST_URI,
+        API_URI
+    ) !== false
+);
+
+// Route Web Uri
+define(
+    "ROUTE_WEB_URI",
+    str_replace(
+        ROOT_URI,
+        "",
+        REQUEST_URI
+    )
+);
+
+// Route Api Uri
+define(
+    "ROUTE_API_URI",
+    !IS_API ?:
+    str_replace(
+        API_URI,
+        "",
+        parse_url(
+            REQUEST_URI,
+            PHP_URL_PATH
+        )
+    )
 );
 
 // Constant a Default time-zone

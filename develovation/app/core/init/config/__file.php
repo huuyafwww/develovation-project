@@ -16,7 +16,7 @@ define(
         $_SERVER[
             isset($_SERVER["REDIRECT_URL"]) ?
             "REDIRECT_URL" :
-            "SCRIPT_FILENAME"
+            "REQUEST_URI"
         ]
     ).
     ".php"
@@ -28,6 +28,26 @@ define(
     basename(
         NOW_REQUEST_FILE,
         ".php"
+    )
+);
+
+// Web Uri Path
+define(
+    "WEB_URI_PATH",
+    str_replace(
+        NOW_REQUEST_FILE_NAME."/",
+        NOW_REQUEST_FILE,
+        ROUTE_WEB_URI
+    )
+);
+
+// Web Uri Path Name
+define(
+    "WEB_URI_PATH_NAME",
+    str_replace(
+        NOW_REQUEST_FILE_NAME."/",
+        NOW_REQUEST_FILE_NAME,
+        ROUTE_WEB_URI
     )
 );
 
@@ -67,7 +87,7 @@ define(
     !file_exists(
         TEMPLATES_PATH.
         BASE_DIR.
-        NOW_REQUEST_FILE
+        WEB_URI_PATH
     )
 );
 
@@ -92,7 +112,7 @@ define(
     BASE_DIR.
     (
         !IS_404 ?
-        NOW_REQUEST_FILE :
+        WEB_URI_PATH :
         "404.php"
     )
 );
@@ -112,7 +132,7 @@ define(
     BASE_DIR.
     (
         !IS_404 ?
-        NOW_REQUEST_FILE :
+        WEB_URI_PATH :
         "404.php"
     )
 );
@@ -160,7 +180,7 @@ define(
     BASE_DIR.
     (
         !IS_404 ?
-        NOW_REQUEST_FILE :
+        WEB_URI_PATH :
         "404.php"
     )
 );
@@ -187,7 +207,7 @@ define(
     INCLUDES_PATH.
     BASE_DIR.
     HEAD_PATH.
-    NOW_REQUEST_FILE
+    WEB_URI_PATH
 );
 
 // Base "foot-script" File
@@ -204,7 +224,7 @@ define(
     INCLUDES_PATH.
     BASE_DIR.
     FOOT_PATH.
-    NOW_REQUEST_FILE
+    WEB_URI_PATH
 );
 
 /**

@@ -52,29 +52,8 @@ class __Router{
      */
     public function __construct()
     {
-        // Get Uri to Array
-        $this->__get_array_uri();
-
         // Run a Route
         $this->__run_route();
-    }
-
-    /**
-     * Get Uri to Array
-     *
-     * @access private
-     */
-    private function __get_array_uri()
-    {
-        $this->__uris = __empty_index_delete(
-            explode(
-                "/",
-                parse_url(
-                    REQUEST_URI,
-                    PHP_URL_PATH
-                )
-            )
-        );
     }
 
     /**
@@ -202,7 +181,7 @@ class __Router{
     private function __load_api()
     {
         // Get Target Route
-        $this->__get_route("api");
+        $this->__get_route();
 
         // Get Route Class Name And File Name
         $this->__get_slug($this->__route["slug"]);
@@ -210,11 +189,11 @@ class __Router{
         // Get Route Path
         $this->__get_path();
 
+        // When Request Api not exists,return error.
+        $this->__api_exist_check();
+
         // Load Target Class File
-        __load_once(
-            API_PATH.
-            $this->__path
-        );
+        __load_once($this->__path);
 
         // Run Target Class
         new $this->__slug;
@@ -224,35 +203,19 @@ class __Router{
      * Get Target Route
      *
      * @access private
-     * @param string $__target_str
      */
-    private function __get_route(
-        string $__target_str
-    )
+    private function __get_route()
     {
         // Slice Uris
-        $this->__slice_uris(
-            array_search(
-                $__target_str,
-                $this->__uris
+        $this->__uris = __empty_index_delete(
+            explode(
+                "/",
+                ROUTE_API_URI
             )
         );
 
         // Get Route Uri
         $this->__get_route_uri();
-    }
-
-    /**
-     * Slice Uris
-     */
-    private function __slice_uris(
-        string $__target_index
-    )
-    {
-        $this->__uris = array_slice(
-            $this->__uris,
-            $__target_index + 1
-        );
     }
 
     /**
@@ -304,10 +267,35 @@ class __Router{
     private function __get_path()
     {
         $this->__path =
+            API_PATH.
             $this->__route["method"].
             "/".
             $this->__slug.
             ".php"
         ;
+    }
+
+    /**
+     * When Request Api not exists,return error.
+     *
+     * @access private
+     */
+    private function __api_exist_check()
+    {
+        file_exists($this->__path) OR $this->__api_error();
+    }
+
+    /**
+     * Return Api Error Response
+     *
+     * @access private
+     */
+    private function __api_error()
+    {
+        __load_once(
+            API_PATH.
+            "__404.php"
+        );
+        new __Api_Not_Found;
     }
 }

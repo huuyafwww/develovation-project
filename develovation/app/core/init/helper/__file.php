@@ -14,14 +14,14 @@ function __save_file(
     bool $__is_append = true
 ): bool
 {
-    return 
+    return
         file_put_contents(
             $__file,
             $__data,
             (
-                $__is_append 
-                ? FILE_APPEND 
-                | LOCK_EX 
+                $__is_append
+                ? FILE_APPEND
+                | LOCK_EX
                 : LOCK_EX
             )
         ) !== false
@@ -41,7 +41,7 @@ function __delete_files(
 {
     if(!is_array($__dirs))
     {
-        $__files = 
+        $__files =
             __get_file_list(
                 $__dirs,
                 $__extension
@@ -55,7 +55,7 @@ function __delete_files(
     {
         foreach($__dirs as $__dir)
         {
-            $__files = 
+            $__files =
                 __get_file_list(
                     $__dir,
                     $__extension

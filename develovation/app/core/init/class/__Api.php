@@ -12,10 +12,10 @@ class __Api{
      * @var array
      */
     protected $__response = [];
-    
+
     /**
      * API Init
-     * 
+     *
      * @access protected
      * @param string $__mime
      */
@@ -25,6 +25,12 @@ class __Api{
     {
         // Response Header Settings
         $this->__header_settings($__mime);
+
+        // Get Response
+        $this->__get_response();
+
+        // Send Response
+        $this->__send_response();
     }
 
     /**
@@ -43,7 +49,7 @@ class __Api{
 
     /**
      * Send Response
-     * 
+     *
      * @access protected
      */
     protected function __send_response()
@@ -51,5 +57,6 @@ class __Api{
         echo json_encode(
             $this->__response
         );
+        exit;
     }
 }
