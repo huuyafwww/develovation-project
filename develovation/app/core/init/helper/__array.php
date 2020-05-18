@@ -19,19 +19,34 @@ function __array_rand(
 }
 
 /**
- * Empty Index Delete
+ * Get Search Array key to Target Array Column
  *
- * @param array $__array
- * @return array
+ * @param array $__target_array
+ * @param array $__search_array
+ * @return array|false
  */
-function __empty_index_delete(
-    array $__array
-): array
+function __get_array_key2column(
+    array $__target_array,
+    array $__search_array
+)
 {
-    return array_values(
-        array_filter(
-            $__array,
-            "strlen"
+    foreach(
+        $__search_array
+        as $__search_val
+    )
+    {
+        if(
+            isset(
+                $__target_array[$__search_val]
+            )
         )
-    );
+        {
+            $__target_array = $__target_array[$__search_val];
+        }
+        else
+        {
+            return false;
+        }
+    }
+    return $__target_array;
 }

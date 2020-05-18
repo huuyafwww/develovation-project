@@ -60,6 +60,7 @@ define("CLASS_PATH",INIT_PATH."class/");
 define("CONFIG_PATH",INIT_PATH."config/");
 define("HELPER_PATH",INIT_PATH."helper/");
 define("CORE_LIB_PATH",INIT_PATH."lib/");
+define("ROUTES_PATH",INIT_PATH."routes/");
 /* /Core-Dir-Constant */
 
 /* Inc-Dir-Constant */

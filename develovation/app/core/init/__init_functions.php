@@ -131,3 +131,21 @@ function __load_files(
         __load_once($__target_path);
     }
 }
+
+/**
+ * Empty Index Delete
+ *
+ * @param array $__array
+ * @return array
+ */
+function __empty_index_delete(
+    array $__array
+): array
+{
+    return array_values(
+        array_filter(
+            $__array,
+            "strlen"
+        )
+    );
+}

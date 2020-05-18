@@ -9,7 +9,7 @@ class __Action_Hook{
 
     /**
      * Get the All Hooks
-     * 
+     *
      * @access public
      * @return array
      */
@@ -28,7 +28,7 @@ class __Action_Hook{
         string $hook_name
     )
     {
-        return 
+        return
             $this->__hook_exists($hook_name) ?
             $this->hooks[
                 $hook_name
@@ -48,7 +48,7 @@ class __Action_Hook{
         string $hook_name
     ): bool
     {
-        return 
+        return
             isset(
                 $this->hooks[
                     $hook_name
@@ -69,7 +69,7 @@ class __Action_Hook{
         string $action_name
     )
     {
-        $this->hooks[$hook_name][] = 
+        $this->hooks[$hook_name][] =
         [
             "name" => $action_name,
         ];

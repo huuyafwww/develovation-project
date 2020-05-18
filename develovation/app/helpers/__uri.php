@@ -15,3 +15,14 @@ function __get_http_url(
         "/"
     ;
 }
+
+/**
+ * Get Api Url
+ */
+function __get_api_url()
+{
+    echo
+        HTTP_ROOT_URL.
+        "api/"
+    ;
+}

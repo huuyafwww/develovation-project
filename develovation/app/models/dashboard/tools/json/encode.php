@@ -3,7 +3,7 @@
 /**
  * View Model
  */
-class __M_Home extends __Model{
+class __M_Tools_json_encode extends __Model{
 
     /**
      * Model Init

@@ -5,7 +5,7 @@
  */
 function __get_title()
 {
-    require_once(TITLE_CONFIG_FILE);
+    require(TITLE_CONFIG_FILE);
 
     echo
         isset(

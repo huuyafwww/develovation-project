@@ -16,7 +16,7 @@ $__sidebar_config =
 			"/json/encode" => [
                 "label" => "Json Encode",
 			],
-			"/json/dencode" => [
+			"/json/decode" => [
                 "label" => "Json Decode"
 			]
 		]

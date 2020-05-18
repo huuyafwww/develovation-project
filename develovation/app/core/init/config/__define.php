@@ -37,7 +37,7 @@ define(
 // HTTP Root Url
 define(
     "HTTP_ROOT_URL",
-    "//".HTTP_HOST."/".ROOT_URI
+    "//".HTTP_HOST.ROOT_URI
 );
 
 // Constant a Request Method Name
@@ -45,6 +45,9 @@ define("REQUEST_METHOD",$_SERVER["REQUEST_METHOD"]);
 
 // Is POST
 define("IS_POST",REQUEST_METHOD === "POST");
+
+// Is GET
+define("IS_GET",REQUEST_METHOD === "GET");
 
 // Is Ajax
 define(
@@ -65,7 +68,16 @@ define(
 
 // Route Web Uri
 define(
-    "ROUTE_WEB_URI",
+    "ROUTE_URI",
+    IS_API ?
+    str_replace(
+        API_URI,
+        "",
+        parse_url(
+            REQUEST_URI,
+            PHP_URL_PATH
+        )
+    ) :
     str_replace(
         ROOT_URI,
         "",
@@ -73,16 +85,13 @@ define(
     )
 );
 
-// Route Api Uri
+// Route Api Uri Array
 define(
-    "ROUTE_API_URI",
-    !IS_API ?:
-    str_replace(
-        API_URI,
-        "",
-        parse_url(
-            REQUEST_URI,
-            PHP_URL_PATH
+    "ROUTE_URI_ARRAY",
+    __empty_index_delete(
+        explode(
+            "/",
+            ROUTE_URI
         )
     )
 );
