@@ -30,7 +30,7 @@ class __Controller{
 
     /**
      * Controller Init
-     * 
+     *
      * @access protected
      */
     protected function __construct()
@@ -48,7 +48,7 @@ class __Controller{
 
     /**
      * Load View Helpers
-     * 
+     *
      * @access private
      */
     private function __load_helpers()
@@ -59,7 +59,7 @@ class __Controller{
 
     /**
      * Load Child Model
-     * 
+     *
      * @access private
      */
     private function __load_model()
@@ -77,7 +77,7 @@ class __Controller{
 
     /**
      * Load Model Class Name
-     * 
+     *
      * @access private
      */
     private function __get_model_class_name()
@@ -87,7 +87,7 @@ class __Controller{
 
     /**
      * Load View File
-     * 
+     *
      * @access protected
      */
     protected function __get_view()
@@ -116,7 +116,7 @@ class __Controller{
 
     /**
      * Set Body Class
-     * 
+     *
      * @access private
      * @param string $__var
      */

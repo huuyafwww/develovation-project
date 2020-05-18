@@ -14,12 +14,28 @@ class __Router{
     private $__uris;
 
     /**
+     * This is Now Routes
+     *
+     * @access private
+     * @var array
+     */
+    private $__routes;
+
+    /**
      * This is Target Route
      *
      * @access private
      * @var array
      */
     private $__route;
+
+    /**
+     * This is Now Uri
+     *
+     * @access private
+     * @var array
+     */
+    private $__uri;
 
     /**
      * This is Route Class Name And File Name
@@ -44,6 +60,14 @@ class __Router{
      * @var string
      */
     private $__class;
+
+    /**
+     * This is Route Config
+     *
+     * @access private
+     * @var array
+     */
+    private $__route_config;
 
     /**
      * Router Init
@@ -180,83 +204,34 @@ class __Router{
      */
     private function __load_api()
     {
-        // Get Target Route
-        $this->__get_route();
 
-        // Get Route Class Name And File Name
-        $this->__get_slug($this->__route["slug"]);
+        //  Load Routes Config File
+        $this->__load_routes_config(API_ROUTES_CONFIG_FILE);
+
+        // Set Api Route Uri Array
+        $this->__routes = ROUTE_URI_ARRAY;
+
+        // Get Routes Config Column
+        $this->__get_routes_config_column();
+
+        // Delete Last Index
+        array_pop($this->__routes);
+
+        // Set Now Uri
+        $this->__uri = implode("/",$this->__routes);
 
         // Get Route Path
         $this->__get_path();
-
-        // When Request Api not exists,return error.
-        $this->__api_exist_check();
 
         // Load Target Class File
         __load_once($this->__path);
 
         // Run Target Class
-        new $this->__slug;
-    }
-
-    /**
-     * Get Target Route
-     *
-     * @access private
-     */
-    private function __get_route()
-    {
-        // Slice Uris
-        $this->__uris = __empty_index_delete(
-            explode(
-                "/",
-                ROUTE_API_URI
-            )
+        new $this->__route["slug"](
+            $this->__route["method"],
+            $this->__route["is_ajax"],
+            $this->__route["params"]
         );
-
-        // Get Route Uri
-        $this->__get_route_uri();
-    }
-
-    /**
-     * Get Route Uri
-     *
-     * @return void
-     */
-    private function __get_route_uri()
-    {
-        // Get Slug
-        $slug = array_pop($this->__uris);
-
-        $this->__route = [
-            "method" => implode(
-                "/",
-                $this->__uris
-            ),
-            "slug" => $slug
-        ];
-    }
-
-    /**
-     * Get Route Class Name And File Name
-     *
-     * @access private
-     * @param string $__target_str
-     */
-    private function __get_slug(
-        string $__target_str
-    )
-    {
-        $this->__slug =
-            PREFIX.
-            strtoupper(
-                $__target_str[0]
-            ).
-            substr(
-                $__target_str,
-                1
-            )
-        ;
     }
 
     /**
@@ -268,21 +243,11 @@ class __Router{
     {
         $this->__path =
             API_PATH.
-            $this->__route["method"].
+            $this->__uri.
             "/".
-            $this->__slug.
+            $this->__route["name"].
             ".php"
         ;
-    }
-
-    /**
-     * When Request Api not exists,return error.
-     *
-     * @access private
-     */
-    private function __api_exist_check()
-    {
-        file_exists($this->__path) OR $this->__api_error();
     }
 
     /**
@@ -290,12 +255,43 @@ class __Router{
      *
      * @access private
      */
-    private function __api_error()
+    private function __api_not_found_error()
     {
         __load_once(
             API_PATH.
             "__404.php"
         );
         new __Api_Not_Found;
+    }
+
+    /**
+     * Load Routes Config File
+     *
+     * @access private
+     * @param string $__routes_config_file
+     */
+    private function __load_routes_config(
+        string $__routes_config_file
+    )
+    {
+        include_once($__routes_config_file);
+        $this->__route_config = $__routes;
+    }
+
+    /**
+     * Get Routes Config Column
+     *
+     * @access private
+     * @param string $__routes_config_file
+     */
+    private function __get_routes_config_column()
+    {
+        $this->__route = __get_array_key2column(
+            $this->__route_config,
+            $this->__routes
+        );
+
+        // When Request Api not exists,return error.
+        $this->__route OR $this->__api_not_found_error();
     }
 }

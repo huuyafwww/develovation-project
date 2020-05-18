@@ -10,9 +10,11 @@ class __Loader{
      *
      * @access public
      * @param bool $__is_display_error
+     * @param bool $__is_auto_validate
      */
     public function __construct(
-        bool $__is_display_error = true
+        bool $__is_display_error = true,
+        bool $__is_auto_validate = true
     )
     {
         // Auto Loader
@@ -29,6 +31,9 @@ class __Loader{
 
         // Token Settings
         $this->__token_settings();
+
+        // Auto Validater
+        $this->__auto_validater($__is_auto_validate);
 
         // Route Loader
         $this->__route_loader();
@@ -186,6 +191,20 @@ class __Loader{
                     SESSION_E_TOKEN_NAME => __get_encrypt_token()
                 ]
             )
+        );
+    }
+
+    /**
+     * Auto Validater
+     *
+     * @access private
+     */
+    private function __auto_validater(
+        bool $__is_auto_validate
+    )
+    {
+        new __Validater(
+            $__is_auto_validate
         );
     }
 

@@ -4,8 +4,15 @@ var token;
 var fixed_full_screen_btn = $("#fixed-full-screen-btn");
 var fixed_full_screen_icon = fixed_full_screen_btn.find("i");
 
+$.postJSON = function(url, data, callback){
+    $.post(url, data, callback,"json");
+};
+
 // If Dom Loaded
 $(function(){
+
+    // Toggle a Full Screen
+    __full_screen_btn_click_event();
 
     // Get a IP Address
     __get_ip();
@@ -13,28 +20,10 @@ $(function(){
     // Get Token to All Form Input Element
     __set_token_in_all_forms();
 
-    // Toggle a Full Screen
-    __full_screen_btn_click_event();
-
     // Run All "a-tag" Prefetch
     __prefetch();
-    
-});
 
-/**
- * Get a IP Address
- * $.getJSON Sample(Get IP ADDRESS)
- */
-function __get_ip()
-{
-    $.getJSON(
-        "http://localhost:8888/github/develovation-project/develovation/api/get/ip/",
-        null,
-        function(data){
-            let ip_address = data["ip"];
-        }
-    );
-}
+});
 
 /**
  * If Full Screen Button Click,Toggle a Full Screen
@@ -80,6 +69,20 @@ function __exit_full_screen()
 }
 
 /**
+ * Get a IP Address
+ */
+function __get_ip()
+{
+    $.postJSON(
+        api_url + "get/ip/",
+        null,
+        function(data){
+            let ip_address = data["ip"];
+        }
+    );
+}
+
+/**
  * If Dom Loaded,Get Token to All Form Input Element
  */
 function __set_token_in_all_forms()
@@ -89,8 +92,8 @@ function __set_token_in_all_forms()
     (
         form.length === 0
         ||
-        $.getJSON(
-            "http://localhost:8888/github/develovation-project/develovation/api/get/token/",
+        $.postJSON(
+            api_url + "get/token/",
             {
                 "temp_token":temp_token
             },
@@ -106,7 +109,6 @@ function __set_token_in_all_forms()
                                 value:token
                             }
                         )
-                        
                     );
                 }
             }

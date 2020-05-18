@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Validater
@@ -30,13 +30,13 @@ class __Validater{
             (
                 IS_POST
                 AND
-                $this->__post_request()
+                $this->__post_validate()
             )
             OR
             (
                 !empty($_GET)
                 AND
-                $this->__get_request()
+                $this->__get_validate()
             )
         );
     }
@@ -46,7 +46,7 @@ class __Validater{
      *
      * @access private
      */
-    private function __get_request()
+    private function __get_validate()
     {
         $_GET = __h($_GET);
     }
@@ -56,7 +56,7 @@ class __Validater{
      *
      * @access private
      */
-    private function __post_request()
+    private function __post_validate()
     {
         $_POST = __h($_POST);
     }

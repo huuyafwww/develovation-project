@@ -4,7 +4,7 @@
  * Available Debugger Methods
  */
 class __Tester{
-    
+
     /**
      * Debug Var
      *
@@ -24,7 +24,7 @@ class __Tester{
 
     /**
      * Debug The Include Files
-     * 
+     *
      * @access public
      */
     public function __inc_files()
@@ -33,10 +33,10 @@ class __Tester{
             get_included_files()
         );
     }
-    
+
     /**
      * Debug The Defined Constants
-     * 
+     *
      * @access public
      */
     public function __def_consts()
@@ -69,5 +69,5 @@ class __Tester{
             get_defined_vars()
         );
     }
-    
+
 }

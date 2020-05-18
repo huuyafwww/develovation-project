@@ -10,8 +10,15 @@ class __Api_Not_Found extends __Api{
      */
     public function __construct()
     {
-        // Run Parent Class Constructor
-        parent::__construct();
+
+        // Response Header Settings
+        $this->__header_settings();
+
+        // Get Response
+        $this->__get_response();
+
+        // Send Response
+        $this->__send_response();
     }
 
     /**

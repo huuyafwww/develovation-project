@@ -8,7 +8,7 @@ $__titles = [
     "dashboard" => [
         "home" => "ホーム",
         "encode" => "Json Encode", // "tools/json/encode/"
-        "dencode" => "Json Decode" // "tools/json/dencode/"
+        "decode" => "Json Decode" // "tools/json/dencode/"
     ]
 ];
 

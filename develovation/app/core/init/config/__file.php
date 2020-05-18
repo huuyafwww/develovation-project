@@ -37,7 +37,7 @@ define(
     str_replace(
         NOW_REQUEST_FILE_NAME."/",
         NOW_REQUEST_FILE,
-        ROUTE_WEB_URI
+        ROUTE_URI
     )
 );
 
@@ -47,7 +47,7 @@ define(
     str_replace(
         NOW_REQUEST_FILE_NAME."/",
         NOW_REQUEST_FILE_NAME,
-        ROUTE_WEB_URI
+        ROUTE_URI
     )
 );
 
@@ -91,15 +91,41 @@ define(
     )
 );
 
+// Web Routes Config File
+define(
+    "WEB_ROUTES_CONFIG_FILE",
+    ROUTES_PATH."web.php"
+);
+
+// Api Routes Config File
+define(
+    "API_ROUTES_CONFIG_FILE",
+    ROUTES_PATH."api.php"
+);
+
 // This is Class-Slug
 define(
     "CLASS_SLUG",
+    implode(
+        "_",
+        __empty_index_delete(
+            explode(
+                "/",
+                ROUTE_URI
+            )
+        )
+    )
+);
+
+// This is Class-Slug
+define(
+    "CLASS_NAME",
     !IS_404 ?
     strtoupper(
-        NOW_REQUEST_FILE_NAME[0]
+        CLASS_SLUG[0]
     ).
     substr(
-        NOW_REQUEST_FILE_NAME,
+        CLASS_SLUG,
         1
     ) :
     "404"
@@ -122,7 +148,7 @@ define(
     "MODEL_CLASS",
     PREFIX.
     "M_".
-    CLASS_SLUG
+    CLASS_NAME
 );
 
 // Controller File
@@ -142,7 +168,7 @@ define(
     "CONTROLLER_CLASS",
     PREFIX.
     "C_".
-    CLASS_SLUG
+    CLASS_NAME
 );
 
 // View File

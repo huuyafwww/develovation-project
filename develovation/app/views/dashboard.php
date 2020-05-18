@@ -24,7 +24,9 @@
                     <div class="section-header">
 
                         <!-- Section-Title -->
-                        <h1>Blank Page</h1><!-- /Section-Title -->
+                        <h1>
+                            <?php __get_title(); ?>
+                        </h1><!-- /Section-Title -->
 
                     </div><!-- /Section-Header -->
 
