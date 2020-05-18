@@ -32,7 +32,7 @@ function __h(
  */
 function __request_param_validater(
     array $__params,
-    bool $__is_post
+    bool $__is_post = true
 ): bool
 {
     $__method = $__is_post ? $_POST : $_GET;

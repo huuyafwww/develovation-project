@@ -1,12 +1,14 @@
 <div class="main-sidebar">
     <!-- Sidebar-Wrapper -->
     <aside id="sidebar-wrapper">
-        
+
         <!-- Sidebar-Brand -->
         <div class="sidebar-brand">
 
             <!-- Brand-Name -->
-            <a href="index.html">
+            <a
+                href="<?php __get_http_url("home"); ?>"
+            >
                 Stisla
             </a><!-- /Brand-Name -->
 
@@ -14,9 +16,11 @@
 
         <!-- Sidebar-Brand-Sm -->
         <div class="sidebar-brand sidebar-brand-sm">
-            
+
             <!-- Brand-Name -->
-            <a href="index.html">
+            <a
+                href="<?php __get_http_url("home"); ?>"
+            >
                 St
             </a><!-- /Brand-Name -->
 

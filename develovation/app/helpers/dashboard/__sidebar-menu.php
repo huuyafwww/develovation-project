@@ -140,7 +140,7 @@ function __get_sidebar_child(
         <!-- Item-Link -->
         <a
             class="nav-link"
-            href="<?php echo __get_http_url($__child_href); ?>"
+            href="<?php __get_http_url($__child_href); ?>"
         >
 
             <!-- Item-About -->

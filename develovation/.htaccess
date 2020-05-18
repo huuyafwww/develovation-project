@@ -16,5 +16,5 @@
 
 # .htaccessファイルと.logファイルのアクセスを全て拒否する
 <Files ~ "^\.(htaccess|log)$">
-  deny from all
+  Deny from all
 </Files>
