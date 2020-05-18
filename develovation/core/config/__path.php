@@ -14,7 +14,7 @@ define(
 define(
     "ROOT_PATH",
     realpath(
-        __DIR__."/../../../../"
+        __DIR__."/../../"
     )."/"
 );
 
@@ -27,12 +27,12 @@ define("LOG_PATH",ROOT_PATH."log/");
 define("API_PATH",APP_PATH."api/");
 define(
     "ASSETS_PATH",
-    ROOT_URI."app/assets/"
+    ROOT_URI."assets/"
 );
 define("COMPONENTS_PATH",APP_PATH."components/");
 define("VIEW_CONFIG_PATH",APP_PATH."config/");
 define("CONTROLLERS_PATH",APP_PATH."controllers/");
-define("CORE_PATH",APP_PATH."core/");
+// define("CORE_PATH",APP_PATH."core/");
 define("VIEW_HELPERS_PATH",APP_PATH."helpers/");
 define("INCLUDES_PATH",APP_PATH."includes/");
 define("MODELS_PATH",APP_PATH."models/");
@@ -55,12 +55,11 @@ define("LIB_IMG_PATH",ASSETS_LIB_PATH."img/");
 /* /Assets-Lib-Dir-Constant */
 
 /* Core-Dir-Constant */
-define("INIT_PATH",CORE_PATH."init/");
-define("CLASS_PATH",INIT_PATH."class/");
-define("CONFIG_PATH",INIT_PATH."config/");
-define("HELPER_PATH",INIT_PATH."helper/");
-define("CORE_LIB_PATH",INIT_PATH."lib/");
-define("ROUTES_PATH",INIT_PATH."routes/");
+define("CLASS_PATH",CORE_PATH."class/");
+define("CONFIG_PATH",CORE_PATH."config/");
+define("HELPER_PATH",CORE_PATH."helper/");
+define("CORE_LIB_PATH",CORE_PATH."lib/");
+define("ROUTES_PATH",CORE_PATH."routes/");
 /* /Core-Dir-Constant */
 
 /* Inc-Dir-Constant */
