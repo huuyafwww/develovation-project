@@ -1,4 +1,9 @@
 {
+    "name": "huuyafwww/develovation-project",
+    "type": "project",
+    "description": "Distributed platform for development on the browser.",
+    "homepage": "https://github.com/huuyafwww/develovation-project",
+    "license": "MIT",
     "require": {
         "illuminate/database": "^7.0",
         "vlucas/phpdotenv": "^4.1"
