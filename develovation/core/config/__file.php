@@ -81,6 +81,20 @@ define(
     BASE_DIR_NAME === "auth"
 );
 
+// Is Invalid Request
+define(
+    "IS_INVALID_REQUEST",
+    !__is_strpos(
+        TEMPLATES_PATH.
+        BASE_DIR.
+        WEB_URI_PATH,
+        realpath(
+            TEMPLATES_PATH.
+            BASE_DIR
+        )
+    )
+);
+
 // Is 404
 define(
     "IS_404",
@@ -89,46 +103,19 @@ define(
         BASE_DIR.
         WEB_URI_PATH
     )
+    OR
+    IS_INVALID_REQUEST
 );
 
 // Web Routes Config File
 define(
-    "WEB_ROUTES_CONFIG_FILE",
-    ROUTES_PATH."web.php"
-);
-
-// Api Routes Config File
-define(
-    "API_ROUTES_CONFIG_FILE",
-    ROUTES_PATH."api.php"
-);
-
-// This is Class-Slug
-define(
-    "CLASS_SLUG",
-    implode(
-        "_",
-        __empty_index_delete(
-            explode(
-                "/",
-                ROUTE_URI
-            )
-        )
+    "ROUTES_CONFIG_FILE",
+    ROUTES_PATH.
+    (
+        IS_API ?
+        "api.php" :
+        "web.php"
     )
-);
-
-// This is Class-Slug
-define(
-    "CLASS_NAME",
-    !IS_404 ?
-    strtoupper(
-        CLASS_SLUG[0]
-    ).
-    substr(
-        CLASS_SLUG,
-        1
-    ) :
-    "404"
 );
 
 // Model File
@@ -143,14 +130,6 @@ define(
     )
 );
 
-// Model Class Name
-define(
-    "MODEL_CLASS",
-    PREFIX.
-    "M_".
-    CLASS_NAME
-);
-
 // Controller File
 define(
     "CONTROLLER_FILE",
@@ -163,16 +142,11 @@ define(
     )
 );
 
-// Controller Class Name
-define(
-    "CONTROLLER_CLASS",
-    PREFIX.
-    "C_".
-    CLASS_NAME
-);
-
 // View File
-define("VIEW_FILE",VIEWS_PATH.BASE_FILE);
+define(
+    "VIEW_FILE",
+    VIEWS_PATH.BASE_FILE
+);
 
 /////////// View Config ///////////
 
@@ -211,14 +185,6 @@ define(
     )
 );
 
-// 404 View File
-define(
-    "E_404_FILE",
-    TEMPLATES_PATH.
-    BASE_DIR.
-    "404.php"
-);
-
 // Base "head" File
 define(
     "BASE_HEAD_FILE",
@@ -233,7 +199,11 @@ define(
     INCLUDES_PATH.
     BASE_DIR.
     HEAD_PATH.
-    WEB_URI_PATH
+    (
+        !IS_404 ?
+        WEB_URI_PATH :
+        "404.php"
+    )
 );
 
 // Base "foot-script" File
@@ -250,7 +220,11 @@ define(
     INCLUDES_PATH.
     BASE_DIR.
     FOOT_PATH.
-    WEB_URI_PATH
+    (
+        !IS_404 ?
+        WEB_URI_PATH :
+        "404.php"
+    )
 );
 
 /**

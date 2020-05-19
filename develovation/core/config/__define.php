@@ -147,3 +147,12 @@ define(
     "HTTP_REFERER",
     @$_SERVER["HTTP_REFERER"] ?: ""
 );
+
+// Class Slug Constant Name
+define(
+    "CLASS_SLUGS",
+    [
+        "MODEL_CLASS" => "M_",
+        "CONTROLLER_CLASS" => "C_",
+    ]
+);

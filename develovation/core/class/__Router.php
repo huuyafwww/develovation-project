@@ -6,14 +6,6 @@
 class __Router{
 
     /**
-     * This is Array Uri
-     *
-     * @access private
-     * @var array
-     */
-    private $__uris;
-
-    /**
      * This is Now Routes
      *
      * @access private
@@ -36,14 +28,6 @@ class __Router{
      * @var array
      */
     private $__uri;
-
-    /**
-     * This is Route Class Name And File Name
-     *
-     * @access private
-     * @var string
-     */
-    private $__slug;
 
     /**
      * This is Route Path
@@ -112,6 +96,18 @@ class __Router{
     {
         // Auth Check
         $this->__auth_check();
+
+        //  Load Routes Config File
+        $this->__load_routes_config();
+
+        // Set Api Route Uri Array
+        $this->__routes = ROUTE_URI_ARRAY;
+
+        // Get Routes Config Column
+        $this->__get_routes_config_column();
+
+        // Define View Constant for Dynamic
+        $this->__set_view_constant();
 
         // Load Target Controllers File
         __load_once(CONTROLLER_FILE);
@@ -188,6 +184,36 @@ class __Router{
     }
 
     /**
+     * Define View Constant for Dynamic
+     *
+     * @access private
+     */
+    private function __set_view_constant()
+    {
+        $__class_slug_name =
+            isset(
+                $this->__route["slug"]
+            ) ?
+            $this->__route["slug"] :
+            "404"
+        ;
+        foreach(
+            CLASS_SLUGS
+            as
+            $__constant_name
+            => $__class_name_prefix
+        )
+        {
+            define(
+                $__constant_name,
+                PREFIX.
+                $__class_name_prefix.
+                $__class_slug_name
+            );
+        }
+    }
+
+    /**
      * Load Controller Class Name
      *
      * @access private
@@ -206,13 +232,16 @@ class __Router{
     {
 
         //  Load Routes Config File
-        $this->__load_routes_config(API_ROUTES_CONFIG_FILE);
+        $this->__load_routes_config();
 
         // Set Api Route Uri Array
         $this->__routes = ROUTE_URI_ARRAY;
 
         // Get Routes Config Column
         $this->__get_routes_config_column();
+
+        // When Request Api not exists,return error.
+        $this->__route OR $this->__api_not_found_error();
 
         // Delete Last Index
         array_pop($this->__routes);
@@ -251,6 +280,30 @@ class __Router{
     }
 
     /**
+     * Load Routes Config File
+     *
+     * @access private
+     */
+    private function __load_routes_config()
+    {
+        include_once(ROUTES_CONFIG_FILE);
+        $this->__route_config = $__routes;
+    }
+
+    /**
+     * Get Routes Config Column
+     *
+     * @access private
+     */
+    private function __get_routes_config_column()
+    {
+        $this->__route = __get_array_key2column(
+            $this->__route_config,
+            $this->__routes
+        );
+    }
+
+    /**
      * Return Api Error Response
      *
      * @access private
@@ -262,36 +315,5 @@ class __Router{
             "__404.php"
         );
         new __Api_Not_Found;
-    }
-
-    /**
-     * Load Routes Config File
-     *
-     * @access private
-     * @param string $__routes_config_file
-     */
-    private function __load_routes_config(
-        string $__routes_config_file
-    )
-    {
-        include_once($__routes_config_file);
-        $this->__route_config = $__routes;
-    }
-
-    /**
-     * Get Routes Config Column
-     *
-     * @access private
-     * @param string $__routes_config_file
-     */
-    private function __get_routes_config_column()
-    {
-        $this->__route = __get_array_key2column(
-            $this->__route_config,
-            $this->__routes
-        );
-
-        // When Request Api not exists,return error.
-        $this->__route OR $this->__api_not_found_error();
     }
 }

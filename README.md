@@ -16,7 +16,7 @@
     - View
     - Controller
     - Helper
-    - OR Mapperは3rd Party製の[illuminate/database](https://github.com/illuminate/database)を利用
+    - OR Mapperは3rd Party製の[illuminate/database](https://github.com/illuminate/database)を利用
     - エラーログやアクセスログの記録
         - パーサーも開発する
 - PHPテンプレートエンジン（開発中）
@@ -28,7 +28,7 @@
 
 ```
 🙆‍♂️ = Allow from all
-🙅‍♂️ = deny from all
+🙅‍♂️ = Deny from all
 ```
 
 #### Now

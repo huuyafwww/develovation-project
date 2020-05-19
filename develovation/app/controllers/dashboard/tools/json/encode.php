@@ -3,7 +3,7 @@
 /**
  * View Controller
  */
-class __C_Tools_json_encode extends __Controller{
+class __C_Json_Encode extends __Controller{
 
     /**
      * Controller Init

@@ -47,7 +47,7 @@ class __Loader{
     private function __auto_loader()
     {
         // Require Init Functions Files
-        $this->__init_func_loader();
+        require_once(INIT_FUNC_FILE);
 
         // Require Define Constants
         __load_files(LOAD_DEFINE_FILES);
@@ -60,26 +60,6 @@ class __Loader{
 
         // Load Class Files
         __load_files(CLASS_PATH);
-    }
-
-    /**
-     * Require Define Constants
-     *
-     * @access private
-     */
-    private function __define_loader()
-    {
-        require_once(DEFINE_FILE);
-    }
-
-    /**
-     * Require Init Functions File
-     *
-     * @access private
-     */
-    private function __init_func_loader()
-    {
-        require_once(INIT_FUNC_FILE);
     }
 
     /**
@@ -198,14 +178,13 @@ class __Loader{
      * Auto Validater
      *
      * @access private
+     * @param bool $__is_auto_validate
      */
     private function __auto_validater(
         bool $__is_auto_validate
     )
     {
-        new __Validater(
-            $__is_auto_validate
-        );
+        $__is_auto_validate AND new __Validater;
     }
 
     /**

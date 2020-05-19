@@ -3,7 +3,7 @@
 /**
  * View Model
  */
-class __M_Tools_json_decode extends __Model{
+class __M_Json_Decode extends __Model{
 
     /**
      * Model Init
