@@ -14,12 +14,4 @@ class __M_Login extends __Model{
         parent::__construct();
     }
 
-    /**
-     * This is a Model Run Sample Code
-     */
-    public function __test()
-    {
-        echo "Testing";
-    }
-
 }

@@ -1,6 +1,6 @@
 <?php
 
-$__titles = [
+return [
     "auth" => [
         "register" => "新規登録",
         "login" => "ログイン"

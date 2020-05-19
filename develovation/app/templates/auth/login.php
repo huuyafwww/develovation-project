@@ -1,6 +1,6 @@
 <!-- Card -->
 <div class="card card-primary">
-                            
+
     <!-- Card-Header -->
     <div class="card-header">
 
@@ -8,9 +8,9 @@
         <h4>
             <?php __get_card_title(); ?>
         </h4><!-- /Card-Title -->
-        
+
     </div><!-- /Card-Header -->
-    
+
     <!-- Card-Body -->
     <div class="card-body">
 
@@ -56,7 +56,7 @@
 
                     <!-- Float-Right -->
                     <div class="float-right">
-                        
+
                         <!-- Forgot-Password-Link -->
                         <a href="auth-forgot-password.html" class="text-small">
                             パスワードの再設定
@@ -88,7 +88,7 @@
 
                 <!-- Custom-Checkbox -->
                 <div class="custom-control custom-checkbox">
-                    
+
                     <!-- Input-Checkbox -->
                     <input
                         id="remember-me"
@@ -123,12 +123,16 @@
             </div><!-- /Form-Group -->
 
         </form><!-- /Form -->
-    
+
     </div><!-- /Card-Body -->
 
 </div><!-- /Card -->
 
 <!-- Link-to-Create-Account -->
 <div class="mt-5 text-muted text-center">
-    Don't have an account? <a href="auth-register.html">Create One</a>
+    <a
+        href="<?php __get_http_url("register"); ?>"
+    >
+        新規登録
+    </a>
 </div><!-- /Link-to-Create-Account -->

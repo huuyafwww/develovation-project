@@ -133,6 +133,9 @@ define(
 // Constant a Openssl-Method
 define("OPENSSL_METHOD","AES-256-ECB");
 
+// Constant a Password Hash Method
+define("PASSWORD_HASH_METHOD",PASSWORD_DEFAULT);
+
 // Prefix
 define("PREFIX","__");
 
