@@ -14,7 +14,7 @@ class __C_Home extends __Controller{
         parent::__construct();
 
         // This is a Model Run Sample Code
-        // $this->model->__test();
+        // $this->__model->
 
         // Get Views
         $this->__get_view();

@@ -11,11 +11,59 @@ class __Model{
      * @access protected
      * @var DB
      */
-    protected $db;
+    protected $__db;
+
+    /**
+     * All Form Param for Validation
+     *
+     * @access private
+     * @var array
+     */
+    private $__all_form_validation_params;
+
+    /**
+     * Param for Validation
+     *
+     * @access private
+     * @var array
+     */
+    private $__validation_params;
+
+    /**
+     * Is All Request Params
+     *
+     * @access protected
+     * @var bool
+     */
+    protected $__is_all_params;
+
+    /**
+     * Route Uri Array for Get Validation Params
+     *
+     * @access private
+     * @var bool
+     */
+    private $__route_uri_array;
+
+    /**
+     * Requested Data
+     *
+     * @access protected
+     * @var array
+     */
+    protected $__requested_data = [];
+
+    /**
+     * Last DB Proccess Return Id
+     *
+     * @access protected
+     * @var int
+     */
+    protected $__last_id;
 
     /**
      * Model Init
-     * 
+     *
      * @access protected
      */
     protected function __construct()
@@ -26,7 +74,7 @@ class __Model{
 
     /**
      * Auto Loader
-     * 
+     *
      * @access private
      */
     private function __auto_loader()
@@ -49,7 +97,7 @@ class __Model{
 
     /**
      * "illuminate/database" Class to DB Class
-     * 
+     *
      * @access private
      */
     private function __create_alias()
@@ -62,42 +110,142 @@ class __Model{
 
     /**
      * Get Databese Class
-     * 
+     *
      * @access private
      */
     private function __get_db_class()
     {
-        $this->db = new DB();
+        $this->__db = new DB();
     }
 
     /**
      * Connect Database
-     * 
+     *
      * @access private
      */
     private function __connect_db()
     {
-        $this->db->addConnection(DB_CONFIG);
+        $this->__db->addConnection(DB_CONFIG);
     }
 
     /**
      * Set Global for DB Class
-     * 
+     *
      * @access private
      */
     private function __set_global()
     {
-        $this->db->setAsGlobal();
+        $this->__db->setAsGlobal();
     }
 
     /**
      * Enable Eloquent
-     * 
+     *
      * @access private
      */
     private function __enable_eloquent()
     {
-        $this->db->bootEloquent();
+        $this->__db->bootEloquent();
+    }
+
+    /**
+     * Request Params Checker
+     *
+     * @access protected
+     */
+    protected function __request_params_checker()
+    {
+        // Get All Form Validate Params
+        $this->__get_all_form_validate_params();
+
+        // Get Route Uri Array
+        $this->__route_uri_array = ROUTE_URI_ARRAY;
+
+        // Set Base Slug for $this->__route_uri_array
+        array_unshift(
+            $this->__route_uri_array,
+            BASE_DIR_NAME
+        );
+
+        // Get Request Target Validate Params
+        $this->__get_request_validate_params();
+
+        // Is All Request Params
+        $this->__is_all_params =
+            __request_params_validater(
+                $this->__validation_params
+            )
+        ;
+    }
+
+    /**
+     * Get All Form Validate Params
+     *
+     * @access private
+     */
+    private function __get_all_form_validate_params()
+    {
+        $this->__all_form_validation_params =
+            require_once(FORM_REQUEST_VALIDATE_PARAMS_CONFIG_FILE)
+        ;
+    }
+
+    /**
+     * Get Request Target Validate Params
+     *
+     * @access private
+     */
+    private function __get_request_validate_params()
+    {
+        $this->__validation_params = __get_array_key2column(
+            $this->__all_form_validation_params,
+            $this->__route_uri_array
+        );
+    }
+
+    /**
+     * Get Requested Data
+     *
+     * @access protected
+     */
+    protected function __get_requested_data()
+    {
+        foreach(
+            $this->__validation_params
+            as
+            $__param
+        ){
+            $this->__requested_data[$__param] =
+                $_POST[$__param]
+            ;
+        }
+    }
+
+    /**
+     * Set *_at Data
+     *
+     * @access protected
+     */
+    protected function __set_at_data(
+        string $__at
+    )
+    {
+        $this->__requested_data[$__at] =
+            TIME
+        ;
+    }
+
+    /**
+     * Get Last DB Proccess Return Id
+     *
+     * @access protected
+     */
+    protected function __get_last_id()
+    {
+        $this->__last_id = $this->__db
+            ::getPdo()
+            ->lastInsertId()
+        ;
     }
 
 }

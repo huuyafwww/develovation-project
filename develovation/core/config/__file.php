@@ -171,6 +171,13 @@ define(
     "__auth-card-title.php"
 );
 
+// View Form Request Params for Validate
+define(
+    "FORM_REQUEST_VALIDATE_PARAMS_CONFIG_FILE",
+    VIEW_CONFIG_PATH.
+    "__forms.php"
+);
+
 /////////// View Config ///////////
 
 // Template File

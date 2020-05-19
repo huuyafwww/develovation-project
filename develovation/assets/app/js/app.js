@@ -23,6 +23,9 @@ $(function(){
     // Run All "a-tag" Prefetch
     __prefetch();
 
+    // Activation ToolTip
+    activation_tooltip();
+
 });
 
 /**
@@ -142,4 +145,12 @@ function __prefetch()
         );
         temp_hrefs.push(target_href);
     }
+}
+
+/**
+ * Activation ToolTip
+ */
+function activation_tooltip()
+{
+    $("[data-toggle='tooltip']").tooltip();
 }

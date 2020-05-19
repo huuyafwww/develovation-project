@@ -30,7 +30,7 @@ function __h(
  * @param bool $__is_post
  * @return bool
  */
-function __request_param_validater(
+function __request_params_validater(
     array $__params,
     bool $__is_post = true
 ): bool

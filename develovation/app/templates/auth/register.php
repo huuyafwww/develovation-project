@@ -1,6 +1,6 @@
 <!-- Card -->
 <div class="card card-primary">
-                            
+
     <!-- Card-Header -->
     <div class="card-header">
 
@@ -8,14 +8,18 @@
         <h4>
             <?php __get_card_title(); ?>
         </h4><!-- /Card-Title -->
-        
+
     </div><!-- /Card-Header -->
-    
+
     <!-- Card-Body -->
     <div class="card-body">
 
         <!-- Form -->
-        <form method="POST" action="">
+        <form
+            method="POST"
+            action=""
+            id="register-form"
+        >
 
             <!-- Form-Group -->
             <div class="form-group">
@@ -34,8 +38,12 @@
                     required
                     tabindex="1"
                     minlength="3"
+                    maxlength="20"
                     pattern="^[0-9a-z]+$"
                     autofocus
+                    data-toggle="tooltip"
+                    data-placement="left"
+                    data-original-title="3文字以上20文字未満で小文字の半角英数字を利用します"
                 ><!-- /Input-Email -->
 
                 <!-- Invalid-Feedback -->
@@ -86,6 +94,9 @@
                     minlength="8"
                     pattern="^[0-9a-z]+$"
                     data-indicator="pwindicator"
+                    data-toggle="tooltip"
+                    data-placement="left"
+                    data-original-title="8文字以上で半角英数字を利用します"
                 ><!-- /Input-Password -->
 
                 <!-- Pwindicator -->
@@ -100,14 +111,14 @@
             <div class="form-group">
 
                 <!-- Label -->
-                <label for="password2" class="d-block">
+                <label for="password-confirm" class="d-block">
                     パスワード（再確認）
                 </label><!-- /Label -->
 
                 <!-- Input-Password-Confirm -->
                 <input
-                    id="password2"
-                    class="form-control" 
+                    id="password-confirm"
+                    class="form-control"
                     type="password"
                     name="password-confirm"
                     required
@@ -121,7 +132,7 @@
 
                 <!-- Custom-Checkbox -->
                 <div class="custom-control custom-checkbox">
-                    
+
                     <!-- Input-Checkbox -->
                     <input
                         id="agree"
@@ -156,7 +167,16 @@
             </div><!-- /Form-Group -->
 
         </form><!-- /Form -->
-    
+
     </div><!-- /Card-Body -->
 
 </div><!-- /Card -->
+
+<!-- Link-to-Login-Account -->
+<div class="mt-5 text-muted text-center">
+    <a
+        href="<?php __get_http_url("login"); ?>"
+    >
+        ログイン
+    </a>
+</div><!-- /Link-to-Login-Account -->

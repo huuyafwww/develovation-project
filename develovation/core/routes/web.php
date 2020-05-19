@@ -2,20 +2,30 @@
 
 $__routes =
 [
-    "home" => [
-        "slug" => "Home"
-    ],
-    "tools" => [
-        "json" => [
-            "encode" => [
-                "slug" => "Json_Encode"
-            ],
-            "decode" => [
-                "slug" => "Json_Decode"
-            ]
+    "auth" => [
+        "login" => [
+            "slug" => "Login"
+        ],
+        "register" => [
+            "slug" => "Register"
         ]
     ],
-    "404" => [
-        "slug" => "404"
+    "dashboard" =>[
+        "home" => [
+            "slug" => "Home"
+        ],
+        "tools" => [
+            "json" => [
+                "encode" => [
+                    "slug" => "Json_Encode"
+                ],
+                "decode" => [
+                    "slug" => "Json_Decode"
+                ]
+            ]
+        ],
+        "404" => [
+            "slug" => "404"
+        ]
     ]
 ];

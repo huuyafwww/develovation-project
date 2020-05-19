@@ -122,7 +122,7 @@ class __Api{
     private function __validate_params()
     {
         (
-            __request_param_validater(
+            __request_params_validater(
                 $this->__params,
                 IS_POST
             )

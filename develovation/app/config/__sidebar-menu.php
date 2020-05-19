@@ -1,6 +1,6 @@
 <?php
 
-$__sidebar_config =
+$__auth_card_titles =
 [
     "home" => [
 		"type" => "normal",
