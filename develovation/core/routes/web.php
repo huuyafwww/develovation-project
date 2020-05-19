@@ -3,13 +3,19 @@
 $__routes =
 [
     "home" => [
-        "slug" => "_Home"
+        "slug" => "Home"
     ],
     "tools" => [
         "json" => [
             "encode" => [
-                "slug" => "_Json_Encode"
+                "slug" => "Json_Encode"
+            ],
+            "decode" => [
+                "slug" => "Json_Decode"
             ]
         ]
+    ],
+    "404" => [
+        "slug" => "404"
     ]
 ];
