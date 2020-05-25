@@ -3,12 +3,20 @@
 // Default is a Session Start
 session_start();
 
+// Root Path
+define(
+    "ROOT_PATH",
+    realpath(
+        __DIR__
+    )."/"
+);
+
 /**
  * Core Directory Settings
  */
 
 // Core Directory Path
-$__core_path = __DIR__."/core/";
+$__core_path = ROOT_PATH."/core/";
 
 // Constant a "core" Directory Path
 define(
@@ -25,7 +33,7 @@ define(
  * Init Load File Settings
  */
 
-// Constant a "core" Directory Path
+// Constant a "bootstrap" Directory Path in "core" Directory
 define(
     "BOOTSTRAP_PATH",
     CORE_PATH."bootstrap/"
@@ -39,6 +47,39 @@ define(
 
 /**
  * /Init Load File Settings
+ */
+
+/**
+ * Composer Auto Load File Settings
+ */
+
+// Constant a "lib" Directory Path in "core" Directory
+define(
+    "CORE_LIB_PATH",
+    CORE_PATH."lib/"
+);
+
+// Composer Auto Load File
+define(
+    "LIB_AUTOLOAD_FILE",
+    CORE_LIB_PATH."autoload.php"
+);
+
+/**
+ * /Composer Auto Load File Settings
+ */
+
+/**
+ * Env File Path Settings
+ */
+
+define(
+    "ENV_PATH",
+    ROOT_PATH."env/"
+);
+
+/**
+ * /Env File Path Settings
  */
 
 // Require Once a "__init.php"

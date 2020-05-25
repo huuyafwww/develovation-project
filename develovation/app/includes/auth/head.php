@@ -3,7 +3,6 @@
 
 <title><?php __get_title(); ?></title>
 
-
 <link rel="stylesheet" href="<?php __get_lib_css("bootstrap/bootstrap.min.css"); ?>">
 <link rel="stylesheet" href="<?php __get_lib_css("fontawesome/all.min.css"); ?>">
 <link rel="stylesheet" href="<?php __get_lib_css("stisla/style.min.css"); ?>">

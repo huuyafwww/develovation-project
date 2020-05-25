@@ -10,14 +10,6 @@ define(
     $_SERVER["DOCUMENT_ROOT"]
 );
 
-// Root Path
-define(
-    "ROOT_PATH",
-    realpath(
-        __DIR__."/../../"
-    )."/"
-);
-
 /* Directly-Root-DIR-Constant */
 define("APP_PATH",ROOT_PATH."app/");
 define("LOG_PATH",ROOT_PATH."log/");
@@ -32,7 +24,6 @@ define(
 define("COMPONENTS_PATH",APP_PATH."components/");
 define("VIEW_CONFIG_PATH",APP_PATH."config/");
 define("CONTROLLERS_PATH",APP_PATH."controllers/");
-// define("CORE_PATH",APP_PATH."core/");
 define("VIEW_HELPERS_PATH",APP_PATH."helpers/");
 define("INCLUDES_PATH",APP_PATH."includes/");
 define("MODELS_PATH",APP_PATH."models/");
@@ -58,7 +49,6 @@ define("LIB_IMG_PATH",ASSETS_LIB_PATH."img/");
 define("CLASS_PATH",CORE_PATH."class/");
 define("CONFIG_PATH",CORE_PATH."config/");
 define("HELPER_PATH",CORE_PATH."helper/");
-define("CORE_LIB_PATH",CORE_PATH."lib/");
 define("ROUTES_PATH",CORE_PATH."routes/");
 /* /Core-Dir-Constant */
 

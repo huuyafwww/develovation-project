@@ -7,6 +7,7 @@
 <script defer src="<?php __get_lib_js("stisla/scripts.js"); ?>"></script>
 <script defer src="<?php __get_lib_js("pjax/jquery.pjax.min.js"); ?>"></script>
 <script defer src="<?php __get_lib_js("fullscreen/jquery.fullscreen.min.js"); ?>"></script>
+<!-- <script defer src="<?php __get_lib_js("turbolinks/turbolinks.js"); ?>"></script> -->
 
 <script defer>
     var api_url = "<?php __get_api_url(); ?>";

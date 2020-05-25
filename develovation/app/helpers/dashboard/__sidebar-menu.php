@@ -5,8 +5,10 @@
  */
 function __get_sidebar()
 {
+    require(SIDEBAR_MENU_CONFIG_FILE);
+
     foreach(
-        require(SIDEBAR_MENU_CONFIG_FILE)
+        $__sidebar_config
         as
         $slug
         =>

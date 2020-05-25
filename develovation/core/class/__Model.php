@@ -207,16 +207,22 @@ class __Model{
      * Get Requested Data
      *
      * @access protected
+     * @param bool $__is_post
      */
-    protected function __get_requested_data()
+    protected function __get_requested_data(
+        bool $__is_post = true
+    )
     {
+
+        $__method = $__is_post ? $_POST : $_GET;
+
         foreach(
             $this->__validation_params
             as
             $__param
         ){
             $this->__requested_data[$__param] =
-                $_POST[$__param]
+                $__method[$__param]
             ;
         }
     }
