@@ -42,9 +42,9 @@ define(
  */
 
 // This is test
-// $_SESSION["user"] = true;
+$_SESSION["user"] = true;
 
-unset($_SESSION["user"]);
+// unset($_SESSION["user"]);
 
 // Require Once a "__Loader" Class File
 require_once(LOADER_FILE);

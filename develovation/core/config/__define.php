@@ -1,7 +1,7 @@
 <?php
 
-// Login-User-Variable-On-SESSION
-define("LOGIN_VAR","user");
+// Login User Variable on SESSION
+define("LOGIN_VAR",$_ENV["LOGIN_VAR"]);
 
 // Is Login
 define(
@@ -97,7 +97,7 @@ define(
 );
 
 // Constant a Default time-zone
-define("DEFAULT_TIME_ZONE","Asia/Tokyo");
+define("DEFAULT_TIME_ZONE",$_ENV["DEFAULT_TIME_ZONE"]);
 
 // Default is "PHPSESSID"
 define("SESSION_NAME",session_name());

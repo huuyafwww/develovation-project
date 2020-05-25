@@ -5,16 +5,16 @@
  */
 
 // DataBase Name
-define("DB_NAME","develovation");
+define("DB_NAME",$_ENV["DB_NAME"]);
 
 // DataBase Host
-define("DB_HOST","localhost");
+define("DB_HOST",$_ENV["DB_HOST"]);
 
 // DataBase User Name
-define("DB_USER","root");
+define("DB_USER",$_ENV["DB_USER"]);
 
 // DataBase Password
-define("DB_PASSWORD","root");
+define("DB_PASSWORD",$_ENV["DB_PASSWORD"]);
 
 // "illuminate/database" Alias Name
 define("ILLUMINATE_DB_ALIAS_NAME","DB");

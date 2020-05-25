@@ -147,6 +147,38 @@ function __prefetch()
     }
 }
 
+/* Vanilla Javascript Prefetch Functions
+
+function __prefetch()
+{
+    let a = document.getElementsByTagName("a");
+    let temp_hrefs = [];
+    for(let i = 0;i < a.length;i++)
+    {
+        let target_href = a[i].getAttribute("href");
+        (
+            (
+                target_href.indexOf("#") > -1
+                ||
+                temp_hrefs.indexOf(target_href) > -1
+            )
+            ||
+            __set_prefetch_element(target_href)
+        );
+        temp_hrefs.push(target_href);
+    }
+}
+
+function __set_prefetch_element(target_href)
+{
+    let link = document.createElement("link");
+    link.setAttribute("rel","prefetch");
+    link.setAttribute("href",target_href);
+
+    document.head.appendChild(link);
+}
+*/
+
 /**
  * Activation ToolTip
  */

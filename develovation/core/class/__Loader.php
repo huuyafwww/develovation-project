@@ -1,5 +1,7 @@
 <?php
 
+use Dotenv\Dotenv;
+
 /**
  * Load the Core File
  */
@@ -49,17 +51,32 @@ class __Loader{
         // Require Init Functions Files
         require_once(INIT_FUNC_FILE);
 
-        // Require Define Constants
-        __load_files(LOAD_DEFINE_FILES);
-
         // Require Composer Package AutoLoad File
         __load_once(LIB_AUTOLOAD_FILE);
+
+        // Load .env File Constants
+        $this->__load_env();
+
+        // Require Define Constants
+        __load_files(LOAD_DEFINE_FILES);
 
         // Load Helper Files
         __load_files(HELPER_PATH);
 
         // Load Class Files
         __load_files(CLASS_PATH);
+    }
+
+    /**
+     * Load .env File Constants
+     *
+     * @access private
+     */
+    private function __load_env()
+    {
+        Dotenv
+            ::createImmutable(ENV_PATH)
+            ->load();
     }
 
     /**
