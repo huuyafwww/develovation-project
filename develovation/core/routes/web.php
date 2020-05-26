@@ -26,6 +26,9 @@ $__routes =
         ],
         "404" => [
             "slug" => "404"
+        ],
+        "logout" => [
+            "slug" => "Logout"
         ]
     ]
 ];

@@ -61,7 +61,7 @@ class __M_Login extends __Model{
                 "email" => $this->__requested_data["email"],
             ]
             AND
-            $this->__redirect(
+            __redirect(
                 HTTP_ROOT_URL.
                 "home/"
             )

@@ -50,6 +50,7 @@ define("CLASS_PATH",CORE_PATH."class/");
 define("CONFIG_PATH",CORE_PATH."config/");
 define("HELPER_PATH",CORE_PATH."helper/");
 define("ROUTES_PATH",CORE_PATH."routes/");
+define("TRAIT_PATH",CORE_PATH."trait/");
 /* /Core-Dir-Constant */
 
 /* Inc-Dir-Constant */

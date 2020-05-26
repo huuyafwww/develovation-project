@@ -63,6 +63,9 @@ class __Loader{
         // Load Helper Files
         __load_files(HELPER_PATH);
 
+        // Load Trait Files
+        __load_files(TRAIT_PATH);
+
         // Load Class Files
         __load_files(CLASS_PATH);
     }
