@@ -228,6 +228,32 @@ class __Model{
     }
 
     /**
+     * Is Exists Record
+     *
+     * @access protected
+     * @param string $__table
+     * @param array $__where
+     */
+    protected function __is_exists(
+        string $__table,
+        array $__where
+    ):bool
+    {
+        return
+            $this->__db
+                ::table(
+                    $__table
+                )
+                ->where(
+                    $__where["col"],
+                    $__where["ope"],
+                    $__where["target"]
+                )
+                ->exists()
+        ;
+    }
+
+    /**
      * Set *_at Data
      *
      * @access protected
@@ -252,6 +278,23 @@ class __Model{
             ::getPdo()
             ->lastInsertId()
         ;
+    }
+
+    /**
+     * To Redirect and Exit
+     *
+     * @access protected
+     * @var string $__to
+     */
+    protected function __redirect(
+        string $__to
+    )
+    {
+        header(
+            "Location: ".
+            $__to
+        );
+        exit;
     }
 
 }

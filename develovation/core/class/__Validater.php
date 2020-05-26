@@ -48,7 +48,7 @@ class __Validater{
      */
     private function __get_validate()
     {
-        $_GET = __h($_GET);
+        __h($_GET);
     }
 
     /**
@@ -58,6 +58,6 @@ class __Validater{
      */
     private function __post_validate()
     {
-        $_POST = __h($_POST);
+        __h($_POST);
     }
 }

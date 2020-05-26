@@ -7,7 +7,7 @@
  * @return string|array
  */
 function __h(
-    $__stringer
+    &$__stringer
 )
 {
     if(
@@ -20,7 +20,6 @@ function __h(
             $__string = htmlspecialchars($__string);
         }
     }
-    return $__stringer;
 }
 
 /**

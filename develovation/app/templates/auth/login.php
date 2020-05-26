@@ -15,7 +15,10 @@
     <div class="card-body">
 
         <!-- Form -->
-        <form method="POST" action="">
+        <form
+            method="POST"
+            action=""
+        >
 
             <!-- Form-Group -->
             <div class="form-group">
@@ -95,7 +98,6 @@
                         class="custom-control-input"
                         type="checkbox"
                         name="remember"
-                        required
                         tabindex="3"
                     ><!-- /Input-Checkbox -->
 

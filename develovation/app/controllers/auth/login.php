@@ -13,8 +13,8 @@ class __C_Login extends __Controller{
         // Run Parent Class Constructor
         parent::__construct();
 
-        // This is a Model Run Sample Code
-        // $this->__model->
+        // When IS_POST is true,Register New User
+        IS_POST AND $this->__model->__login_user();
 
         // Get Views
         $this->__get_view();
