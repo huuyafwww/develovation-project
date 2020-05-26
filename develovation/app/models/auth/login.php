@@ -36,6 +36,8 @@ class __M_Login extends __Model{
 
         // When $this->__is_all_params is true,Login User
         $this->__is_all_params AND $this->__login();
+
+        // エラー時の挙動を追加する
     }
 
     /**
@@ -54,12 +56,7 @@ class __M_Login extends __Model{
         )
         AND
         (
-            $_SESSION[LOGIN_VAR] =
-            [
-                "user_name" => $this->__user->user_name,
-                "display_name" => $this->__user->display_name,
-                "email" => $this->__requested_data["email"],
-            ]
+            $this->__set_user_session()
             AND
             __redirect(
                 HTTP_ROOT_URL.
@@ -141,6 +138,23 @@ class __M_Login extends __Model{
                     ]
                 )
         ;
+    }
+
+    /**
+     * Set User Session
+     *
+     * @access private
+     */
+    private function __set_user_session()
+    {
+        $_SESSION[LOGIN_VAR] =
+            [
+                "user_name" => $this->__user->user_name,
+                "display_name" => $this->__user->display_name,
+                "email" => $this->__requested_data["email"],
+            ]
+        ;
+        return true;
     }
 
 }

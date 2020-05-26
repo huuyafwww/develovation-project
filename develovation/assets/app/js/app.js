@@ -23,9 +23,6 @@ $(function(){
     // Run All "a-tag" Prefetch
     __prefetch();
 
-    // Activation ToolTip
-    activation_tooltip();
-
 });
 
 /**
@@ -53,7 +50,7 @@ function __run_full_screen()
     fixed_full_screen_icon.addClass("fa-compress-arrows-alt");
     fixed_full_screen_icon.removeClass("fa-expand-arrows-alt");
     is_full_screen = true;
-    $('html').fullscreen();
+    $("html").fullscreen();
 }
 
 /**
@@ -141,7 +138,7 @@ function __prefetch()
                     rel:"prefetch",
                     href:target_href,
                 }
-            ).appendTo('head')
+            ).appendTo("head")
         );
         temp_hrefs.push(target_href);
     }
@@ -178,11 +175,3 @@ function __set_prefetch_element(target_href)
     document.head.appendChild(link);
 }
 */
-
-/**
- * Activation ToolTip
- */
-function activation_tooltip()
-{
-    $("[data-toggle='tooltip']").tooltip();
-}
