@@ -29,6 +29,8 @@ class __M_Register extends __Model{
         // When $this->__is_all_params is true,Insert New User
         $this->__is_all_params AND $this->__insert_new_user();
 
+        // エラー時の挙動を追加する
+
     }
 
     /**
@@ -76,23 +78,11 @@ class __M_Register extends __Model{
         $this->__get_last_id();
 
         // When Done Register New User,Redirect Login Page
-        $this->__done_new_user_register();
-
-    }
-
-    /**
-     * When Done New User Register,Redirect Login Page
-     *
-     * @access private
-     */
-    private function __done_new_user_register()
-    {
-        header(
-            "Location: ".
+        $this->__redirect(
             HTTP_ROOT_URL.
             "login/"
         );
-        exit;
+
     }
 
 }

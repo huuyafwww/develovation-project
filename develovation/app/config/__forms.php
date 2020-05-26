@@ -6,6 +6,10 @@ return [
             "user_name",
             "email",
             "password"
+        ],
+        "login" => [
+            "email",
+            "password"
         ]
     ]
 ];

@@ -68,7 +68,7 @@ class __Loader{
     }
 
     /**
-     * Load .env File Constants
+     * Load env File Constants
      *
      * @access private
      */
