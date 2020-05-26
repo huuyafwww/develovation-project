@@ -153,7 +153,10 @@ class __Router{
             !IS_LOGIN
             AND
             // Redirect to login.php
-            $this->__redirect_to_login_before()
+            __redirect(
+                HTTP_ROOT_URL.
+                "login/"
+            )
         );
     }
 
@@ -170,23 +173,11 @@ class __Router{
             IS_404
             AND
             // Redirect to login.php
-            $this->__redirect_to_login_before()
+            __redirect(
+                HTTP_ROOT_URL.
+                "login/"
+            )
         );
-    }
-
-    /**
-     * Redirect to login.php
-     *
-     * @access private
-     */
-    private function __redirect_to_login_before()
-    {
-        header(
-            "Location: ".
-            HTTP_ROOT_URL.
-            "login/"
-        );
-        exit;
     }
 
     /**

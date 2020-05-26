@@ -94,7 +94,7 @@ define(
 define(
     "IS_404",
     !file_exists(
-        TEMPLATES_PATH.
+        CONTROLLERS_PATH.
         BASE_DIR.
         WEB_URI_PATH
     )

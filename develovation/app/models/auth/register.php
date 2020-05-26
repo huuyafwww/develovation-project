@@ -78,7 +78,7 @@ class __M_Register extends __Model{
         $this->__get_last_id();
 
         // When Done Register New User,Redirect Login Page
-        $this->__redirect(
+        __redirect(
             HTTP_ROOT_URL.
             "login/"
         );

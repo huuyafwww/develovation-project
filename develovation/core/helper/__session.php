@@ -61,7 +61,7 @@ function __delete_sessions(
 }
 
 /**
- * Safe SESSION Destroy
+ * SESSION Destroy for Safe
  */
 function __end_session()
 {

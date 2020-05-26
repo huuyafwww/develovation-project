@@ -5,13 +5,7 @@
  */
 class __Model{
 
-    /**
-     * This is Array Uri
-     *
-     * @access protected
-     * @var DB
-     */
-    protected $__db;
+    use __DB;
 
     /**
      * All Form Param for Validation
@@ -44,22 +38,6 @@ class __Model{
      * @var bool
      */
     private $__route_uri_array;
-
-    /**
-     * Requested Data
-     *
-     * @access protected
-     * @var array
-     */
-    protected $__requested_data = [];
-
-    /**
-     * Last DB Proccess Return Id
-     *
-     * @access protected
-     * @var int
-     */
-    protected $__last_id;
 
     /**
      * Model Init
@@ -225,76 +203,6 @@ class __Model{
                 $__method[$__param]
             ;
         }
-    }
-
-    /**
-     * Is Exists Record
-     *
-     * @access protected
-     * @param string $__table
-     * @param array $__where
-     */
-    protected function __is_exists(
-        string $__table,
-        array $__where
-    ):bool
-    {
-        return
-            $this->__db
-                ::table(
-                    $__table
-                )
-                ->where(
-                    $__where["col"],
-                    $__where["ope"],
-                    $__where["target"]
-                )
-                ->exists()
-        ;
-    }
-
-    /**
-     * Set *_at Data
-     *
-     * @access protected
-     */
-    protected function __set_at_data(
-        string $__at
-    )
-    {
-        $this->__requested_data[$__at] =
-            TIME
-        ;
-    }
-
-    /**
-     * Get Last DB Proccess Return Id
-     *
-     * @access protected
-     */
-    protected function __get_last_id()
-    {
-        $this->__last_id = $this->__db
-            ::getPdo()
-            ->lastInsertId()
-        ;
-    }
-
-    /**
-     * To Redirect and Exit
-     *
-     * @access protected
-     * @var string $__to
-     */
-    protected function __redirect(
-        string $__to
-    )
-    {
-        header(
-            "Location: ".
-            $__to
-        );
-        exit;
     }
 
 }
