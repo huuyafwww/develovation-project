@@ -41,11 +41,6 @@ define(
  * /Init Load File Settings
  */
 
-// // This is test
-// // $_SESSION["user"] = true;
-
-// unset($_SESSION["user"]);
-
 // Require Once a "__Loader" Class File
 require_once(LOADER_FILE);
 

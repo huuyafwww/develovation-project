@@ -14,3 +14,4 @@
     var api_url = "<?php __get_api_url(); ?>";
 </script>
 <script defer src="<?php __get_app_js("app.js"); ?>" id="main-js" data-token="<?php echo __get_session_token(); ?>"></script>
+<script defer src="<?php __get_base_js(); ?>"></script>

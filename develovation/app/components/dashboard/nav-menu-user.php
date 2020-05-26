@@ -67,7 +67,8 @@
 
         <!-- Dropdown-Item -->
         <a
-            href="<?php echo __get_http_url("logout"); ?>"
+            href="#"
+            id="logout"
             class="dropdown-item has-icon text-danger"
         >
 

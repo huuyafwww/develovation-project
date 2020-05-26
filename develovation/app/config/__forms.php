@@ -11,5 +11,10 @@ return [
             "email",
             "password"
         ]
+    ],
+    "dashboard" => [
+        "logout" => [
+            "logout"
+        ]
     ]
 ];
