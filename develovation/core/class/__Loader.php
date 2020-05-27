@@ -130,13 +130,10 @@ class __Loader{
         (
             $__judge
             AND
-            !header(
-                "Location: ".
+            __redirect(
                 $__to.
                 "/"
             )
-            AND
-            exit
         );
     }
 
