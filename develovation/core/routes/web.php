@@ -24,6 +24,9 @@ $__routes =
                 ]
             ]
         ],
+        "settings" => [
+            "slug" => "Settings"
+        ],
         "404" => [
             "slug" => "404"
         ],
