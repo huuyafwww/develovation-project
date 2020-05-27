@@ -26,5 +26,5 @@ $__sidebar_config =
         "label" => "設定",
         "icon" => "cog",
         "href" => "settings"
-    ],
+    ]
 ];
