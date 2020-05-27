@@ -8,7 +8,8 @@ return [
     "dashboard" => [
         "home" => "ホーム",
         "encode" => "Json Encode", // "tools/json/encode/"
-        "decode" => "Json Decode" // "tools/json/dencode/"
+        "decode" => "Json Decode", // "tools/json/dencode/"
+        "settings" => "設定"
     ]
 ];
 

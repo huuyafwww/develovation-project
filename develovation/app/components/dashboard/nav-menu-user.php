@@ -16,7 +16,7 @@
 
         <!-- Dropdown-About-Right -->
         <div class="d-sm-none d-lg-inline-block">
-            Hi, Ujang Maman
+            <?php echo __get_session("display_name"); ?>
         </div><!-- /Dropdown-About-Right -->
 
     </a><!-- Dropdown-About -->
@@ -52,7 +52,10 @@
         </a><!-- /Dropdown-Item -->
 
         <!-- Dropdown-Item -->
-        <a href="features-settings.html" class="dropdown-item has-icon">
+        <a
+            href="<?php echo __get_http_url("settings"); ?>"
+            class="dropdown-item has-icon"
+        >
 
             <!-- Dropdown-Icon -->
             <i class="fas fa-cog"></i> <!-- /Dropdown-Icon -->

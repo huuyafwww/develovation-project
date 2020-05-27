@@ -104,6 +104,21 @@ function __get_session(
 }
 
 /**
+ * Get Single SESSION Array Value
+ *
+ * @param string $__session_array_name
+ * @param string $__session_name
+ * @return mixed
+ */
+function __get_array_session(
+    string $__session_array_name,
+    string $__session_name
+)
+{
+    return $_SESSION[$__session_array_name][$__session_name];
+}
+
+/**
  * Get ALL SESSION
  *
  * @return array

@@ -20,5 +20,11 @@ $__sidebar_config =
                 "label" => "Json Decode"
 			]
 		]
-    ]
+    ],
+    "settings" => [
+        "type" => "normal",
+        "label" => "設定",
+        "icon" => "cog",
+        "href" => "settings"
+    ],
 ];
