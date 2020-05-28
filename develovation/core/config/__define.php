@@ -9,6 +9,9 @@ define(
     isset($_SESSION[LOGIN_VAR])
 );
 
+// Is SSL
+define("IS_SSL",__is_ssl());
+
 // Constant a Http Host
 define("HTTP_HOST",$_SERVER["HTTP_HOST"]);
 
@@ -37,7 +40,13 @@ define(
 // HTTP Root Url
 define(
     "HTTP_ROOT_URL",
-    "//".HTTP_HOST.ROOT_URI
+    "http".
+    (
+        IS_SSL
+        ? "s"
+        : ""
+    ).
+    "://".HTTP_HOST.ROOT_URI
 );
 
 // Constant a Request Method Name

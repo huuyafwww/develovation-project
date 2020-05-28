@@ -149,3 +149,55 @@ function __empty_index_delete(
         )
     );
 }
+
+/**
+ * Is SSL
+ *
+ * @return bool
+ */
+function __is_ssl():bool
+{
+    return (
+        (
+            isset($_SERVER["HTTPS"])
+            AND
+            (
+                $_SERVER["HTTPS"] === "on"
+                OR
+                $_SERVER["HTTPS"] === "1"
+            )
+        )
+        OR
+        (
+            isset($_SERVER["SSL"])
+            AND
+            (
+                $_SERVER["SSL"] === "on"
+            )
+        )
+        OR
+        (
+            isset($_SERVER["HTTP_X_FORWARDED_PROTO"])
+            AND
+            (
+                strtolower($_SERVER["HTTP_X_FORWARDED_PROTO"]) === "https"
+            )
+        )
+        OR
+        (
+            isset($_SERVER["HTTP_X_FORWARDED_PORT"])
+            AND
+            (
+                $_SERVER["HTTP_X_FORWARDED_PORT"] === "443"
+            )
+        )
+        OR
+        (
+            isset($_SERVER["SERVER_PORT"])
+            AND
+            (
+                $_SERVER["SERVER_PORT"] === "443"
+            )
+        )
+    );
+}

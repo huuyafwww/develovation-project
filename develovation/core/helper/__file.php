@@ -68,3 +68,57 @@ function __delete_files(
         }
     }
 }
+
+/**
+ * Get Base64 Image String for Html img tag src
+ *
+ * @param string $__img_path
+ * @return string
+ */
+function __get_build_img2base64(
+    string $__img_path
+)
+{
+    return
+        "data:"
+        .__get_img_mime_type(
+            $__img_path
+        )
+        .";base64,"
+        .__get_img2base64(
+            $__img_path
+        )
+    ;
+}
+
+/**
+ * Get Image Mime Type
+ *
+ * @param string $__img_path
+ * @return string
+ */
+function __get_img_mime_type(
+    string $__img_path
+):string
+{
+    return image_type_to_mime_type(
+        exif_imagetype($__img_path)
+    );
+}
+
+/**
+ * Get Image to Base64
+ *
+ * @param string $__img_path
+ * @return string
+ */
+function __get_img2base64(
+    string $__img_path
+):string
+{
+    return base64_encode(
+        file_get_contents(
+            $__img_path
+        )
+    );
+}

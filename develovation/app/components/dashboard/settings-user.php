@@ -5,7 +5,7 @@
     aria-labelledby="settings-user-nav-link"
 >
     <form>
-        <div class="card" id="settings-card">
+        <div class="card card-primary" id="settings-card">
             <div class="card-header">
                 <h4>ユーザー 設定</h4>
             </div>

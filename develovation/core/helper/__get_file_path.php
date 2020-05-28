@@ -92,7 +92,7 @@ function __get_lib_js(
 }
 
 /**
- * Echo the Lib Img Path For Front-End Request
+ * Echo the Lib Img Base64 String For Front-End Request
  *
  * @param string $__file
  */
@@ -100,5 +100,10 @@ function __get_lib_img(
     string $__file
 )
 {
-    echo LIB_IMG_PATH.$__file;
+    echo
+        __get_build_img2base64(
+            LIB_IMG_PATH
+            .$__file
+        )
+    ;
 }
