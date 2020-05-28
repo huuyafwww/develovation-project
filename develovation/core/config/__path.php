@@ -19,7 +19,7 @@ define("LOG_PATH",ROOT_PATH."log/");
 define("API_PATH",APP_PATH."api/");
 define(
     "ASSETS_PATH",
-    ROOT_URI."assets/"
+    HTTP_ROOT_URL."assets/"
 );
 define("COMPONENTS_PATH",APP_PATH."components/");
 define("VIEW_CONFIG_PATH",APP_PATH."config/");

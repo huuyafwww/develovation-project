@@ -1,7 +1,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <div class="card">
+        <div class="card card-primary">
             <div class="card-header">
                 <h4>Jump To</h4>
             </div>
