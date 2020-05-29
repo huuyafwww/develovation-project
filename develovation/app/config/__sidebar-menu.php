@@ -21,6 +21,12 @@ $__sidebar_config =
 			]
 		]
     ],
+    "login-history" => [
+        "type" => "normal",
+        "label" => "ログイン履歴",
+        "icon" => "history",
+        "href" => "login-history"
+    ],
     "settings" => [
         "type" => "normal",
         "label" => "設定",

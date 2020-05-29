@@ -1,3 +1,7 @@
 pre{
     tab-size: 20px;
 }
+
+body.login-history table.table{
+    margin-bottom: unset;
+}

@@ -9,6 +9,7 @@ return [
         "home" => "ホーム",
         "encode" => "Json Encode", // "tools/json/encode/"
         "decode" => "Json Decode", // "tools/json/dencode/"
+        "login-history" => "ログイン履歴",
         "settings" => "設定"
     ]
 ];

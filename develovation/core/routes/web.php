@@ -24,6 +24,9 @@ $__routes =
                 ]
             ]
         ],
+        "login-history" => [
+            "slug" => "Login_History"
+        ],
         "settings" => [
             "slug" => "Settings"
         ],
