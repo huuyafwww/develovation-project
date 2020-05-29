@@ -10,7 +10,10 @@ define(
 );
 
 // Is SSL
-define("IS_SSL",__is_ssl());
+define(
+    "IS_SSL",
+    __is_ssl()
+);
 
 // Constant a Http Host
 define("HTTP_HOST",$_SERVER["HTTP_HOST"]);

@@ -4,49 +4,66 @@
     role="tabpanel"
     aria-labelledby="settings-user-nav-link"
 >
-    <form>
+    <form
+        method="POST"
+        action=""
+    >
         <div class="card card-primary" id="settings-card">
             <div class="card-header">
                 <h4>ユーザー 設定</h4>
             </div>
             <div class="card-body">
-                <p class="text-muted">General settings such as, site title, site description, address and so on.</p>
                 <div class="form-group row align-items-center">
-                    <label for="site-title" class="form-control-label col-sm-3 text-md-right">Site Title</label>
+                    <label for="user_name" class="form-control-label col-sm-3 text-md-right">ログインユーザー名</label>
                     <div class="col-sm-6 col-md-9">
-                        <input type="text" name="site_title" class="form-control" id="site-title">
+                        <input
+                            type="text"
+                            name="user_name"
+                            class="form-control"
+                            id="user_name"
+                            value="<?php echo __get_session("user_name"); ?>"
+                            required
+                            minlength="3"
+                            maxlength="20"
+                            pattern="^[0-9a-z]+$"
+                            data-toggle="tooltip"
+                            data-placement="left"
+                            data-original-title="3文字以上20文字未満で小文字の半角英数字を利用します"
+                        >
                     </div>
                 </div>
                 <div class="form-group row align-items-center">
-                    <label for="site-description" class="form-control-label col-sm-3 text-md-right">Site Description</label>
+                    <label for="display_name" class="form-control-label col-sm-3 text-md-right">表示名</label>
                     <div class="col-sm-6 col-md-9">
-                        <textarea class="form-control" name="site_description" id="site-description"></textarea>
+                        <input
+                            type="text"
+                            name="display_name"
+                            class="form-control"
+                            id="display_name"
+                            value="<?php echo __get_session("display_name"); ?>"
+                            required
+                            minlength="3"
+                            maxlength="20"
+                            pattern="^[0-9a-z\u4E00-\u9FFF\u3040-\u309Fー]+$"
+                            data-toggle="tooltip"
+                            data-placement="left"
+                            data-original-title="3文字以上20文字未満で小文字の半角英数字とひらがな・漢字を利用できます"
+                        >
                     </div>
                 </div>
-                <div class="form-group row align-items-center">
-                    <label class="form-control-label col-sm-3 text-md-right">Site Logo</label>
-                    <div class="col-sm-6 col-md-9">
-                        <div class="custom-file">
-                            <input type="file" name="site_logo" class="custom-file-input" id="site-logo">
-                            <label class="custom-file-label">Choose File</label>
-                        </div>
-                        <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
-                    </div>
-                </div>
-                <div class="form-group row align-items-center">
-                    <label class="form-control-label col-sm-3 text-md-right">Favicon</label>
-                    <div class="col-sm-6 col-md-9">
-                        <div class="custom-file">
-                            <input type="file" name="site_favicon" class="custom-file-input" id="site-favicon">
-                            <label class="custom-file-label">Choose File</label>
-                        </div>
-                        <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
-                    </div>
-                </div>
+                <input
+                    type="hidden"
+                    name="action"
+                    value="user"
+                >
             </div>
             <div class="card-footer bg-whitesmoke text-md-right">
-                <button class="btn btn-primary" id="save-btn">Save Changes</button>
-                <button class="btn btn-secondary" type="button">Reset</button>
+                <button
+                    class="btn btn-primary"
+                    type="submit"
+                >
+                    保存
+                </button>
             </div>
         </div>
     </form>
