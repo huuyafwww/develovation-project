@@ -1,5 +1,11 @@
 <?php
 
+// User Agent
+define(
+    "USER_AGENT",
+    $_SERVER["HTTP_USER_AGENT"]
+);
+
 // Login User Variable on SESSION
 define("LOGIN_VAR",$_ENV["LOGIN_VAR"]);
 

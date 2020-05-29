@@ -24,7 +24,8 @@
 - PHPテンプレートエンジン（開発中）
 - HTTPリクエストヘッダーのバリデーションモジュール（開発中）
 - 管理画面のテンプレートはMITライセンスの[Stisla](https://getstisla.com/)を利用
-- 環境変数の管理はBSDライセンスの[vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)を利用
+- 環境変数の管理はMITライセンスの[vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)を利用
+- ユーザーエージェントをパースするMITライセンスの[whichbrowser/parser](https://github.com/WhichBrowser/Parser-PHP)を利用
 
 ### Directory structure
 

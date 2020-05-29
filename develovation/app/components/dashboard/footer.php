@@ -25,8 +25,5 @@
     action="<?php echo __get_http_url("logout"); ?>"
     method="POST"
 >
-    <input
-        type="hidden"
-        name="logout"
-    >
+    <?php __insert_input_hidden("logout"); ?>
 </form>

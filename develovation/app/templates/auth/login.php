@@ -110,6 +110,8 @@
 
             </div><!-- /Form-Group -->
 
+            <?php __insert_input_hidden("client_ua","","client_ua"); ?>
+
             <!-- Form-Group -->
             <div class="form-group">
 

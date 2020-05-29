@@ -3,16 +3,17 @@
 $(function(){
 
     // Activation Pwstrength
-    activation_pwstrength();
+    __activation_pwstrength();
 
     // Activation Password Checker
-    activation_pw_checker();
+    __activation_pw_checker();
+
 });
 
 /**
  * Activation Pwstrength
  */
-function activation_pwstrength()
+function __activation_pwstrength()
 {
     $(".pwstrength").pwstrength();
 }
@@ -20,7 +21,7 @@ function activation_pwstrength()
 /**
  * Activation Password Checker
  */
-function activation_pw_checker()
+function __activation_pw_checker()
 {
     $("#register-form").submit(function(){
         let password = $("#password").val();
@@ -28,7 +29,7 @@ function activation_pw_checker()
         return(
             password == password_confirm ?
             true :
-            password_not_matching()
+            __password_not_matching()
         );
     });
 }
@@ -37,7 +38,7 @@ function activation_pw_checker()
 /**
  * When Password does not match,Alert
  */
-function password_not_matching(){
+function __password_not_matching(){
     alert("パスワードが一致しません");
     return false;
 }

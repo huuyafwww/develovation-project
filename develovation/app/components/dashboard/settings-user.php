@@ -51,11 +51,7 @@
                         >
                     </div>
                 </div>
-                <input
-                    type="hidden"
-                    name="action"
-                    value="user"
-                >
+                <?php __insert_input_hidden("action","user"); ?>
             </div>
             <div class="card-footer bg-whitesmoke text-md-right">
                 <button
