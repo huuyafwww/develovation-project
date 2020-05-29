@@ -9,7 +9,8 @@ return [
         ],
         "login" => [
             "email",
-            "password"
+            "password",
+            "client_ua"
         ]
     ],
     "dashboard" => [

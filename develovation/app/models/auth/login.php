@@ -56,6 +56,8 @@ class __M_Login extends __Model{
         )
         AND
         (
+            $this->__insert_login_history()
+            AND
             $this->__set_user_session()
             AND
             __redirect(
@@ -132,12 +134,49 @@ class __M_Login extends __Model{
                 )
                 ->first(
                     [
+                        "id",
                         "user_name",
                         "password",
                         "display_name"
                     ]
                 )
         ;
+    }
+
+    /**
+     * Insert Login History
+     *
+     * @access private
+     */
+    private function __insert_login_history()
+    {
+        $__client_ua = $this->__requested_data["client_ua"];
+        $__user_info = __get_parsed_ua(
+            $__client_ua
+        );
+
+        $__user_info = array_merge(
+            $__user_info,
+            [
+                "created_at" => TIME,
+                "user_id" => $this->__user->id,
+                "ip" => IP_ADDRESS,
+                "time" => TIME,
+                "requested_ua" => USER_AGENT,
+                "client_ua" => $__client_ua,
+                "is_ua_match" => USER_AGENT === $__client_ua ? 0 : 1
+            ]
+        );
+        $this->__db
+            ::table(
+                "login_history"
+            )
+            ->insert(
+                $__user_info
+            )
+        ;
+
+        return true;
     }
 
     /**
@@ -149,7 +188,7 @@ class __M_Login extends __Model{
     {
         __set_sessions(
             [
-                LOGIN_VAR => true,
+                LOGIN_VAR => $this->__user->id,
                 "user_name" => $this->__user->user_name,
                 "display_name" => $this->__user->display_name,
                 "email" => $this->__requested_data["email"]
