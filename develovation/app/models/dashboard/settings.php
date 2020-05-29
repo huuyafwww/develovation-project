@@ -57,6 +57,9 @@ class __M_Settings extends __Model{
         // Get Requested Data
         $this->__get_requested_data();
 
+        // Set *_at Data
+        $this->__set_at_data("updated_at");
+
         $this->__db
             ::table("user")
             ->where(
