@@ -15,6 +15,12 @@ return [
     "dashboard" => [
         "logout" => [
             "logout"
+        ],
+        "settings" => [
+            "user" => [
+                "user_name",
+                "display_name"
+            ]
         ]
     ]
 ];

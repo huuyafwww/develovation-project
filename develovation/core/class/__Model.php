@@ -32,6 +32,14 @@ class __Model{
     protected $__is_all_params;
 
     /**
+     * Request Action Name
+     *
+     * @access protected
+     * @var string
+     */
+    protected $__action_name = NULL;
+
+    /**
      * Route Uri Array for Get Validation Params
      *
      * @access private
@@ -143,6 +151,14 @@ class __Model{
         array_unshift(
             $this->__route_uri_array,
             BASE_DIR_NAME
+        );
+
+        (
+            !is_null(
+                $this->__action_name
+            )
+            AND
+            $this->__route_uri_array[] = $this->__action_name
         );
 
         // Get Request Target Validate Params

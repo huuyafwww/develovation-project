@@ -102,7 +102,9 @@ function __get_img_mime_type(
 ):string
 {
     return image_type_to_mime_type(
-        exif_imagetype($__img_path)
+        exif_imagetype(
+            $__img_path
+        )
     );
 }
 
