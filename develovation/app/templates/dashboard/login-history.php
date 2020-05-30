@@ -20,16 +20,44 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                            foreach(
+                                array_reverse(
+                                    __get_controller_var("__login_history")
+                                )
+                                as $__index
+                                => $__history
+                            ):
+                        ?>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
+                            <th scope="row">
+                                <?php echo $__index; ?>
+                            </th>
+                            <td>
+                                <?php echo $__history->ip; ?>
+                            </td>
+                            <td>
+                                <?php echo __time2date($__history->time); ?>
+                            </td>
+                            <td>
+                                <?php echo $__history->device; ?>
+                            </td>
+                            <td>
+                                <?php echo $__history->type; ?>
+                            </td>
+                            <td>
+                                <?php echo $__history->os; ?>
+                            </td>
+                            <td>
+                                <?php echo $__history->browser_name; ?>
+                            </td>
+                            <td>
+                                <?php echo $__history->browser_version; ?>
+                            </td>
                         </tr>
+                        <?php
+                            endforeach;
+                        ?>
                     </tbody>
                 </table>
             </div><!-- /Card-Body -->
