@@ -26,16 +26,3 @@ function __get_api_url()
         "api/"
     ;
 }
-
-/**
- * Route Uri to Array
- */
-function __route_uri2array()
-{
-    $__routes = ROUTE_URI_ARRAY;
-    array_unshift(
-        $__routes,
-        BASE_DIR_NAME
-    );
-    return $__routes;
-}

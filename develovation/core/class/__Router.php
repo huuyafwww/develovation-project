@@ -103,12 +103,6 @@ class __Router{
         // Set Api Route Uri Array
         $this->__routes = ROUTE_URI_ARRAY;
 
-        // Set Base Slug for $this->__routes
-        array_unshift(
-            $this->__routes,
-            BASE_DIR_NAME
-        );
-
         // Get Routes Config Column
         $this->__get_routes_config_column();
 

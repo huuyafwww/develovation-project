@@ -8,7 +8,7 @@ function __get_title()
 
     $__title = __get_array_key2column(
         require(TITLE_CONFIG_FILE),
-        __route_uri2array()
+        ROUTE_URI_ARRAY
     );
 
     echo

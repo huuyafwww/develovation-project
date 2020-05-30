@@ -15,6 +15,14 @@ define(
     isset($_SESSION[LOGIN_VAR])
 );
 
+// Base Directory
+define(
+    "BASE_DIR_NAME",
+    IS_LOGIN ?
+    "dashboard" :
+    "auth"
+);
+
 // Is SSL
 define(
     "IS_SSL",
@@ -109,7 +117,12 @@ define(
     __empty_index_delete(
         explode(
             "/",
-            ROUTE_URI
+            (
+                !IS_API
+                ? BASE_DIR_NAME."/"
+                : ""
+            )
+            .ROUTE_URI
         )
     )
 );
