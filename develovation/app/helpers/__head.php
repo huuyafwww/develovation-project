@@ -5,17 +5,15 @@
  */
 function __get_title()
 {
-    $__titles = require(TITLE_CONFIG_FILE);
+
+    $__title = __get_array_key2column(
+        require(TITLE_CONFIG_FILE),
+        __route_uri2array()
+    );
 
     echo
-        isset(
-            $__titles
-                [BASE_DIR_NAME]
-                [NOW_REQUEST_FILE_NAME]
-        ) ?
-        $__titles
-            [BASE_DIR_NAME]
-            [NOW_REQUEST_FILE_NAME] :
+        $__title !== false ?
+        $__title :
         "404 Not Found"
     ;
 }
