@@ -147,12 +147,6 @@ class __Model{
         // Get Route Uri Array
         $this->__route_uri_array = ROUTE_URI_ARRAY;
 
-        // Set Base Slug for $this->__route_uri_array
-        array_unshift(
-            $this->__route_uri_array,
-            BASE_DIR_NAME
-        );
-
         (
             !is_null(
                 $this->__action_name

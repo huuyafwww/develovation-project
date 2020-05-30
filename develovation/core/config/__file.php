@@ -62,14 +62,6 @@ define(
     "auth/"
 );
 
-// Base Directory
-define(
-    "BASE_DIR_NAME",
-    IS_LOGIN ?
-    "dashboard" :
-    "auth"
-);
-
 // Is Auth
 define(
     "IS_AUTH",
