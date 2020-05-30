@@ -47,7 +47,7 @@
                             max="10000"
                             data-toggle="tooltip"
                             data-placement="left"
-                            data-original-title="3から10,000間です"
+                            data-original-title="3から10,000を選択します"
                         >
                     </div>
                 </div>
