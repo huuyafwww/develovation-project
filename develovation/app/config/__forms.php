@@ -21,6 +21,12 @@ return [
             "user" => [
                 "user_name",
                 "display_name"
+            ],
+            "backup" => [
+                "is_backup",
+                // "target_path",
+                "max_count",
+                "is_backup_sql"
             ]
         ]
     ]
