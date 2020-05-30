@@ -33,6 +33,19 @@
                                 通知
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            id="settings-backup-nav-link"
+                            data-toggle="tab"
+                            href="#settings-backup-tab"
+                            role="tab"
+                            aria-controls="settings-backup"
+                            aria-selected="false"
+                            >
+                                バックアップ
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -41,6 +54,7 @@
         <div class="tab-content no-padding">
             <?php __get_component("settings-user.php"); ?>
             <?php __get_component("settings-notify.php"); ?>
+            <?php __get_component("settings-backup.php"); ?>
         </div>
     </div>
 </div>

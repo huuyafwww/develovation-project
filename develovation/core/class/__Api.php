@@ -8,7 +8,7 @@ class __Api{
     /**
      * Validation Method
      *
-     * @access private
+     * @access protected
      * @var string
      */
     protected $__validate_method;
@@ -16,7 +16,7 @@ class __Api{
     /**
      * IS Ajax Endpoint
      *
-     * @access private
+     * @access protected
      * @var bool
      */
     protected $__is_ajax;
@@ -24,7 +24,7 @@ class __Api{
     /**
      * Validation Params
      *
-     * @access private
+     * @access protected
      * @var array
      */
     protected $__params;
