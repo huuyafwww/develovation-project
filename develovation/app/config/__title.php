@@ -11,6 +11,9 @@ return [
             "json" => [
                 "encode" => "Json Encode",
                 "decode" => "Json Decode"
+            ],
+            "system" => [
+                "backup" => "バックアップ"
             ]
         ],
         "login-history" => "ログイン履歴",
