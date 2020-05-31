@@ -164,7 +164,7 @@ class __M_Login extends __Model{
                 "time" => TIME,
                 "requested_ua" => USER_AGENT,
                 "client_ua" => $__client_ua,
-                "is_ua_match" => USER_AGENT === $__client_ua ? 0 : 1
+                "is_ua_match" => USER_AGENT === $__client_ua ? 1 : 0
             ]
         );
         $this->__db
