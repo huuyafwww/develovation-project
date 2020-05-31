@@ -18,6 +18,9 @@ $__sidebar_config =
 			],
 			"/json/decode" => [
                 "label" => "Json Decode"
+            ],
+            "/system/backup" => [
+                "label" => "バックアップ"
 			]
 		]
     ],

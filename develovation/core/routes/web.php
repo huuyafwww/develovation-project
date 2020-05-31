@@ -22,6 +22,11 @@ $__routes =
                 "decode" => [
                     "slug" => "Json_Decode"
                 ]
+            ],
+            "system" => [
+                "backup" => [
+                    "slug" => "Backup"
+                ]
             ]
         ],
         "login-history" => [
