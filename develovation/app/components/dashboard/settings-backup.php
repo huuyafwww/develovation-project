@@ -19,14 +19,22 @@
                     <div class="col-sm-6 col-md-9">
                         <select id="is_backup" class="form-control" name="is_backup">
                             <option
-                                value="0"
-                                <?php if($__backup_settings->is_backup == 0) echo " selected";?>
+                                value="1"
+                                <?php
+                                    if(
+                                        (bool)$__backup_settings->is_backup
+                                    ) echo " selected";
+                                ?>
                             >
                                 する
                             </option>
                             <option
-                                value="1"
-                                <?php if($__backup_settings->is_backup == 1) echo " selected";?>
+                                value="0"
+                                <?php
+                                    if(
+                                        !(bool)$__backup_settings->is_backup
+                                    ) echo " selected";
+                                ?>
                             >
                                 しない
                             </option>
@@ -56,14 +64,22 @@
                     <div class="col-sm-6 col-md-9">
                         <select id="is_backup_sql" class="form-control" name="is_backup_sql">
                             <option
-                                value="0"
-                                <?php if($__backup_settings->is_backup_sql == 0) echo " selected";?>
+                                value="1"
+                                <?php
+                                    if(
+                                        (bool)$__backup_settings->is_backup_sql
+                                    ) echo " selected";
+                                ?>
                             >
                                 する
                             </option>
                             <option
-                                value="1"
-                                <?php if($__backup_settings->is_backup_sql == 1) echo " selected";?>
+                                value="0"
+                                <?php
+                                    if(
+                                        !(bool)$__backup_settings->is_backup_sql
+                                    ) echo " selected";
+                                ?>
                             >
                                 しない
                             </option>

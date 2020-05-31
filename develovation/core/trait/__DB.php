@@ -82,4 +82,35 @@ trait __DB {
         ;
     }
 
+    /**
+     * Get Backup Settings
+     *
+     * @access public
+     */
+    public function __get_backup_settings()
+    {
+        return
+            $this->__db
+                ::table(
+                    "backup_settings"
+                )
+                ->where(
+                    "time",
+                    "=",
+                    $this->__db
+                        ::table(
+                            "backup_settings"
+                        )
+                        ->max("time")
+                )
+                ->first(
+                    [
+                        "is_backup",
+                        "max_count",
+                        "is_backup_sql"
+                    ]
+                )
+        ;
+    }
+
 }
