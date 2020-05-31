@@ -1,4 +1,3 @@
-
 <div class="row">
     <div class="col-md-4">
         <div class="card card-primary">
@@ -43,7 +42,7 @@
                             aria-controls="settings-backup"
                             aria-selected="false"
                             >
-                                バックアップ
+                                システムのバックアップ
                         </a>
                     </li>
                 </ul>

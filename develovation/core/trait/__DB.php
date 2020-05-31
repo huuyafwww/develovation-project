@@ -105,11 +105,42 @@ trait __DB {
                 )
                 ->first(
                     [
+                        "user_id",
+                        "time",
                         "is_backup",
                         "max_count",
                         "is_backup_sql"
                     ]
                 )
+        ;
+    }
+
+    /**
+     * User ID to Display Name
+     *
+     * @access public
+     * @param string $__user_id
+     */
+    public function __user_id2display_name(
+        int $__user_id
+    )
+    {
+        return
+            $this->__db
+                ::table(
+                    "user"
+                )
+                ->where(
+                    "id",
+                    "=",
+                    $__user_id
+                )
+                ->first(
+                    [
+                        "display_name"
+                    ]
+                )
+                ->display_name
         ;
     }
 

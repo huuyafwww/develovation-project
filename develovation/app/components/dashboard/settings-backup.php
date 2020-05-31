@@ -11,7 +11,7 @@
     >
         <div class="card card-primary" id="settings-card">
             <div class="card-header">
-                <h4>バックアップ 設定</h4>
+                <h4>システムのバックアップ 設定</h4>
             </div>
             <div class="card-body">
                 <div class="form-group row align-items-center">

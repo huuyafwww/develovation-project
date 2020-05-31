@@ -1,7 +1,10 @@
-pre{
+pre
+{
     tab-size: 20px;
 }
 
-body.login-history table.table{
+body.login-history table.table,
+body.backup .card
+{
     margin-bottom: unset;
 }
