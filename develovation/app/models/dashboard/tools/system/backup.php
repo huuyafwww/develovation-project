@@ -43,6 +43,12 @@ class __M_Backup extends __Model{
         // Increment Download Count
         $this->__increment_download_count();
 
+        // Set Backup Download Header
+        $this->__set_backup_download_header();
+
+        // Output Target Backup File
+        readfile(BACKUP_PATH.$this->__requested_data["time"].".zip");
+
         // Redirect This Page
         __redirect(
             HTTP_ROOT_URL.
@@ -66,6 +72,18 @@ class __M_Backup extends __Model{
             )
             ->increment("download_count");
         ;
+    }
+
+    /**
+     * Set Backup Download Header
+     *
+     * @access private
+     */
+    private function __set_backup_download_header()
+    {
+        header("Pragma: public");
+        header("Content-Type: application/octet-stream");
+        header("Content-Disposition: attachment; filename=".$this->__requested_data["time"].".zip");
     }
 
 }
