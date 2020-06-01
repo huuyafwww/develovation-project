@@ -16,7 +16,11 @@
 
             <!-- Card-Body -->
             <div class="card-body">
+
+                <!-- Table -->
                 <table class="table table-striped table-hover table-bordered">
+
+                    <!-- Tbody -->
                     <tbody>
                         <tr>
                             <td>編集者</td>
@@ -48,8 +52,10 @@
                                 <?php echo $__backup_settings->backup_sql; ?>
                             </td>
                         </tr>
-                    </tbody>
-                </table>
+                    </tbody><!-- /Tbody -->
+
+                </table><!-- /Table -->
+
             </div><!-- /Card-Body -->
 
         </div><!-- /Card -->

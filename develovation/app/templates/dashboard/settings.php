@@ -1,11 +1,24 @@
+<!-- Row -->
 <div class="row">
+
+    <!-- Col-md-4 -->
     <div class="col-md-4">
+
+        <!-- Card -->
         <div class="card card-primary">
+
+            <!-- Card-Header -->
             <div class="card-header">
                 <h4>Jump To</h4>
-            </div>
+            </div><!-- /Card-Header -->
+
+            <!-- Card-Body -->
             <div class="card-body">
+
+                <!-- Nav -->
                 <ul class="nav nav-pills flex-column">
+
+                    <!-- Nav-Item -->
                     <li class="nav-item">
                         <a
                             class="nav-link active show"
@@ -18,7 +31,9 @@
                             >
                                 ユーザー
                         </a>
-                    </li>
+                    </li><!-- /Nav-Item -->
+
+                    <!-- Nav-Item -->
                     <li class="nav-item">
                         <a
                             class="nav-link"
@@ -31,7 +46,9 @@
                             >
                                 通知
                         </a>
-                    </li>
+                    </li><!-- /Nav-Item -->
+
+                    <!-- Nav-Item -->
                     <li class="nav-item">
                         <a
                             class="nav-link"
@@ -44,11 +61,16 @@
                             >
                                 システムのバックアップ
                         </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+                    </li><!-- /Nav-Item -->
+
+                </ul><!-- /Nav -->
+
+            </div><!-- /Card-Body -->
+
+        </div><!-- /Card -->
+
+    </div><!-- /Col-md-4 -->
+
     <div class="col-md-8">
         <div class="tab-content no-padding">
             <?php __get_component("settings-user.php"); ?>
@@ -56,4 +78,4 @@
             <?php __get_component("settings-backup.php"); ?>
         </div>
     </div>
-</div>
+</div><!-- /Row -->

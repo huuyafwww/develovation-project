@@ -6,7 +6,11 @@
 
             <!-- Card-Body -->
             <div class="card-body p-0">
+
+                <!-- Table -->
                 <table class="table table-striped table-hover table-bordered">
+
+                    <!-- Thead -->
                     <thead>
                         <tr>
                             <th scope="col">項番</th>
@@ -18,7 +22,9 @@
                             <th scope="col">ブラウザ名</th>
                             <th scope="col">ブラウザVer</th>
                         </tr>
-                    </thead>
+                    </thead><!-- /Thead -->
+
+                    <!-- Tbody -->
                     <tbody>
                         <?php
                             foreach(
@@ -58,8 +64,10 @@
                         <?php
                             endforeach;
                         ?>
-                    </tbody>
-                </table>
+                    </tbody><!-- /Tbody -->
+
+                </table><!-- /Table -->
+
             </div><!-- /Card-Body -->
 
         </div><!-- /Card -->

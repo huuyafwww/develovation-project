@@ -1,20 +1,40 @@
+<!-- Settings-User -->
 <div
     class="tab-pane fade active show"
     id="settings-user-tab"
     role="tabpanel"
     aria-labelledby="settings-user-nav-link"
 >
+
+    <!-- Form -->
     <form
         method="POST"
         action=""
     >
+
+        <!-- Card -->
         <div class="card card-primary" id="settings-card">
+
+            <!-- Card-Header -->
             <div class="card-header">
                 <h4>ユーザー 設定</h4>
-            </div>
+            </div><!-- /Card-Header -->
+
+            <!-- Card-Body -->
             <div class="card-body">
+
+                <!-- Form-Group -->
                 <div class="form-group row align-items-center">
-                    <label for="user_name" class="form-control-label col-sm-3 text-md-right">ログインユーザー名</label>
+
+                    <!-- Label -->
+                    <label
+                        for="user_name"
+                        class="form-control-label col-sm-3 text-md-right"
+                    >
+                        ログインユーザー名
+                    </label><!-- /Label -->
+
+                    <!-- Input-Wrapper -->
                     <div class="col-sm-6 col-md-9">
                         <input
                             type="text"
@@ -30,10 +50,22 @@
                             data-placement="left"
                             data-original-title="3文字以上20文字未満で小文字の半角英数字を利用します"
                         >
-                    </div>
-                </div>
+                    </div><!-- /Input-Wrapper -->
+
+                </div><!-- /Form-Group -->
+
+                <!-- Form-Group -->
                 <div class="form-group row align-items-center">
-                    <label for="display_name" class="form-control-label col-sm-3 text-md-right">表示名</label>
+
+                    <!-- Label -->
+                    <label
+                        for="display_name"
+                        class="form-control-label col-sm-3 text-md-right"
+                    >
+                        表示名
+                    </label><!-- /Label -->
+
+                    <!-- Input-Wrapper -->
                     <div class="col-sm-6 col-md-9">
                         <input
                             type="text"
@@ -49,18 +81,19 @@
                             data-placement="left"
                             data-original-title="3文字以上20文字未満で小文字の半角英数字とひらがな・漢字を利用できます"
                         >
-                    </div>
-                </div>
-                <?php __insert_input_hidden("action","user"); ?>
-            </div>
-            <div class="card-footer bg-whitesmoke text-md-right">
-                <button
-                    class="btn btn-primary"
-                    type="submit"
-                >
-                    保存
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
+                    </div><!-- /Input-Wrapper -->
+
+                </div><!-- /Form-Group -->
+
+                <!-- Input-Hidden -->
+                <?php __insert_input_hidden("action","user"); ?><!-- /Input-Hidden -->
+
+            </div><!-- /Card-Body -->
+
+            <?php __get_component("settings-card-footer.php"); ?>
+
+        </div><!-- /Card -->
+
+    </form><!-- /Form -->
+
+</div><!-- /Settings-User -->
