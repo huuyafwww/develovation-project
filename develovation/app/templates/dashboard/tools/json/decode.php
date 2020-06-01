@@ -39,7 +39,11 @@
             <!-- Card-Header -->
             <div class="card-header">
                 <h4>デコード済みの連想配列 || json文字列</h4>
+
+                <!-- Copy-Button-Wrapper -->
                 <div class="card-header-action">
+
+                    <!-- Copy-Button -->
                     <a
                         id="copy-btn"
                         class="btn btn-icon btn-info"
@@ -47,8 +51,10 @@
                         data-clipboard-target="#output"
                     >
                         <i class="far fa-copy"></i>
-                    </a>
-                </div>
+                    </a><!-- /Copy-Button -->
+
+                </div><!-- /Copy-Button-Wrapper -->
+
             </div><!-- /Card-Header -->
 
             <!-- Card-Body -->

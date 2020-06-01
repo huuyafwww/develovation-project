@@ -1,20 +1,29 @@
+<!-- Settings-Notify -->
 <div
     class="tab-pane fade"
     id="settings-notify-tab"
     role="tabpanel"
     aria-labelledby="settings-notify-nav-link"
 >
+    <!-- Form -->
     <form>
+
+        <!-- Card -->
         <div class="card card-primary" id="settings-card">
+
+            <!-- Card-Header -->
             <div class="card-header">
                 <h4>通知 設定</h4>
-            </div>
+            </div><!-- /Card-Header -->
+
+            <!-- Card-Body -->
             <div class="card-body">
-            </div>
-            <div class="card-footer bg-whitesmoke text-md-right">
-                <button class="btn btn-primary" id="save-btn">Save Changes</button>
-                <button class="btn btn-secondary" type="button">Reset</button>
-            </div>
-        </div>
-    </form>
-</div>
+            </div><!-- /Card-Body -->
+
+            <?php __get_component("settings-card-footer.php"); ?>
+
+        </div><!-- /Card -->
+
+    </form><!-- /Form -->
+
+</div><!-- /Settings-Notify -->
