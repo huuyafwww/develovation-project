@@ -3,7 +3,7 @@
 /**
  * System Backup Class
  */
-class __Backup{
+class __Backup extends __Model{
 
     /**
      * Backup Settings
@@ -54,21 +54,14 @@ class __Backup{
     private $__backup_count;
 
     /**
-     * Model Class
-     *
-     * @access private
-     * @var __Model
-     */
-    private $__model;
-
-    /**
      * Backup Init
      *
      * @access public
      */
     public function __construct()
     {
-        $this->__max_backup_count = $__max_backup_count;
+        // Run Parent Class Constructor
+        parent::__construct();
 
         // Auto Loader
         $this->__auto_loader();
@@ -84,11 +77,8 @@ class __Backup{
         // // Get Backup Count
         // $this->__get_backup_count();
 
-        // Get Model
-        $this->__get_model();
-
         // Get Backup Settings
-        $this->__backup_settings = $this->__model->__get_backup_settings();
+        $this->__backup_settings = $this->__get_backup_settings();
 
         // Set Is Backup
         $this->__is_backup = (bool)$this->__backup_settings->is_backup;
@@ -97,10 +87,10 @@ class __Backup{
         $this->__max_backup_count = $this->__backup_settings->max_count;
 
         // Is SQL Backup
-        $this->__is_backup_sql = (bool)$this->__backup_settings->__is_sql_backup;
+        $this->__is_backup_sql = (bool)$this->__backup_settings->is_backup_sql;
 
         // Set Now Backup Count
-        $this->__backup_count = __get_backup_history_count();
+        $this->__backup_count = $this->__get_backup_history_count();
     }
 
     /**
@@ -121,23 +111,14 @@ class __Backup{
     }
 
     /**
-     * Get Model
-     *
-     * @access private
-     */
-    private function __get_model()
-    {
-        $this->__model = new __Model;
-    }
-
-    /**
      * Create Backup
      *
      * @access public
      */
     public function __create_backup()
     {
-        return (
+        return
+        (
                 (
                     $this->__is_backup
                     OR
@@ -159,10 +140,54 @@ class __Backup{
     /**
      * System Backup
      *
-     * @access public
+     * @access private
      */
     private function __system_backup()
     {
+        $__time = TIME;
+
+        $__target_path = ROOT_PATH;
+
+        $__save_dir = BACKUP_PATH;
+
+        $__cmd_separator = "&& ";
+
+        $__cd =
+            "cd "
+                .$__save_dir
+        ;
+
+        $__mkdir =
+            "mkdir "
+                .$__time
+        ;
+
+        $__rsync =
+            "rsync -a "
+                .$__target_path
+                ." "
+                .$__time
+                ." --exclude storage/backup/"
+        ;
+
+        $__zip =
+            "zip -r "
+                .$__time
+                .".zip"
+                ." "
+                .$__time
+        ;
+
+        // Exclude "storage/backup/" Dir
+        exec(
+            $__cd
+                .$__cmd_separator
+                .$__mkdir
+                .$__cmd_separator
+                .$__rsync
+                .$__cmd_separator
+                .$__zip
+        );
     }
 
 }

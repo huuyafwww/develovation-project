@@ -68,6 +68,9 @@ class __Loader{
 
         // Load Class Files
         __load_files(CLASS_PATH);
+
+        // Load Core Model Class Files
+        __load_files(CORE_MODEL_PATH);
     }
 
     /**

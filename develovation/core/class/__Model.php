@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Database\Capsule\Manager as DB;
+
 /**
  * View Model
  */
@@ -50,9 +52,9 @@ class __Model{
     /**
      * Model Init
      *
-     * @access protected
+     * @access public
      */
-    protected function __construct()
+    public function __construct()
     {
         // Auto Loader
         $this->__auto_loader();
@@ -65,9 +67,6 @@ class __Model{
      */
     private function __auto_loader()
     {
-        // "illuminate/database" Class to DB Class
-        $this->__create_alias();
-
         // Get Databese Class
         $this->__get_db_class();
 
@@ -79,19 +78,6 @@ class __Model{
 
         // Enable Eloquent
         $this->__enable_eloquent();
-    }
-
-    /**
-     * "illuminate/database" Class to DB Class
-     *
-     * @access private
-     */
-    private function __create_alias()
-    {
-        class_alias(
-            Illuminate\Database\Capsule\Manager::class,
-            ILLUMINATE_DB_ALIAS_NAME
-        );
     }
 
     /**

@@ -12,7 +12,7 @@ define(
 
 /* Directly-Root-DIR-Constant */
 define("APP_PATH",ROOT_PATH."app/");
-define("LOG_PATH",ROOT_PATH."log/");
+define("STORAGE_PATH",ROOT_PATH."storage/");
 /* /Directly-Root-DIR-Constant */
 
 /* Directly-App-DIR-Constant */
@@ -49,6 +49,7 @@ define("LIB_IMG_PATH",ASSETS_LIB_PATH."img/");
 define("CLASS_PATH",CORE_PATH."class/");
 define("CONFIG_PATH",CORE_PATH."config/");
 define("HELPER_PATH",CORE_PATH."helper/");
+define("CORE_MODEL_PATH",CORE_PATH."model/");
 define("ROUTES_PATH",CORE_PATH."routes/");
 define("TRAIT_PATH",CORE_PATH."trait/");
 /* /Core-Dir-Constant */
@@ -57,6 +58,11 @@ define("TRAIT_PATH",CORE_PATH."trait/");
 define("FOOT_PATH","foot/");
 define("HEAD_PATH","head/");
 /* /Inc-Dir-Constant */
+
+/* Storage-Dir-Constant */
+define("BACKUP_PATH",STORAGE_PATH."backup/");
+define("LOG_PATH",STORAGE_PATH."log/");
+/* /Storage-Dir-Constant */
 
 /**
  * /PATH Constant
