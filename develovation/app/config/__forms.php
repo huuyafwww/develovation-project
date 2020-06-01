@@ -17,6 +17,14 @@ return [
         "logout" => [
             "logout"
         ],
+        "tools" => [
+            "system" => [
+                "backup" => [
+                    "user_id",
+                    "time"
+                ]
+            ]
+        ],
         "settings" => [
             "user" => [
                 "user_name",

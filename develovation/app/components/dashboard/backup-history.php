@@ -1,6 +1,7 @@
 <!-- Table -->
 <table
     class="table table-striped table-hover table-bordered d-none backup-history-table backup-<?php echo $__backup->time; ?>"
+    data-time="<?php echo $__backup->time; ?>"
 >
 
     <!-- Tbody -->

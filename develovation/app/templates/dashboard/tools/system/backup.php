@@ -10,7 +10,7 @@ $__backup_history = __get_controller_var("__backup_history");
     <div class="col-md-6">
 
         <!-- Card -->
-        <div class="card card-primary">
+        <div class="card card-primary h-100">
 
             <!-- Card-Header -->
             <div class="card-header">
@@ -140,8 +140,40 @@ $__backup_history = __get_controller_var("__backup_history");
                 <?php endif;?>
             </div><!-- /Card-Body -->
 
+            <!-- Card-Footer -->
+            <div class="card-footer bg-whitesmoke text-md-right">
+
+                <!-- Download-Button -->
+                <button
+                    id="backup-download-btn"
+                    type="button"
+                    class="btn btn-success btn-icon icon-left d-none"
+                >
+                    <i class="fas fa-cloud-download-alt"></i> ダウンロード
+                </button><!-- /Download-Button -->
+
+            </div><!-- /Card-Footer -->
+
         </div><!-- /Card -->
 
     </div><!-- /col-md-6 -->
 
 </div><!-- /Row -->
+
+<form
+    id="backup-download-form"
+    action=""
+    method="POST"
+>
+    <?php
+        __insert_input_hidden(
+            "user_id",
+            __get_session(LOGIN_VAR)
+        );
+        __insert_input_hidden(
+            "time",
+            "",
+            "input-backup-time"
+        );
+    ?>
+</form>
