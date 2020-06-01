@@ -54,6 +54,14 @@ class __Backup extends __Model{
     private $__backup_count;
 
     /**
+     * User Id
+     *
+     * @access private
+     * @var int
+     */
+    private $__user_id;
+
+    /**
      * Backup Init
      *
      * @access public
@@ -115,8 +123,13 @@ class __Backup extends __Model{
      *
      * @access public
      */
-    public function __create_backup()
+    public function __create_backup(
+        int $__user_id
+    )
     {
+        // Set User Id
+        $this->__user_id = $__user_id;
+
         return
         (
                 (
@@ -124,15 +137,17 @@ class __Backup extends __Model{
                     OR
                     "システムのバックアップが有効になっていません"
                 )
-                OR
+                AND
                 (
                     $this->__backup_count >= $this->__max_backup_count
                     OR
                     "これ以上システムのバックアップを作成できません"
                 )
-                OR
+                AND
                 (
                     $this->__system_backup()
+                    AND
+                    "システムのバックアップが完了しました"
                 )
         );
     }
@@ -144,6 +159,9 @@ class __Backup extends __Model{
      */
     private function __system_backup()
     {
+        // Insert Backup History
+        $this->__insert_backup_history();
+
         $__time = TIME;
 
         $__target_path = ROOT_PATH;
@@ -178,7 +196,12 @@ class __Backup extends __Model{
                 .$__time
         ;
 
-        // Exclude "storage/backup/" Dir
+        $__rm_dir =
+            "rm -rf "
+                .$__time
+        ;
+
+        // Exec Command
         exec(
             $__cd
                 .$__cmd_separator
@@ -187,7 +210,38 @@ class __Backup extends __Model{
                 .$__rsync
                 .$__cmd_separator
                 .$__zip
+                .$__cmd_separator
+                .$__rm_dir
         );
+    }
+
+    /**
+     * Insert Backup History
+     *
+     * @access private
+     */
+    private function __insert_backup_history()
+    {
+        // Build Insert Data
+        $this->__requested_data =
+        [
+            "user_id" => $this->__user_id,
+            "time" => TIME,
+            "is_backup_sql" => $this->__backup_settings->is_backup_sql,
+            "download_count" => 1
+        ];
+
+        // Set *_at Data
+        $this->__set_at_data("created_at");
+
+        $this->__db
+            ::table(
+                "backup_history"
+            )
+            ->insert(
+                $this->__requested_data
+            )
+        ;
     }
 
 }
