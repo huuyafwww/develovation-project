@@ -28,10 +28,18 @@ class __C_Backup extends __Controller{
         $__backup_settings->date = __time2date($__backup_settings->time);
 
         // Set Is Backup Message
-        $__backup_settings->backup = $__backup_settings->is_backup ? "しない" : "する";
+        $__backup_settings->backup =
+            (bool)$__backup_settings->is_backup
+            ? "する"
+            : "しない"
+        ;
 
         // Set Is SQL Backup Message
-        $__backup_settings->backup_sql = $__backup_settings->is_backup_sql ? "しない" : "する";
+        $__backup_settings->backup_sql =
+            (bool)$__backup_settings->is_backup_sql
+            ? "する"
+            : "しない"
+        ;
 
         // Set Backup Settings for View
         self::$__vars["__backup_settings"]

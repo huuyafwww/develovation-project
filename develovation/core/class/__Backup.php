@@ -97,7 +97,10 @@ class __Backup{
         $this->__max_backup_count = $this->__backup_settings->max_count;
 
         // Is SQL Backup
-        $this->__max_backup_count = (bool)$this->__backup_settings->__is_sql_backup;
+        $this->__is_backup_sql = (bool)$this->__backup_settings->__is_sql_backup;
+
+        // Set Now Backup Count
+        $this->__backup_count = __get_backup_history_count();
     }
 
     /**
@@ -125,6 +128,41 @@ class __Backup{
     private function __get_model()
     {
         $this->__model = new __Model;
+    }
+
+    /**
+     * Create Backup
+     *
+     * @access public
+     */
+    public function __create_backup()
+    {
+        return (
+                (
+                    $this->__is_backup
+                    OR
+                    "システムのバックアップが有効になっていません"
+                )
+                OR
+                (
+                    $this->__backup_count >= $this->__max_backup_count
+                    OR
+                    "これ以上システムのバックアップを作成できません"
+                )
+                OR
+                (
+                    $this->__system_backup()
+                )
+        );
+    }
+
+    /**
+     * System Backup
+     *
+     * @access public
+     */
+    private function __system_backup()
+    {
     }
 
 }

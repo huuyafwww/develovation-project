@@ -20,5 +20,16 @@ $__routes =
                 "temp_token"
             ]
         ]
+    ],
+    "create" => [
+        "backup" => [
+            "name" => "__Backup",
+            "slug" => "__Create_Backup",
+            "method" => "IS_POST",
+            "is_ajax" => true,
+            "params" => [
+                "user_id"
+            ]
+        ],
     ]
 ];
