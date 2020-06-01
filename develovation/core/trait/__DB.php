@@ -116,6 +116,46 @@ trait __DB {
     }
 
     /**
+     * Get Backup History
+     *
+     * @access public
+     */
+    public function __get_backup_history()
+    {
+        return
+            $this->__db
+                ::table(
+                    "backup_history"
+                )
+                ->get(
+                    [
+                        "user_id",
+                        "time",
+                        "target_path",
+                        "is_backup_sql",
+                        "download_count",
+                    ]
+                )
+        ;
+    }
+
+    /**
+     * Get Backup History Count
+     *
+     * @access public
+     */
+    public function __get_backup_history_count()
+    {
+        return
+            $this->__db
+                ::table(
+                    "backup_history"
+                )
+                ->count()
+        ;
+    }
+
+    /**
      * User ID to Display Name
      *
      * @access public
