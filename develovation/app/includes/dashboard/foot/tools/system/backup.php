@@ -1,0 +1,1 @@
+<script defer src="<?php __get_page_js(); ?>"></script>

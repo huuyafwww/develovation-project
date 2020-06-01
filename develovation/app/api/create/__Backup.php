@@ -33,6 +33,11 @@ class __Create_Backup extends __Api{
     protected function __get_response()
     {
         $__backup = new __Backup;
-        $this->__response["backup"] = $__backup->__create_backup();
+        $this->__response["backup"] =
+            $__backup
+                ->__create_backup(
+                    $_POST["user_id"]
+                )
+        ;
     }
 }
