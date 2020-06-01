@@ -13,6 +13,9 @@ class __C_Backup extends __Controller{
         // Run Parent Class Constructor
         parent::__construct();
 
+        // When IS_POST is true,Download System Backup
+        IS_POST AND $this->__model->__download_backup();
+
         // Set Backup Settings
         $this->__set_backup_settings();
 
