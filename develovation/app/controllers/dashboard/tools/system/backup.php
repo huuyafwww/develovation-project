@@ -13,9 +13,24 @@ class __C_Backup extends __Controller{
         // Run Parent Class Constructor
         parent::__construct();
 
-        // This is a Model Run Sample Code
-        // $this->__model->
+        // Set Backup Settings
+        $this->__set_backup_settings();
 
+        // Set Backup History
+        $this->__set_backup_history();
+
+        // Get Views
+        $this->__get_view();
+
+    }
+
+    /**
+     * Set Backup Settings
+     *
+     * @access private
+     */
+    private function __set_backup_settings()
+    {
         // Get Backup Settings
         $__backup_settings = $this->__model->__get_backup_settings();
 
@@ -45,8 +60,51 @@ class __C_Backup extends __Controller{
         self::$__vars["__backup_settings"]
             = $__backup_settings
         ;
+    }
 
-        // Get Views
-        $this->__get_view();
+    /**
+     * Set Backup History
+     *
+     * @access private
+     */
+    private function __set_backup_history()
+    {
+        // Get Backup History
+        $__backup_history = $this->__model->__get_backup_history();
+
+        if(!isset($__backup_history->user_id))
+        {
+            self::$__vars["__backup_history"]
+                = []
+            ;
+        }
+
+        foreach
+        (
+            $__backup_history
+            as
+            &$__backup
+        )
+        {
+            // Set Display Name
+            $__backup->display_name = $this->__model->__user_id2display_name(
+                $__backup->user_id
+            );
+
+            // Set Date
+            $__backup->date = __time2date($__backup->time);
+
+            // Set Is SQL Backup Message
+            $__backup->backup_sql =
+                (bool)$__backup->is_backup_sql
+                    ? "有"
+                    : "無"
+            ;
+        }
+
+        // Set Backup Settings for View
+        self::$__vars["__backup_history"]
+            = $__backup_history
+        ;
     }
 }

@@ -1,4 +1,7 @@
-<?php $__backup_settings = __get_controller_var("__backup_settings"); ?>
+<?php
+$__backup_settings = __get_controller_var("__backup_settings");
+$__backup_history = __get_controller_var("__backup_history");
+?>
 
 <!-- Row -->
 <div class="row">
@@ -12,6 +15,20 @@
             <!-- Card-Header -->
             <div class="card-header">
                 <h4>現在のシステムバックアップ設定</h4>
+
+                <!-- Card-Header-Action -->
+                <div class="card-header-action">
+
+                    <!-- Create-Buckup-Button -->
+                    <button
+                        id="create-buckup-btn"
+                        type="button"
+                        class="btn btn-primary btn-icon icon-left"
+                    >
+                        <i class="fas fa-file-archive"></i> バックアップを作成する
+                    </button><!-- /Create-Buckup-Button -->
+                </div><!-- /Card-Header-Action -->
+
             </div><!-- /Card-Header -->
 
             <!-- Card-Body -->
@@ -71,17 +88,56 @@
             <!-- Card-Header -->
             <div class="card-header">
                 <h4>作成済みのシステムバックアップ</h4>
+
+                <!-- Card-Header-Action -->
                 <div class="card-header-action dropdown">
-                    <a href="#" data-toggle="dropdown" class="btn btn-danger dropdown-toggle d-block">作成済みのバックアップ一覧</a>
-                    <ul class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+
+                    <!-- DropDown-Label -->
+                    <a
+                        href="#"
+                        data-toggle="dropdown"
+                        class="btn btn-danger dropdown-toggle d-block"
+                    >
+                        作成済みのバックアップ一覧
+                    </a><!-- /DropDown-Label -->
+
+                    <!-- Select-Backup-History-Box -->
+                    <ul
+                        id="select-backup-history-box"
+                        class="dropdown-menu dropdown-menu-sm dropdown-menu-right"
+                    >
                         <li class="dropdown-title">バックアップを選択</li>
-                        <li><a href="#" class="dropdown-item">Sample</a></li>
-                    </ul>
-                </div>
+                        <?php foreach($__backup_history as $__backup): ?>
+                            <li>
+                                <a
+                                    id="backup-<?php echo $__backup->time; ?>"
+                                    href="#"
+                                    class="dropdown-item"
+                                >
+                                    <?php echo $__backup->date; ?>
+                                </a>
+                            </li>
+                        <?php endforeach;?>
+                    </ul><!-- /Select-Backup-History-Box -->
+
+                </div><!-- /Card-Header-Action -->
+
             </div><!-- /Card-Header -->
 
             <!-- Card-Body -->
             <div class="card-body">
+                <?php if(empty($__backup_history)): ?>
+                    <div class="text-center">
+                        <h4>バックアップはありません</h4>
+                    </div>
+                <?php else:?>
+                    <?php foreach($__backup_history as $__backup): ?>
+
+                        <!-- Backup-History -->
+                        <?php include(COMPONENTS_PATH.BASE_DIR."/backup-history.php"); ?><!-- /Backup-History -->
+
+                    <?php endforeach;?>
+                <?php endif;?>
             </div><!-- /Card-Body -->
 
         </div><!-- /Card -->
