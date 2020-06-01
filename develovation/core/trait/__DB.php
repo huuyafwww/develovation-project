@@ -136,6 +136,7 @@ trait __DB {
                         "download_count",
                     ]
                 )
+                ->toArray()
         ;
     }
 
