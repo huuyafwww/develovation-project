@@ -16,9 +16,6 @@ define("DB_USER",$_ENV["DB_USER"]);
 // DataBase Password
 define("DB_PASSWORD",$_ENV["DB_PASSWORD"]);
 
-// "illuminate/database" Alias Name
-define("ILLUMINATE_DB_ALIAS_NAME","DB");
-
 // DataBase Config
 define(
     "DB_CONFIG",

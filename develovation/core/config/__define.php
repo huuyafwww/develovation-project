@@ -1,5 +1,20 @@
 <?php
 
+// Operating System
+define(
+    "OS",
+    PHP_OS
+);
+
+// Is Windows OS
+define(
+    "IS_WINDOWS_OS",
+    __is_strpos(
+        OS,
+        "WIN"
+    )
+);
+
 // User Agent
 define(
     "USER_AGENT",

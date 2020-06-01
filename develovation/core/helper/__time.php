@@ -7,7 +7,7 @@
  * @return string
  */
 function __time2date(
-    string $__time
+    string $__time = TIME
 ):string
 {
     return date(
