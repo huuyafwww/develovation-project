@@ -16,6 +16,9 @@ define("DB_USER",$_ENV["DB_USER"]);
 // DataBase Password
 define("DB_PASSWORD",$_ENV["DB_PASSWORD"]);
 
+// "mysqldump" Command Path
+define("MYSQL_DUMP",$_ENV["MYSQL_DUMP"]);
+
 // DataBase Config
 define(
     "DB_CONFIG",

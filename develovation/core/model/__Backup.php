@@ -188,6 +188,23 @@ class __Backup extends __Model{
                 ." --exclude storage/backup/"
         ;
 
+        $__mysqldump =
+            MYSQL_DUMP
+            ." "
+                .DB_NAME
+            ." --host="
+                .DB_HOST
+            ." --user="
+                .DB_USER
+            ." --password="
+                .DB_PASSWORD
+            ." > '"
+                .$__time
+                ."/"
+                .__time2date()
+                .".sql'"
+        ;
+
         $__zip =
             "zip -r "
                 .$__time
@@ -209,10 +226,13 @@ class __Backup extends __Model{
                 .$__cmd_separator
                 .$__rsync
                 .$__cmd_separator
+                .$__mysqldump
+                .$__cmd_separator
                 .$__zip
                 .$__cmd_separator
                 .$__rm_dir
         );
+
     }
 
     /**
