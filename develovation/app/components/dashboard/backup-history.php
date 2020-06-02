@@ -7,13 +7,13 @@
     <!-- Tbody -->
     <tbody>
         <tr>
-            <td>編集者</td>
+            <td>作成者</td>
             <td>
                 <?php echo $__backup->display_name; ?>
             </td>
         </tr>
         <tr>
-            <td>編集日時</td>
+            <td>作成日時</td>
             <td>
                 <?php echo $__backup->date; ?>
             </td>
