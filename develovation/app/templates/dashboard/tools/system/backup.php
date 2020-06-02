@@ -19,14 +19,16 @@ $__backup_history = __get_controller_var("__backup_history");
                 <!-- Card-Header-Action -->
                 <div class="card-header-action">
 
-                    <!-- Create-Buckup-Button -->
-                    <button
-                        id="create-buckup-btn"
-                        type="button"
-                        class="btn btn-primary btn-icon icon-left"
-                    >
-                        <i class="fas fa-file-archive"></i> バックアップを作成する
-                    </button><!-- /Create-Buckup-Button -->
+                    <?php if($__backup_settings->is_backup): ?>
+                        <!-- Create-Buckup-Button -->
+                        <button
+                            id="create-buckup-btn"
+                            type="button"
+                            class="btn btn-primary btn-icon icon-left"
+                        >
+                            <i class="fas fa-file-archive"></i> バックアップを作成する
+                        </button><!-- /Create-Buckup-Button -->
+                    <?php endif; ?>
                 </div><!-- /Card-Header-Action -->
 
             </div><!-- /Card-Header -->
