@@ -2,6 +2,16 @@
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fhuuyafwww%2Fdevelovation-project.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fhuuyafwww%2Fdevelovation-project?ref=badge_shield)
 
 
+## Now Developing
+
+### System Backup Page
+
+![システムのバックアップページ](./img/System_Backup_Page.png)
+
+### Login History Page
+
+![ログイン履歴ページ](./img/Login_History_Page.png)
+
 ## Programming language & Development stack
 
 - PHP
@@ -12,7 +22,7 @@
 
 ### Framework & Library
 
-- PHPフレームワーク（開発中）
+- PHPフレームワーク（開発完了）
     - Routing
     - Model
     - View
