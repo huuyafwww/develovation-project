@@ -226,8 +226,13 @@ class __Backup extends __Model{
                 .$__cmd_separator
                 .$__rsync
                 .$__cmd_separator
-                .$__mysqldump
-                .$__cmd_separator
+                .(
+                    $this->__is_backup_sql
+                    ?
+                        $__mysqldump
+                        .$__cmd_separator
+                    : ""
+                )
                 .$__zip
                 .$__cmd_separator
                 .$__rm_dir
