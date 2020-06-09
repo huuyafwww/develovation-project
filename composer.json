@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "illuminate/database": "^7.0",
-        "vlucas/phpdotenv": "^4.1",
+        "vlucas/phpdotenv": "^5.0",
         "whichbrowser/parser": "^2.0"
     },
     "config": {
