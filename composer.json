@@ -1,0 +1,15 @@
+{
+    "name": "huuyafwww/develovation-project",
+    "type": "project",
+    "description": "Distributed platform for development on the browser.",
+    "homepage": "https://github.com/huuyafwww/develovation-project",
+    "license": "MIT",
+    "require": {
+        "illuminate/database": "^7.0",
+        "vlucas/phpdotenv": "^5.0",
+        "whichbrowser/parser": "^2.0"
+    },
+    "config": {
+        "vendor-dir" : "./develovation/core/lib"
+    }
+}

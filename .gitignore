@@ -1,7 +1,12 @@
 # Any Extension
 *.log
+*.zip
+.env
 
 # Any File
 .DS_Store
+composer.lock
 
-# Any Directory
+# Any Folder
+/temp/
+/develovation/storage/backup/*
