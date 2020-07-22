@@ -1,4 +1,5 @@
 <?php
+
 /**
  * To Redirect and Exit
  *
