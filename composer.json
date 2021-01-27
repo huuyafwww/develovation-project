@@ -5,7 +5,7 @@
     "homepage": "https://github.com/huuyafwww/develovation-project",
     "license": "MIT",
     "require": {
-        "illuminate/database": "^7.0",
+        "illuminate/database": "^8.25",
         "vlucas/phpdotenv": "^5.0",
         "whichbrowser/parser": "^2.0"
     },
